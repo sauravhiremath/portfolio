@@ -9,8 +9,8 @@ const greeting = {
   /* Your Summary And Greeting Section */
   username: "Saurav M. H",
   title: "Hi all, I'm Saurav",
-  subTitle: emoji("A passionate Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."),
-  resumeLink: "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing"
+  subTitle: emoji("Your friendly neighbourhood Software Developer 🚀 experienced in building Web and Mobile applications with TypeScript / Reactjs / NodeJS and their deployments using Nginx and CI/CD tools."),
+  resumeLink: "https://drive.google.com/file/d/156SNgRtP1MVdoWAk2qCFxYaTeGiGFnKu/view?usp=sharing"
 };
 
 // Your Social Media Link
@@ -29,34 +29,19 @@ const socialMediaLinks = {
 // Your Skills Section
 
 const skillsSection = {
-  title: "What i do",
-  subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+  title: "What I do",
+  subTitle: "PRETTY MUCH EVERYTHING FROM BUILDING A PRODUCT AND DEPLOYING IT",
   skills: [
-    emoji("⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"),
-    emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
-    emoji("⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean")
+    emoji("🚀 Build stable and secure backend infrastructure using NodeJS / Golang"),
+    emoji("💻 Develop highly interactive Front end / User Interfaces as Single-Page-Applications "),
+    emoji("✨ Integration of third party services such as Firebase/ GCP / Digital Ocean"),
+    emoji("🎨 Design user-centric UI/UX prototypes for web and mobile applications")
   ],
 
 /* Make Sure You include correct Font Awesome Classname to view your icon
 https://fontawesome.com/icons?d=gallery */
 
   softwareSkills: [
-    {
-      skillName: "html-5",
-      fontAwesomeClassname: "fab fa-html5"
-    },
-    {
-      skillName: "css3",
-      fontAwesomeClassname: "fab fa-css3-alt"
-    },
-    {
-      skillName: "sass",
-      fontAwesomeClassname: "fab fa-sass"
-    },
-    {
-      skillName: "JavaScript",
-      fontAwesomeClassname: "fab fa-js"
-    },
     {
       skillName: "reactjs",
       fontAwesomeClassname: "fab fa-react"
@@ -66,20 +51,48 @@ https://fontawesome.com/icons?d=gallery */
       fontAwesomeClassname: "fab fa-node"
     },
     {
-      skillName: "swift",
-      fontAwesomeClassname: "fab fa-swift"
+      skillName: "mongoDB",
+      fontAwesomeClassname: "fas fa-database"
+    },
+    {
+      skillName: "Golang",
+      fontAwesomeClassname: "fa fa-code"
+    },
+    {
+      skillName: "Typescript",
+      fontAwesomeClassname: "fa fa-code"
+    },
+    {
+      skillName: "JavaScript",
+      fontAwesomeClassname: "fab fa-js"
     },
     {
       skillName: "npm",
       fontAwesomeClassname: "fab fa-npm"
     },
     {
+      skillName: "yarn",
+      fontAwesomeClassname: "fab fa-yarn"
+    },
+    {
       skillName: "sql-database",
       fontAwesomeClassname: "fas fa-database"
     },
     {
-      skillName: "aws",
-      fontAwesomeClassname: "fab fa-aws"
+      skillName: "nginx",
+      fontAwesomeClassname: "fas fa-server"
+    },
+    {
+      skillName: "html-5",
+      fontAwesomeClassname: "fab fa-html5"
+    },
+    {
+      skillName: "css3",
+      fontAwesomeClassname: "fab fa-css3-alt"
+    },
+    {
+      skillName: "gcp",
+      fontAwesomeClassname: "fab fa-google"
     },
     {
       skillName: "firebase",
