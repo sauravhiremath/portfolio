@@ -4,10 +4,19 @@
   line-height: 30px;
 }
 
-.talk-cards-div {
+.talk-main-div > * {
+  flex: 1;
+  margin-bottom: 30px;
+}
+
+.talk-main-div {
+  display: flex;
+}
+
+.talk-text-div {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 1rem 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 32px;
 }
 
 @media (max-width: 768px) {
