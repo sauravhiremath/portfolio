@@ -36,6 +36,7 @@ export default function Achievement() {
             {achievementSection.achivementsCards.map((card) => {
               return (
                 <AchivementCard
+                  key={card.title}
                   isDark={isDark}
                   cardInfo={{
                     title: card.title,

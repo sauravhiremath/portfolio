@@ -28,6 +28,7 @@ export default function AchivementCard({ cardInfo, isDark }) {
         {cardInfo.footer.map((v, i) => {
           return (
             <p
+              key={v.name}
               className={isDark ? "dark-mode" : null}
               onClick={() => openUrlInNewTab(v.url)}
             >

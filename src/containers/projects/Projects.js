@@ -8,10 +8,11 @@ import React, {
 } from "react";
 import ApolloClient from "apollo-boost";
 import { gql } from "apollo-boost";
+import emoji from "react-easy-emoji";
 import Button from "../../components/button/Button";
 import { openSource, socialMediaLinks } from "../../portfolio";
 import { Fade } from "react-reveal";
-import { StyleConsumer } from "../../contexts/StyleContext";
+import StyleConsumer from "../../contexts/StyleContext";
 import Loading from "../../containers/loading/Loading";
 import "./Project.css";
 
@@ -68,7 +69,6 @@ export default function Projects() {
         `,
       })
       .then((result) => {
-        console.log(JSON.stringify(result));
         setrepoFunction(result.data.user.pinnedItems.edges);
       })
       .catch(function (error) {
@@ -93,7 +93,9 @@ export default function Projects() {
       <Suspense fallback={renderLoader()}>
         <Fade bottom duration={1000} distance="20px">
           <div className="main" id="opensource">
-            <h1 className="project-title">Open Source Projects</h1>
+            <h1 className="project-title">
+              {emoji("Open Source Projects 📖")}
+            </h1>
             <div className="repo-cards-div-main">
               {repo.map((v, i) => {
                 return (

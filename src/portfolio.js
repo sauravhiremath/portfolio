@@ -2,9 +2,9 @@
 
 const greeting = {
   username: "Saurav M. H",
-  title: "Hi all, I'm Saurav",
+  title: "< Hello, I'm Saurav / >",
   subTitle: emoji(
-    "Your friendly neighbourhood Software Developer 🚀 experienced in building Web and Mobile applications with TypeScript / Reactjs / NodeJS and their deployments using Nginx and CI/CD tools."
+    "Your friendly neighbourhood Software Developer 🚀 experienced in building Responsive Web applications with TypeScript / Reactjs / NodeJS and their deployments using Nginx and CI/CD tools."
   ),
   resumeLink:
     "https://drive.google.com/file/d/156SNgRtP1MVdoWAk2qCFxYaTeGiGFnKu/view?usp=sharing",
@@ -13,11 +13,11 @@ const greeting = {
 const socialMediaLinks = {
   github: "https://github.com/sauravhiremath/",
   linkedin: "https://www.linkedin.com/in/sauravmh/",
-  gmail: "sauravhiremath@gmail.com",
+  gmail: "vitsaurav@gmail.com",
   twitter: "https://twitter.com/sauravmh/",
   gitlab: "https://gitlab.com/sauravmh/",
   facebook: "https://www.facebook.com/sauravmh/",
-  instagram: "https://www.instagram.com/sauravv_404/"
+  instagram: "https://www.instagram.com/sauravv_404/",
 };
 
 const skillsSection = {
@@ -185,9 +185,9 @@ const openSource = {
 /**
  * Again, I don't believe certifications alone maketh a man!
  *                               ~ Saurav M. H (i'm serious)
- * 
- * 
- * 
+ *
+ *
+ *
  * But still here we go...
  */
 
@@ -284,7 +284,8 @@ const talkSection = {
       title: "TechEx - Get started with ML",
       subtitle:
         "What is and How to get get started with ML attended by more than 200 people",
-      slides_url: "https://docs.google.com/presentation/d/1uf9vXJJodQwb1NqqqpXTS7XJuo3LRmwN8nlX7Oj5k1I/edit?usp=sharing",
+      slides_url:
+        "https://docs.google.com/presentation/d/1uf9vXJJodQwb1NqqqpXTS7XJuo3LRmwN8nlX7Oj5k1I/edit?usp=sharing",
       event_url:
         "https://www.facebook.com/csivitu/photos/pcb.2584585674899467/2584583278233040/",
     },
@@ -292,9 +293,9 @@ const talkSection = {
       title: "Advanced Data Structures and Algorithms",
       subtitle:
         "Learn what is Dynamic Mem Location, Heap Structure and more about min-heap and max-heap sorting",
-      slides_url: "https://docs.google.com/presentation/d/1iZ4OI5fBfJuXRjcu7-k4Xdu7jJOA4VmD9IncdkRyc4g/edit?usp=sharing",
-      event_url:
-        "https://www.facebook.com/csivitu/posts/2309814529043251",
+      slides_url:
+        "https://docs.google.com/presentation/d/1iZ4OI5fBfJuXRjcu7-k4Xdu7jJOA4VmD9IncdkRyc4g/edit?usp=sharing",
+      event_url: "https://www.facebook.com/csivitu/posts/2309814529043251",
     },
   ],
 };
@@ -310,7 +311,8 @@ const contactInfo = {
 
 const twitterDetails = {
   title: "My Twitter Insight",
-  subtitle: "Keep yourself updated with what I am working on currently, and some fun stuff too 🔥",
+  subtitle:
+    "Keep yourself updated with what I am working on currently, and some fun stuff too 🔥",
   userName: "sauravmh",
 };
 
