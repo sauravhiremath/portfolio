@@ -1,12 +1,19 @@
-import React, { useState, useEffect, useContext, Suspense, lazy } from "react";
+import React, {
+  useState,
+  useEffect,
+  useContext,
+  Suspense,
+  lazy,
+  useCallback,
+} from "react";
 import ApolloClient from "apollo-boost";
 import { gql } from "apollo-boost";
-import "./Project.css";
-import Button from "../../components/button/Button";
 import { openSource } from "../../portfolio";
 import { Fade } from "react-reveal";
 import { StyleConsumer } from "../../contexts/StyleContext";
 import Loading from "../../containers/loading/Loading";
+import "./Project.css";
+
 export default function Projects() {
   const GithubRepoCard = lazy(() =>
     import("../../components/githubRepoCard/GithubRepoCard")
@@ -15,11 +22,8 @@ export default function Projects() {
   const renderLoader = () => <Loading />;
   const [repo, setrepo] = useState([]);
   const { isDark } = useContext(StyleConsumer);
-  useEffect(() => {
-    getRepoData();
-  }, []);
 
-  function getRepoData() {
+  const getRepoData = useCallback(() => {
     const client = new ApolloClient({
       uri: "https://api.github.com/graphql",
       request: (operation) => {
@@ -66,11 +70,16 @@ export default function Projects() {
         console.log(JSON.stringify(result));
         setrepoFunction(result.data.user.pinnedItems.edges);
       });
-  }
+  }, []);
+
+  useEffect(() => {
+    getRepoData();
+  }, [getRepoData]);
 
   function setrepoFunction(array) {
     setrepo(array);
   }
+
   if (!(typeof repo === "string" || repo instanceof String)) {
     return (
       <Suspense fallback={renderLoader()}>

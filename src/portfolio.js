@@ -311,7 +311,7 @@ const talkSection = {
 
   talks: [
     {
-      title: "Get started with Machine Learning - TechEx",
+      title: "TechEx - Get started with ML",
       subtitle:
         "What is and How to get get started with ML attended by more than 200 people",
       slides_url: "https://bit.ly/saadpasta-slides",

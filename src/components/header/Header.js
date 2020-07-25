@@ -3,17 +3,15 @@ import Headroom from "react-headroom";
 import "./Header.css";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import StyleContext from "../../contexts/StyleContext";
-import { Fade } from "react-reveal";
 import { greeting, workExperiences } from "../../portfolio";
-
 
 function Header() {
   const { isDark } = useContext(StyleContext);
   const exp = workExperiences.viewExperiences;
   return (
     <Headroom>
-      <header className={isDark ? "dark-menu header": "header"}>
-        <a href="" className="logo">
+      <header className={isDark ? "dark-menu header" : "header"}>
+        <a href="https://sauravmh.com" className="logo">
           <span className="grey-color"> &lt;</span>
           <span className="logo-name">{greeting.username}</span>
           <span className="grey-color">/&gt;</span>
@@ -26,14 +24,14 @@ function Header() {
           <li>
             <a href="#skills">Skills</a>
           </li>
-          {exp === true &&
-            <li>
-              <a href="#experience">Work Experiences</a>
-            </li>
-          }
           <li>
             <a href="#opensource">Open Source</a>
           </li>
+          {exp === true && (
+            <li>
+              <a href="#experience">Work Experiences</a>
+            </li>
+          )}
           <li>
             <a href="#achievements">Achievements</a>
           </li>
@@ -41,19 +39,18 @@ function Header() {
             <a href="#blogs">Blogs</a>
           </li>
           <li>
-            <a href="#talks">Talks</a>
-          </li>
-          <li>
-            <a href="#achievements">Achievements</a>
+            <a href="#talks">Talks & Workshops</a>
           </li>
           <li>
             <a href="#contact">Contact Me</a>
           </li>
           <li>
-            <a><ToggleSwitch /></a>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+            <a>
+              <ToggleSwitch />
+            </a>
           </li>
         </ul>
-
       </header>
     </Headroom>
   );
