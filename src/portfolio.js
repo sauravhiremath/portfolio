@@ -1,11 +1,6 @@
-﻿/* Change this file to get your personal Portfolio */
-
-// Your Summary And Greeting Section
-
-import emoji from "react-easy-emoji";
+﻿import emoji from "react-easy-emoji";
 
 const greeting = {
-  /* Your Summary And Greeting Section */
   username: "Saurav M. H",
   title: "Hi all, I'm Saurav",
   subTitle: emoji(
@@ -15,22 +10,18 @@ const greeting = {
     "https://drive.google.com/file/d/156SNgRtP1MVdoWAk2qCFxYaTeGiGFnKu/view?usp=sharing",
 };
 
-// Your Social Media Link
-
 const socialMediaLinks = {
-  github: "https://github.com/sauravhiremath",
+  github: "https://github.com/sauravhiremath/",
   linkedin: "https://www.linkedin.com/in/sauravmh/",
   gmail: "sauravhiremath@gmail.com",
-  twitter: "https://twitter.com/sauravmh",
-  gitlab: "https://gitlab.com/sauravmh",
-  facebook: "https://www.facebook.com/sauravmh",
-  // Instagram and Twitter are also supported in the links!
+  twitter: "https://twitter.com/sauravmh/",
+  gitlab: "https://gitlab.com/sauravmh/",
+  facebook: "https://www.facebook.com/sauravmh/",
+  instagram: "https://www.instagram.com/sauravv_404/"
 };
 
-// Your Skills Section
-
 const skillsSection = {
-  title: "What I do",
+  title: "What I do? 🤔",
   subTitle: "PRETTY MUCH EVERYTHING FROM BUILDING A PRODUCT AND DEPLOYING IT",
   skills: [
     emoji(
@@ -46,9 +37,6 @@ const skillsSection = {
       "🎨 Design user-centric UI/UX prototypes for web and mobile applications"
     ),
   ],
-
-  /* Make Sure You include correct Font Awesome Classname to view your icon
-https://fontawesome.com/icons?d=gallery */
 
   softwareSkills: [
     {
@@ -175,7 +163,7 @@ const workExperiences = {
       role: "Data Science Head",
       company: "CamCann",
       companylogo: require("./assets/images/camcannLogo.png"),
-      date: "Jan 2015 – Sep 2015",
+      date: "Jan 2020 – Present",
       desc: "Formed and Lead the first Data Science division",
       descBullets: [
         "Designed and developed Computer Vision solutions to support running on embedded systems such as Raspberry Pi utilising Open Vino, C++ and Python.",
@@ -194,31 +182,13 @@ const openSource = {
   showGithubProfile: "true",
 };
 
-/** So these are some interesting projects I have worked on for
- *  some awesome companies and startups. These are basically products that
- * helped me learn projects are more than just writing pieces of code
- *
- * TODO: remove not that cool
- */
-
-const bigProjects = {
-  title: "Big Projects",
-  subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
-  projects: [
-    {
-      image: require("./assets/images/saayaHealthLogo.webp"),
-      link: "http://saayahealth.com/",
-    },
-    {
-      image: require("./assets/images/nextuLogo.webp"),
-      link: "http://nextu.se/",
-    },
-  ],
-};
-
 /**
  * Again, I don't believe certifications alone maketh a man!
  *                               ~ Saurav M. H (i'm serious)
+ * 
+ * 
+ * 
+ * But still here we go...
  */
 
 const achievementSection = {
@@ -284,9 +254,9 @@ const achievementSection = {
  */
 
 const blogSection = {
-  title: "Blogs",
+  title: "Blogs ✍",
   subtitle:
-    "The only thing that gives me more joy than developing, is helping someone start their journey. And that's how I got started with Blogs",
+    "The only thing that gives me more joy than developing, is helping someone start their journey. And that's how I got started with Blogs 📙",
 
   blogs: [
     {
@@ -304,9 +274,9 @@ const blogSection = {
  */
 
 const talkSection = {
-  title: "Talks and Workshops",
+  title: "Talks and Workshops 🔊",
   subtitle: emoji(
-    "WHAT BETTER WAY TO SHARE YOUR KNOWLEDGE IF NOT TALKS AND WORKSHOPS"
+    "WHAT BETTER WAY TO SHARE YOUR KNOWLEDGE IF NOT TALKS AND WORKSHOPS 🗣️"
   ),
 
   talks: [
@@ -330,7 +300,7 @@ const talkSection = {
 };
 
 const contactInfo = {
-  title: emoji("Contact Me ☎️"),
+  title: emoji("Contact Me 📞"),
   subtitle:
     "Got an interesting project to work on? Or just wanna hangout over a coffee. Let me know when and where",
   email_address: "sauravhiremath@gmail.com",
@@ -351,7 +321,6 @@ export {
   techStack,
   workExperiences,
   openSource,
-  bigProjects,
   achievementSection,
   blogSection,
   talkSection,

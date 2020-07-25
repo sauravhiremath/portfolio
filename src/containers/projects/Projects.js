@@ -8,7 +8,8 @@ import React, {
 } from "react";
 import ApolloClient from "apollo-boost";
 import { gql } from "apollo-boost";
-import { openSource } from "../../portfolio";
+import Button from "../../components/button/Button";
+import { openSource, socialMediaLinks } from "../../portfolio";
 import { Fade } from "react-reveal";
 import { StyleConsumer } from "../../contexts/StyleContext";
 import Loading from "../../containers/loading/Loading";
@@ -69,6 +70,13 @@ export default function Projects() {
       .then((result) => {
         console.log(JSON.stringify(result));
         setrepoFunction(result.data.user.pinnedItems.edges);
+      })
+      .catch(function (error) {
+        console.log(error);
+        setrepoFunction("Error");
+        console.log(
+          "Because of this Error, nothing is shown in place of Projects section. Projects section not configured"
+        );
       });
   }, []);
 
@@ -93,6 +101,12 @@ export default function Projects() {
                 );
               })}
             </div>
+            <Button
+              text={"More Projects"}
+              className="project-button"
+              href={socialMediaLinks.github}
+              newTab={true}
+            />
           </div>
         </Fade>
       </Suspense>
