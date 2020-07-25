@@ -224,7 +224,7 @@ const bigProjects = {
 const achievementSection = {
   title: emoji("Achievements And Certifications 🏆 "),
   subtitle:
-    "Not to brag, but here I have showcased some of my certifications and achievements 🎈🎈",
+    "I don't brag, so here I have showcased some of my certifications and achievements 🎈🎈",
 
   achivementsCards: [
     {
@@ -304,9 +304,9 @@ const blogSection = {
  */
 
 const talkSection = {
-  title: "TALKS AND WORKSHOPS",
+  title: "Talks and Workshops",
   subtitle: emoji(
-    "What better way to share your knowledge if not Talks and Workshops"
+    "WHAT BETTER WAY TO SHARE YOUR KNOWLEDGE IF NOT TALKS AND WORKSHOPS"
   ),
 
   talks: [
@@ -321,19 +321,6 @@ const talkSection = {
   ],
 };
 
-// Podcast Section
-// TODO: Remove this: Coz i'm not cool enough for a podcast
-
-const podcastSection = {
-  title: emoji("Podcast 🎙️"),
-  subtitle: "I LOVE TO TALK ABOUT MYSELF AND TECHNOLOGY",
-
-  // Please Provide with Your Podcast embeded Link
-  podcast: [
-    "https://anchor.fm/codevcast/embed/episodes/DevStory---Saad-Pasta-from-Karachi--Pakistan-e9givv/a-a15itvo",
-  ],
-};
-
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
@@ -344,6 +331,8 @@ const contactInfo = {
 //Twitter Section
 
 const twitterDetails = {
+  title: "My Twitter Insight",
+  subtitle: "Keep yourself updated with what I am working on currently, and some fun stuff too 🔥",
   userName: "sauravmh",
 };
 
@@ -358,7 +347,6 @@ export {
   achievementSection,
   blogSection,
   talkSection,
-  podcastSection,
   contactInfo,
   twitterDetails,
 };

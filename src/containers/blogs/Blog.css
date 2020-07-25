@@ -18,6 +18,7 @@
 .blog-header-text {
   font-size: 56px;
   font-weight: 400;
+  line-height: 30px;
 }
 
 .blog-subtitle {
@@ -27,6 +28,7 @@
   flex: 1;
   margin-bottom: 30px;
 }
+
 .blog-main-div {
   display: flex;
 }
