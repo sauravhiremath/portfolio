@@ -314,9 +314,17 @@ const talkSection = {
       title: "TechEx - Get started with ML",
       subtitle:
         "What is and How to get get started with ML attended by more than 200 people",
-      slides_url: "https://bit.ly/saadpasta-slides",
+      slides_url: "https://docs.google.com/presentation/d/1uf9vXJJodQwb1NqqqpXTS7XJuo3LRmwN8nlX7Oj5k1I/edit?usp=sharing",
       event_url:
         "https://www.facebook.com/csivitu/photos/pcb.2584585674899467/2584583278233040/",
+    },
+    {
+      title: "Advanced Data Structures and Algorithms",
+      subtitle:
+        "Learn what is Dynamic Mem Location, Heap Structure and more about min-heap and max-heap sorting",
+      slides_url: "https://docs.google.com/presentation/d/1iZ4OI5fBfJuXRjcu7-k4Xdu7jJOA4VmD9IncdkRyc4g/edit?usp=sharing",
+      event_url:
+        "https://www.facebook.com/csivitu/posts/2309814529043251",
     },
   ],
 };

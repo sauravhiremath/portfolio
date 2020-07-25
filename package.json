@@ -1,7 +1,7 @@
 {
   "homepage": "https://sauravmh.com",
   "name": "saurav-portfolio",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "^3.1.4",
@@ -18,7 +18,7 @@
     "react-twitter-embed": "3.0.3"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "yarn run build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "deploy": "gh-pages -b master -d build",
