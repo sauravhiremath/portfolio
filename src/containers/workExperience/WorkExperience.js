@@ -1,10 +1,10 @@
-import React from "react";
 import "./WorkExperience.css";
+import React from "react";
+import { Fade } from "react-reveal";
 import ExperienceCard from "../../components/experienceCard/ExperienceCard";
 import { workExperiences } from "../../portfolio";
-import { Fade } from "react-reveal";
 
-export default function WorkExperience() {
+export default WorkExperience = () => {
   if (workExperiences.viewExperiences) {
     return (
       <div id="experience">
@@ -36,4 +36,4 @@ export default function WorkExperience() {
     );
   }
   return null;
-}
+};

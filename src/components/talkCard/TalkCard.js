@@ -1,12 +1,12 @@
-import React from "react";
 import "./TalkCard.css";
+import React from "react";
 
-export default function TalkCard({talkDetails}) {
+export default TalkCard = ({ talkDetails }) => {
   return (
     <div>
       <div className="container">
         <div className="rectangle">
-          <div className="diagonal-fill"></div>
+          <div className="diagonal-fill" />
           <div className="talk-card-title">{talkDetails.title}</div>
           <p className="talk-card-subtitle">{talkDetails.subtitle}</p>
 
@@ -22,4 +22,4 @@ export default function TalkCard({talkDetails}) {
       </div>
     </div>
   );
-}
+};

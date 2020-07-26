@@ -1,11 +1,11 @@
+import "./Achievement.css";
 import React, { useContext } from "react";
+import { Fade } from "react-reveal";
 import AchivementCard from "../../components/achievementCard/AchivementCard";
 import { achievementSection } from "../../portfolio";
-import { Fade } from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
-import "./Achievement.css";
 
-export default function Achievement() {
+export default Achievement = () => {
   const { isDark } = useContext(StyleContext);
 
   return (
@@ -52,4 +52,4 @@ export default function Achievement() {
       </div>
     </Fade>
   );
-}
+};

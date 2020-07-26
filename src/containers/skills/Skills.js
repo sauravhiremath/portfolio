@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
 import "./Skills.css";
+import React, { useContext } from "react";
+import { Fade } from "react-reveal";
 import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
 import { skillsSection } from "../../portfolio";
-import { Fade } from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 
-export default function Skills() {
+export default Skills = () => {
   const { isDark } = useContext(StyleContext);
   return (
     <div className={isDark ? "dark-mode main" : "main"} id="skills">
@@ -15,11 +15,11 @@ export default function Skills() {
             <img
               alt="Working"
               src={require("../../assets/images/developerActivity.svg")}
-            ></img>
+            />
           </div>
         </Fade>
         <Fade right duration={1000}>
-          <div className={"skills-text-div"}>
+          <div className="skills-text-div">
             <h1
               className={isDark ? "dark-mode skills-heading" : "skills-heading"}
             >
@@ -56,4 +56,4 @@ export default function Skills() {
       </div>
     </div>
   );
-}
+};

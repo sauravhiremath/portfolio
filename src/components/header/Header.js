@@ -1,11 +1,11 @@
+import "./Header.css";
 import React, { useContext } from "react";
 import Headroom from "react-headroom";
-import "./Header.css";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import StyleContext from "../../contexts/StyleContext";
 import { greeting, workExperiences } from "../../portfolio";
 
-function Header() {
+export default Header = () => {
   const { isDark } = useContext(StyleContext);
   const exp = workExperiences.viewExperiences;
   return (
@@ -18,7 +18,7 @@ function Header() {
         </a>
         <input className="menu-btn" type="checkbox" id="menu-btn" />
         <label className="menu-icon" htmlFor="menu-btn">
-          <span className="navicon"></span>
+          <span className="navicon" />
         </label>
         <ul className={isDark ? "dark-menu menu" : "menu"}>
           <li>
@@ -45,7 +45,6 @@ function Header() {
             <a href="#contact">Contact Me</a>
           </li>
           <li>
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a>
               <ToggleSwitch />
             </a>
@@ -54,5 +53,4 @@ function Header() {
       </header>
     </Headroom>
   );
-}
-export default Header;
+};

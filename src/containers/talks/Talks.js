@@ -1,11 +1,11 @@
+import "./Talks.css";
 import React, { useContext } from "react";
+import { Fade } from "react-reveal";
 import TalkCard from "../../components/talkCard/TalkCard";
 import { talkSection } from "../../portfolio";
-import { Fade } from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
-import "./Talks.css";
 
-export default function Talks() {
+export default Talks = () => {
   const { isDark } = useContext(StyleContext);
   return (
     <Fade bottom duration={1000} distance="20px">
@@ -43,4 +43,4 @@ export default function Talks() {
       </div>
     </Fade>
   );
-}
+};

@@ -1,3 +1,4 @@
+import "./Project.css";
 import React, {
   useState,
   useEffect,
@@ -9,14 +10,13 @@ import React, {
 import ApolloClient from "apollo-boost";
 import { gql } from "apollo-boost";
 import emoji from "react-easy-emoji";
+import { Fade } from "react-reveal";
 import Button from "../../components/button/Button";
 import { openSource, socialMediaLinks } from "../../portfolio";
-import { Fade } from "react-reveal";
 import StyleConsumer from "../../contexts/StyleContext";
 import Loading from "../../containers/loading/Loading";
-import "./Project.css";
 
-export default function Projects() {
+export default Projects = () => {
   const GithubRepoCard = lazy(() =>
     import("../../components/githubRepoCard/GithubRepoCard")
   );
@@ -99,15 +99,15 @@ export default function Projects() {
             <div className="repo-cards-div-main">
               {repo.map((v, i) => {
                 return (
-                  <GithubRepoCard isDark={isDark} repo={v} key={v.node.id} />
+                  <GithubRepoCard key={v.node.id} isDark={isDark} repo={v} />
                 );
               })}
             </div>
             <Button
-              text={"More Projects"}
+              newTab
+              text="More Projects"
               className="project-button"
               href={socialMediaLinks.github}
-              newTab={true}
             />
           </div>
         </Fade>
@@ -120,4 +120,4 @@ export default function Projects() {
       </Suspense>
     );
   }
-}
+};

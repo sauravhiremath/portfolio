@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
 import "./Blog.css";
+import React, { useContext } from "react";
 import BlogCard from "../../components/blogCard/BlogCard";
 import { blogSection } from "../../portfolio";
 import { Fade } from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
-export default function Blogs() {
+
+export default Blogs = () => {
   const { isDark } = useContext(StyleContext);
   return (
     <Fade bottom duration={1000} distance="20px">
@@ -40,4 +41,4 @@ export default function Blogs() {
       </div>
     </Fade>
   );
-}
+};

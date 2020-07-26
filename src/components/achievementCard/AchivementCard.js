@@ -1,20 +1,16 @@
-import React from "react";
 import "./AchievementCard.css";
+import React from "react";
 
 function openUrlInNewTab(url) {
   var win = window.open(url, "_blank");
   win.focus();
 }
 
-export default function AchivementCard({ cardInfo, isDark }) {
+export default AchivementCard = ({ cardInfo, isDark }) => {
   return (
     <div className={isDark ? "dark-mode certificate-card" : "certificate-card"}>
       <div className="certificate-image-div">
-        <img
-          src={cardInfo.image}
-          alt="achievement"
-          className="card-image"
-        ></img>
+        <img src={cardInfo.image} alt="achievement" className="card-image" />
       </div>
       <div className="certificate-detail-div">
         <h5 className={isDark ? "dark-mode card-title" : "card-title"}>
@@ -39,4 +35,4 @@ export default function AchivementCard({ cardInfo, isDark }) {
       </div>
     </div>
   );
-}
+};

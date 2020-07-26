@@ -1,8 +1,8 @@
-import React, { useState, createRef } from "react";
 import "./ExperienceCard.css";
+import React, { useState, createRef } from "react";
 import ColorThief from "colorthief";
 
-export default function ExperienceCard({ cardInfo }) {
+export default ExperienceCard = ({ cardInfo }) => {
   const [colorArrays, setColorArrays] = useState([]);
   const imgRef = createRef();
 
@@ -19,7 +19,11 @@ export default function ExperienceCard({ cardInfo }) {
 
   const GetDescBullets = ({ descBullets }) => {
     return descBullets
-      ? descBullets.map((item) => <li key={item} className="subTitle">{item}</li>)
+      ? descBullets.map((item) => (
+        <li key={item} className="subTitle">
+          {item}
+        </li>
+      ))
       : null;
   };
 
@@ -29,14 +33,14 @@ export default function ExperienceCard({ cardInfo }) {
         style={{ background: rgb(colorArrays) }}
         className="experience-banner"
       >
-        <div className="experience-blurred_div"></div>
+        <div className="experience-blurred_div" />
         <div className="experience-div-company">
           <h5 className="experience-text-company">{cardInfo.company}</h5>
         </div>
 
         <img
-          crossOrigin={"anonymous"}
           ref={imgRef}
+          crossOrigin="anonymous"
           className="experience-roundedimg"
           src={cardInfo.companylogo}
           alt={cardInfo.company}
@@ -53,4 +57,4 @@ export default function ExperienceCard({ cardInfo }) {
       </div>
     </div>
   );
-}
+};

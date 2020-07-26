@@ -1,8 +1,8 @@
-import React from "react";
 import "./SoftwareSkill.css";
+import React from "react";
 import { skillsSection } from "../../portfolio";
 
-export default function SoftwareSkill() {
+export default SoftwareSkill = () => {
   return (
     <div>
       <div className="software-skills-main-div">
@@ -14,7 +14,7 @@ export default function SoftwareSkill() {
                 className="software-skill-inline"
                 name={skill.skillName}
               >
-                <i className={skill.fontAwesomeClassname}></i>
+                <i className={skill.fontAwesomeClassname} />
                 <p>{skill.skillName}</p>
               </li>
             );
@@ -23,4 +23,4 @@ export default function SoftwareSkill() {
       </div>
     </div>
   );
-}
+};

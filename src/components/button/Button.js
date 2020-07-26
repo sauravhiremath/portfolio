@@ -1,7 +1,7 @@
-import React from "react";
 import "./Button.css";
+import React from "react";
 
-export default function Button({ text, className, href, newTab }) {
+export default Button = ({ text, className, href, newTab }) => {
   return (
     <div className={className}>
       <a className="main-button" href={href} target={newTab && "_blank"}>
@@ -9,4 +9,4 @@ export default function Button({ text, className, href, newTab }) {
       </a>
     </div>
   );
-}
+};
