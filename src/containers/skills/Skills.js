@@ -14,7 +14,7 @@ const Skills = () => {
           <div className="skills-image-div">
             <img
               alt="Working"
-              src={require("../../assets/images/developerActivity.svg")}
+              src={require("../../assets/images/rotatingChair.gif")}
             />
           </div>
         </Fade>

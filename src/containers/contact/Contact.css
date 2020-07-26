@@ -33,6 +33,7 @@
 
 .contact-subtitle {
     text-transform: uppercase;
+    line-height: 2em;
 }
 
 .contact-text-div {
@@ -46,8 +47,8 @@
 .contact-image-div > img {
     max-width: 100%;
     height: auto;
-    margin-left: 1.5rem;
-    margin-top: -4rem;
+    margin-left: 1rem;
+    margin-top: -8rem;
 }
 
 /* Media Query */

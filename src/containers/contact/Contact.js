@@ -46,9 +46,9 @@ const Contact = () => {
           </div>
           <div className="contact-image-div">
             <img
-              alt="Working"
+              alt="Message Man"
               src={require(`../../assets/images/${
-                isDark ? "contactMailDark.svg" : "contactMail.webp"
+                isDark ? "messageMan.png" : "messageMan.png"
               }`)}
             />
           </div>

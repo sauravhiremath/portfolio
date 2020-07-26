@@ -45,7 +45,8 @@ const Greeting = () => {
           <div className="greeting-image-div">
             <img
               alt="sitting on table"
-              src={require("../../assets/images/rotatingChair.gif")}
+              src={require("../../assets/images/greeting.gif")}
+              width="100%"
             />
           </div>
         </div>

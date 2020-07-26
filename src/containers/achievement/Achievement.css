@@ -1,13 +1,13 @@
 .achievement-heading {
   font-size: 56px;
   font-weight: 400;
-  line-height: 2em;
   margin: 0px;
 }
 .achievement-subtitle {
   text-transform: uppercase;
   margin: 0px;
   margin-bottom: 50px;
+  line-height: 4em;
 }
 .card-image {
   height: 250px;

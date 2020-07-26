@@ -2,9 +2,9 @@
 
 const greeting = {
   username: "Saurav M. H",
-  title: "< Hello, I'm Saurav / >",
+  title: "Heya, I'm Saurav",
   subTitle: emoji(
-    "Your friendly neighbourhood Software Developer 🚀 experienced in building Responsive Web applications with TypeScript / Reactjs / NodeJS and their deployments using Nginx and CI/CD tools."
+    "Your friendly neighbourhood Software Developer 🚀 experienced in building Full-Stack Responsive Web applications with TypeScript / Reactjs / NodeJS and their deployments using Nginx and CI/CD tools."
   ),
   resumeLink:
     "https://drive.google.com/file/d/156SNgRtP1MVdoWAk2qCFxYaTeGiGFnKu/view?usp=sharing",
