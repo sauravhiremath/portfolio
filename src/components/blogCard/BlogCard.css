@@ -1,14 +1,11 @@
 .dark-mode {
-  color:white !important;
+  color: rgb(138, 138, 138) !important;
 }
 
 .small-dark {
-  color: white !important;
+  color: rgb(138, 138, 138) !important;
 }
 
-/* .dark-mode h3,
- p { color: white; }
-  */
 .blog-container {
   border-radius: 10px;
   color: #586069;

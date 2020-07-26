@@ -4,7 +4,7 @@ import { Fade } from "react-reveal";
 import ExperienceCard from "../../components/experienceCard/ExperienceCard";
 import { workExperiences } from "../../portfolio";
 
-export default WorkExperience = () => {
+const WorkExperience = () => {
   if (workExperiences.viewExperiences) {
     return (
       <div id="experience">
@@ -37,3 +37,5 @@ export default WorkExperience = () => {
   }
   return null;
 };
+
+export default WorkExperience;

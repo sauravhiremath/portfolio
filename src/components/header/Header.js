@@ -5,7 +5,7 @@ import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import StyleContext from "../../contexts/StyleContext";
 import { greeting, workExperiences } from "../../portfolio";
 
-export default Header = () => {
+const Header = () => {
   const { isDark } = useContext(StyleContext);
   const exp = workExperiences.viewExperiences;
   return (
@@ -45,12 +45,14 @@ export default Header = () => {
             <a href="#contact">Contact Me</a>
           </li>
           <li>
-            <a>
+            <button type="submit">
               <ToggleSwitch />
-            </a>
+            </button>
           </li>
         </ul>
       </header>
     </Headroom>
   );
 };
+
+export default Header;

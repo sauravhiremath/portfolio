@@ -1,8 +1,8 @@
-import React from "react";
 import "./GithubRepoCard.css";
+import React from "react";
 import { Fade } from "react-reveal";
 
-export default GithubRepoCard = ({ repo, isDark }) => {
+const GithubRepoCard = ({ repo, isDark }) => {
   function openRepoinNewTab(url) {
     var win = window.open(url, "_blank");
     win.focus();
@@ -86,3 +86,5 @@ export default GithubRepoCard = ({ repo, isDark }) => {
     </Fade>
   );
 };
+
+export default GithubRepoCard;

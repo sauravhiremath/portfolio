@@ -7,7 +7,8 @@ import StyleContext from "../../contexts/StyleContext";
 import Loading from "../loading/Loading";
 
 const renderLoader = () => <Loading />;
-export default function Twitter() {
+
+const Twitter = () => {
   const { isDark } = useContext(StyleContext);
   if (twitterDetails.userName) {
     return (
@@ -41,4 +42,6 @@ export default function Twitter() {
   } else {
     return null;
   }
-}
+};
+
+export default Twitter;

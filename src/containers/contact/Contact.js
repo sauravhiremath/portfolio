@@ -5,7 +5,7 @@ import SocialMedia from "../../components/socialMedia/SocialMedia";
 import { contactInfo } from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
-export default Contact = () => {
+const Contact = () => {
   const { isDark } = useContext(StyleContext);
   return (
     <Fade bottom duration={1000} distance="20px">
@@ -57,3 +57,5 @@ export default Contact = () => {
     </Fade>
   );
 };
+
+export default Contact;

@@ -1,5 +1,5 @@
-import "./BlogCard.css";
 import React from "react";
+import "./BlogCard.css";
 
 function openUrlInNewTab(url) {
   if (url !== undefined) {
@@ -8,7 +8,7 @@ function openUrlInNewTab(url) {
   }
 }
 
-export default BlogCard = ({ blog, isDark }) => {
+const BlogCard = ({ blog, isDark }) => {
   return (
     <div>
       <div
@@ -33,3 +33,5 @@ export default BlogCard = ({ blog, isDark }) => {
     </div>
   );
 };
+
+export default BlogCard;

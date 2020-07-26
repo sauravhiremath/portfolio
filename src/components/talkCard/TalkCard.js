@@ -1,7 +1,7 @@
 import "./TalkCard.css";
 import React from "react";
 
-export default TalkCard = ({ talkDetails }) => {
+const TalkCard = ({ talkDetails }) => {
   return (
     <div>
       <div className="container">
@@ -23,3 +23,5 @@ export default TalkCard = ({ talkDetails }) => {
     </div>
   );
 };
+
+export default TalkCard;

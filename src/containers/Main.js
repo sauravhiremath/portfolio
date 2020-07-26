@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
 import Skills from "./skills/Skills";
-import StackProgress from "./skillProgress/skillProgress";
 import WorkExperience from "./workExperience/WorkExperience";
 import Projects from "./projects/Projects";
 import Achievement from "./achievement/Achievement";
@@ -19,10 +18,6 @@ export default class Main extends Component {
   state = {
     isDark: false,
   };
-
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
@@ -43,7 +38,6 @@ export default class Main extends Component {
           <Header />
           <Greeting />
           <Skills />
-          <StackProgress />
           <Projects />
           <WorkExperience />
           <Achievement />

@@ -6,7 +6,7 @@ function openUrlInNewTab(url) {
   win.focus();
 }
 
-export default AchivementCard = ({ cardInfo, isDark }) => {
+const AchievementCard = ({ cardInfo, isDark }) => {
   return (
     <div className={isDark ? "dark-mode certificate-card" : "certificate-card"}>
       <div className="certificate-image-div">
@@ -36,3 +36,5 @@ export default AchivementCard = ({ cardInfo, isDark }) => {
     </div>
   );
 };
+
+export default AchievementCard;

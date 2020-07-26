@@ -2,7 +2,7 @@ import "./ToggleSwitch.css";
 import React, { useState, useContext } from "react";
 import StyleContext from "../../contexts/StyleContext";
 
-export default ToggleSwitch = () => {
+const ToggleSwitch = () => {
   const [isChecked, setChecked] = useState(false);
   const styleContext = useContext(StyleContext);
 
@@ -20,3 +20,5 @@ export default ToggleSwitch = () => {
     </label>
   );
 };
+
+export default ToggleSwitch;

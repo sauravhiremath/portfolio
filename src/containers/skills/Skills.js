@@ -5,7 +5,7 @@ import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
 import { skillsSection } from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
-export default Skills = () => {
+const Skills = () => {
   const { isDark } = useContext(StyleContext);
   return (
     <div className={isDark ? "dark-mode main" : "main"} id="skills">
@@ -57,3 +57,5 @@ export default Skills = () => {
     </div>
   );
 };
+
+export default Skills;

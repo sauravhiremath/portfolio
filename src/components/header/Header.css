@@ -6,7 +6,7 @@
 }
 
 .dark-menu li a {
-  color: white !important; 
+  color: white !important;
 }
 
 .dark-menu li a:hover {
@@ -70,7 +70,6 @@
 
 .header .menu-icon {
   cursor: pointer;
-  display: inline-block;
   float: right;
   padding: 28px 20px;
   position: relative;
@@ -130,6 +129,13 @@
 .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
 .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
   top: 0;
+}
+
+.header li button {
+  display: block;
+  padding: 15px 20px;
+  border: 0;
+  background: transparent;
 }
 
 /* 48em = 768px */

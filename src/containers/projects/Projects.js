@@ -16,7 +16,7 @@ import { openSource, socialMediaLinks } from "../../portfolio";
 import StyleConsumer from "../../contexts/StyleContext";
 import Loading from "../../containers/loading/Loading";
 
-export default Projects = () => {
+const Projects = () => {
   const GithubRepoCard = lazy(() =>
     import("../../components/githubRepoCard/GithubRepoCard")
   );
@@ -121,3 +121,5 @@ export default Projects = () => {
     );
   }
 };
+
+export default Projects;

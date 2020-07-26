@@ -1,7 +1,7 @@
 import React from "react";
 import "./Top.css";
 
-export default Top = () => {
+const Top = () => {
   function TopEvent() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -30,3 +30,5 @@ export default Top = () => {
     </button>
   );
 };
+
+export default Top;

@@ -2,7 +2,7 @@ import "./ExperienceCard.css";
 import React, { useState, createRef } from "react";
 import ColorThief from "colorthief";
 
-export default ExperienceCard = ({ cardInfo }) => {
+const ExperienceCard = ({ cardInfo }) => {
   const [colorArrays, setColorArrays] = useState([]);
   const imgRef = createRef();
 
@@ -58,3 +58,5 @@ export default ExperienceCard = ({ cardInfo }) => {
     </div>
   );
 };
+
+export default ExperienceCard;

@@ -7,7 +7,7 @@ import Button from "../../components/button/Button";
 import { greeting } from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
-export default Greeting = () => {
+const Greeting = () => {
   const { isDark } = useContext(StyleContext);
   return (
     <Fade bottom duration={1000} distance="40px">
@@ -45,7 +45,7 @@ export default Greeting = () => {
           <div className="greeting-image-div">
             <img
               alt="sitting on table"
-              src={require("../../assets/images/manOnTable.svg")}
+              src={require("../../assets/images/rotatingChair.gif")}
             />
           </div>
         </div>
@@ -53,3 +53,5 @@ export default Greeting = () => {
     </Fade>
   );
 };
+
+export default Greeting;

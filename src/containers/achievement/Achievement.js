@@ -1,11 +1,11 @@
 import "./Achievement.css";
 import React, { useContext } from "react";
 import { Fade } from "react-reveal";
-import AchivementCard from "../../components/achievementCard/AchivementCard";
+import AchievementCard from "../../components/achievementCard/AchievementCard";
 import { achievementSection } from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
-export default Achievement = () => {
+const Achievement = () => {
   const { isDark } = useContext(StyleContext);
 
   return (
@@ -35,7 +35,7 @@ export default Achievement = () => {
           <div className="achievement-cards-div">
             {achievementSection.achivementsCards.map((card) => {
               return (
-                <AchivementCard
+                <AchievementCard
                   key={card.title}
                   isDark={isDark}
                   cardInfo={{
@@ -53,3 +53,5 @@ export default Achievement = () => {
     </Fade>
   );
 };
+
+export default Achievement;

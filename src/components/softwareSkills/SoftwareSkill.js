@@ -2,7 +2,7 @@ import "./SoftwareSkill.css";
 import React from "react";
 import { skillsSection } from "../../portfolio";
 
-export default SoftwareSkill = () => {
+const SoftwareSkill = () => {
   return (
     <div>
       <div className="software-skills-main-div">
@@ -24,3 +24,5 @@ export default SoftwareSkill = () => {
     </div>
   );
 };
+
+export default SoftwareSkill;

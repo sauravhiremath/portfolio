@@ -5,7 +5,7 @@ import TalkCard from "../../components/talkCard/TalkCard";
 import { talkSection } from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
-export default Talks = () => {
+const Talks = () => {
   const { isDark } = useContext(StyleContext);
   return (
     <Fade bottom duration={1000} distance="20px">
@@ -44,3 +44,5 @@ export default Talks = () => {
     </Fade>
   );
 };
+
+export default Talks;

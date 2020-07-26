@@ -5,7 +5,7 @@ import { Fade } from "react-reveal";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import { contactInfo } from "../../portfolio";
 
-export default GithubProfileCard = ({ prof }) => {
+const GithubProfileCard = ({ prof }) => {
   if (prof.hireable !== null) {
     prof.hireable = "Yes";
   } else {
@@ -59,3 +59,5 @@ export default GithubProfileCard = ({ prof }) => {
     </Fade>
   );
 };
+
+export default GithubProfileCard;
