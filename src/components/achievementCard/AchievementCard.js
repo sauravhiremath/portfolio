@@ -1,10 +1,7 @@
 import "./AchievementCard.css";
 import React from "react";
+import { openUrlInNewTab } from '../helper';
 
-function openUrlInNewTab(url) {
-  var win = window.open(url, "_blank");
-  win.focus();
-}
 
 const AchievementCard = ({ cardInfo, isDark }) => {
   return (

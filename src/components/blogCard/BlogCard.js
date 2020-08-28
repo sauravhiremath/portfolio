@@ -1,12 +1,6 @@
-import React from "react";
 import "./BlogCard.css";
-
-function openUrlInNewTab(url) {
-  if (url !== undefined) {
-    var win = window.open(url, "_blank");
-    win.focus();
-  }
-}
+import React from "react";
+import { openUrlInNewTab } from '../helper';
 
 const BlogCard = ({ blog, isDark }) => {
   return (
