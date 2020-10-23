@@ -4,7 +4,7 @@ const greeting = {
   username: 'Saurav M. H',
   title: "Heya, I'm Saurav",
   subTitle: emoji(
-    'Your friendly neighbourhood Software Developer 🚀 experienced in building Full-Stack Responsive Web applications with TypeScript / Reactjs / NodeJS and their deployments using Nginx and CI/CD tools.'
+    'Your friendly neighbourhood Software Developer 🚀 experienced in building Full-Stack Responsive Web applications with TypeScript / Reactjs / NodeJS and cloud deployments using Nginx, Docker and Kubernetes.'
   ),
   resumeLink: 'https://drive.google.com/file/d/156SNgRtP1MVdoWAk2qCFxYaTeGiGFnKu/view?usp=sharing'
 };
@@ -25,7 +25,7 @@ const skillsSection = {
   skills: [
     emoji('🚀 Build stable and secure backend infrastructure using NodeJS / Golang'),
     emoji('💻 Develop highly interactive Front end / User Interfaces as Single-Page-Applications '),
-    emoji('✨ Integration of third party services such as Firebase/ GCP / Digital Ocean'),
+    emoji('✨ Integration of third party services such as Firebase / GCP / Digital Ocean'),
     emoji('🎨 Design user-centric UI/UX prototypes for web and mobile applications')
   ],
 
@@ -260,6 +260,12 @@ const blogSection = {
         'A definitive guide for building your multiplayer game on a browser the right way using socket.io on NodeJS and React. Ranging from folder-structure to project deployments'
     },
     {
+      url: 'https://dev.to/sauravmh/browser-game-design-using-websockets-and-deployments-on-scale-1iaa',
+      title: 'Browser Game Design using WebSockets and Deployments on Scale - Part 2',
+      description: 'Deploying and apps at scale, without using n8s or serverless. Just a cluster of $5 servers!. Using Nginx and NodeJS'
+
+    },
+    {
       url: 'https://dev.to/sauravmh/going-opensource-a-dive-into-facebook-s-jest-cgb',
       title: "Going OpenSource - A dive into facebook's jest",
       description:
@@ -296,7 +302,7 @@ const talkSection = {
 
 const contactInfo = {
   title: emoji('Contact Me 📞'),
-  subtitle: 'Got an interesting project to work on? Or just wanna hangout over a coffee. Let me know when and where',
+  subtitle: 'Got an interesting project to work on? Or just wanna hangout over a coffee. Lemme know when and where',
   email_address: 'sauravhiremath@gmail.com'
 };
 
