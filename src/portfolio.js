@@ -130,7 +130,7 @@ const workExperiences = {
       role: 'Software Engineer Fellow',
       company: 'MLH & Facebook',
       companylogo: require('./assets/images/facebookLogo.png'),
-      date: 'June 2020 – Present',
+      date: 'June 2020 – August 2020',
       desc: 'Contributed to Facebook/Jest project causing a distinct semantic release.',
       descBullets: [
         'Introduced emitting events from worker-threads back to the parent (both inBand and parallel run)',
@@ -141,7 +141,7 @@ const workExperiences = {
       role: 'Software Developer Intern',
       company: 'Vicara',
       companylogo: require('./assets/images/vicaraLogo.jpg'),
-      date: 'Jan 2020 – Present',
+      date: 'Jan 2020 – August 2020',
       desc: 'Joined as a software developer to develop and deploy the distribution infrastructure for the company',
       descBullets: [
         'Designed and developed multi-threaded test-suite in Golang for benchmarking parallel requests measuring latency, throughput and other metrics through synthetic loads',
@@ -152,7 +152,7 @@ const workExperiences = {
       role: 'Data Science Head',
       company: 'CamCann',
       companylogo: require('./assets/images/camcannLogo.png'),
-      date: 'Jan 2020 – Present',
+      date: 'Jan 2020 – August 2020',
       desc: 'Formed and Lead the first Data Science division',
       descBullets: [
         'Designed and developed Computer Vision solutions to support running on embedded systems such as Raspberry Pi utilising Open Vino, C++ and Python.',
