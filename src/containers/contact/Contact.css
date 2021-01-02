@@ -11,14 +11,14 @@
 }
 
 .contact-title {
-    font-size: 65px;
+    font-size: 48px;
     font-weight: 400;
 }
 
 .contact-detail,
 .contact-detail-email {
     margin-top: 20px;
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 400;
     color: #868e96;
     text-decoration: none;
@@ -41,14 +41,7 @@
 }
 
 .contact-margin-top {
-    margin-top: 4rem;
-}
-
-.contact-image-div > img {
-    max-width: 100%;
-    height: auto;
-    margin-left: 1rem;
-    margin-top: -8rem;
+    margin-top: 0rem;
 }
 
 /* Media Query */
@@ -80,7 +73,7 @@
         font-size: 20px;
     }
 
-    .contact-image-div {
-        display: none;
+    .dark-mode {
+        margin-top: 0rem;
     }
 }
