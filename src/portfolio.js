@@ -305,7 +305,7 @@ const contactInfo = {
 const twitterDetails = {
   title: 'My Twitter Insight',
   subtitle: 'Keep yourself updated with what I am working on currently, and some fun stuff too 🔥',
-  userName: 'sauravmh'
+  userName: ''
 };
 
 export {
