@@ -1,5 +1,5 @@
 .talk-header-title {
-  font-size: 56px;
+  font-size: 48px;
   font-weight: 400;
   line-height: 30px;
 }
@@ -28,5 +28,9 @@
     font-size: 16px;
     line-height: normal;
     text-align: center;
+  }
+
+  .dark-mode {
+    margin-top: 0rem;
   }
 }

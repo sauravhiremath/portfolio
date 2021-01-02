@@ -44,14 +44,6 @@ const Contact = () => {
               <SocialMedia />
             </div>
           </div>
-          <div className="contact-image-div">
-            <img
-              alt="Message Man"
-              src={require(`../../assets/images/${
-                isDark ? "messageMan.png" : "messageMan.png"
-              }`)}
-            />
-          </div>
         </div>
       </div>
     </Fade>

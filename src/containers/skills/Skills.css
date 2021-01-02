@@ -17,11 +17,13 @@
 
 .skills-image-div > img {
   max-width: 100%;
+  display: block;
+  margin: auto;
   height: auto;
 }
 
 .skills-heading {
-  font-size: 56px;
+  font-size: 48px;
   font-weight: 400;
 }
 
@@ -41,7 +43,7 @@
     line-height: normal;
   }
   .skills-main-div {
-    flex-direction: column
+    flex-direction: column;
   }
   .skills-text-div {
     margin-left: 0px;
@@ -57,5 +59,8 @@
   .skills-image-div {
     /* display: none; */
     order: 2;
+  }
+  .dark-mode {
+    margin-top: 0rem;
   }
 }

@@ -3,11 +3,11 @@
   /* margin: 0 auto; */
   text-align: center;
   font-size: 1rem;
-  line-height: 15rem;
+  line-height: 4rem;
 }
 
 .tw-header-text {
-  font-size: 56px;
+  font-size: 48px;
   font-weight: 400;
   line-height: 30px;
 }
@@ -26,5 +26,9 @@
   .tw-header-text {
     font-size: 30px;
     text-align: center;
+  }
+
+  .dark-mode {
+    margin-top: 0rem;
   }
 }
