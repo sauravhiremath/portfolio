@@ -242,6 +242,20 @@ const achievementSection = {
   ]
 };
 
+const educationInfo = {
+  display: true, // Set false to hide this section, defaults to true
+  schools: [
+    {
+      schoolName: 'Vellore Institute of Technology, Vellore',
+      logo: require('./assets/images/vitLogo.jpg'),
+      subHeader: 'B.Tech in Computer Science with Specialisation in Bioinformatics',
+      duration: '2018 - 2022 (Present)',
+      desc: 'Senior Member of CSI-VIT Technical Chapter',
+      descBullets: ['Winner of various inhouse and international hacks', 'Member of Bioinformatics Club']
+    }
+  ]
+};
+
 /**
  * A fun and useful way to share my experiences with the people.
  * Because community is everything and sometimes to time to give back your share too
@@ -262,8 +276,8 @@ const blogSection = {
     {
       url: 'https://dev.to/sauravmh/browser-game-design-using-websockets-and-deployments-on-scale-1iaa',
       title: 'Browser Game Design using WebSockets and Deployments on Scale - Part 2',
-      description: 'Deploying and apps at scale, without using n8s or serverless. Just a cluster of $5 servers!. Using Nginx and NodeJS'
-
+      description:
+        'Deploying and apps at scale, without using n8s or serverless. Just a cluster of $5 servers!. Using Nginx and NodeJS'
     },
     {
       url: 'https://dev.to/sauravmh/going-opensource-a-dive-into-facebook-s-jest-cgb',
@@ -320,6 +334,7 @@ export {
   skillsSection,
   techStack,
   workExperiences,
+  educationInfo,
   openSource,
   achievementSection,
   blogSection,
