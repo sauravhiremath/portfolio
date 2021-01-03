@@ -1,8 +1,13 @@
 .switch {
   position: relative;
   display: inline-block;
-  width: 55px;
+  width: 50px;
   height: 26px;
+}
+
+/* Fix visible slider checkbox */
+input{
+  transform: scale(0.5);
 }
 
 .slider {
@@ -88,4 +93,3 @@ input:checked + .slider::after {
     bottom: 7.5% !important;
   }
 }
-

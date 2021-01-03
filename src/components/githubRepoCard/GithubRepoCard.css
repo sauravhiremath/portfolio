@@ -52,12 +52,11 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   color: rgb(36, 41, 46);
-  margin-bottom: 0.75rem;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: -0.5px;
-  overflow: hidden;
-  margin: 0px;
+  overflow: visible;
+  margin-top: 5px;
 }
 
 .repo-star-svg {

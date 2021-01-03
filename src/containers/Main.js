@@ -6,6 +6,7 @@ import Loading from '../containers/loading/Loading';
 const Header = React.lazy(() => import('../components/header/Header'));
 const Greeting = React.lazy(() => import('./greeting/Greeting'));
 const Skills = React.lazy(() => import('./skills/Skills'));
+const Education = React.lazy(() => import('./education/Education'));
 const WorkExperience = React.lazy(() => import('./workExperience/WorkExperience'));
 const Projects = React.lazy(() => import('./projects/Projects'));
 const Achievement = React.lazy(() => import('./achievement/Achievement'));
@@ -37,23 +38,20 @@ export default class Main extends Component {
         <StyleProvider value={{ isDark: this.state.isDark, changeTheme: this.changeTheme }}>
           <Suspense fallback={<Loading />}>
             <Header />
-          </Suspense>
-          <Suspense fallback={<Loading />}>
             <Greeting />
-          </Suspense>
-          <Suspense fallback={<Loading />}>
-            <Skills />
-            <Projects />
-            <WorkExperience />
-            <Achievement />
-            <Blogs />
-            <Talks />
-            <Twitter />
-            <Contact />
             <Suspense fallback={<Loading />}>
+              <Skills />
+              <Projects />
+              <WorkExperience />
+              <Education />
+              <Achievement />
+              <Blogs />
+              <Talks />
+              <Twitter />
+              <Contact />
               <Footer />
+              <Top />
             </Suspense>
-            <Top />
           </Suspense>
         </StyleProvider>
       </div>
