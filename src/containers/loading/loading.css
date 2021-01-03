@@ -1,3 +1,10 @@
+.loading-content-fill {
+  position: absolute;
+  top: 40px; /* Header Height */
+  bottom: 20px; /* Footer Height */
+  width: 100%;
+}
+
 .sk-circle {
   margin: 100px auto;
   width: 40px;

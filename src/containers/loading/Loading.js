@@ -3,7 +3,7 @@ import React from "react";
 
 const Loading = () => {
   return (
-    <div className="centerContent">
+    <div className="loading-content-fill">
       <div className="sk-circle">
         <div className="sk-circle1 sk-child" />
         <div className="sk-circle2 sk-child" />
