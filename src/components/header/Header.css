@@ -42,6 +42,10 @@
   background-color: #f4f4f4;
 }
 
+.blogs {
+  background-color: #ff88bf;
+}
+
 .header .logo {
   display: block;
   float: left;
@@ -51,7 +55,7 @@
   line-height: normal;
 }
 .header .logo-name {
-  font-family: "Agustina Regular";
+  font-family: 'Agustina Regular';
   font-weight: bold;
   font-variant-ligatures: no-common-ligatures;
   -webkit-font-variant-ligatures: no-common-ligatures;
@@ -88,7 +92,7 @@
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
   background: #333;
-  content: "";
+  content: '';
   display: block;
   height: 100%;
   position: absolute;
