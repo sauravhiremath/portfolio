@@ -6,5 +6,40 @@
         "content-security-policy-report-only": "frame-ancestors https://sauravmh.com/; block-all-mixed-content; default-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'report-sample' https://static.cloudflareinsights.com/ https://ajax.cloudflare.com/ https://www.google-analytics.com/ https://*.googletagmanager.com/; style-src 'self' 'unsafe-inline' 'report-sample' data: https://translate.googleapis.com/ https://fonts.googleapis.com/ https://use.fontawesome.com/ https://cdnjs.cloudflare.com/; object-src 'none'; frame-src https://*.vercel.app/; child-src 'none'; img-src 'self' data: https://www.gstatic.com/ https://www.googletagmanager.com/ https://www.facebook.com/ https://www.google-analytics.com/ https://twemoji.maxcdn.com/; font-src 'self' https://use.fontawesome.com/ https://fonts.gstatic.com/ https://cdnjs.cloudflare.com/; connect-src 'self' https://www.google-analytics.com/ https://api.github.com/; manifest-src https://*.vercel.app/ https://sauravmh.com/; base-uri 'self'; form-action 'none'; media-src 'none'; prefetch-src 'none'; worker-src 'none'; report-uri https://gate.rapidsec.net/g/r/csp/4eb26633-2d24-4586-a89d-55bbc0aefe82/0/8/3?sct=2b6841ba-4b31-49d8-9e97-4f24abc790f3&dpos=report"
       }
     }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "content-security-policy",
+          "value": "frame-ancestors https://sauravmh.com/; block-all-mixed-content; default-src 'none'; script-src 'self' 'report-sample' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com/ https://www.google-analytics.com/ https://ajax.cloudflare.com/ https://static.cloudflareinsights.com/ https://connect.facebook.net/; style-src 'self' 'report-sample' 'unsafe-inline' data: https://cdnjs.cloudflare.com/ https://use.fontawesome.com/ https://fonts.googleapis.com/ https://translate.googleapis.com/; object-src 'none'; frame-src https://*.vercel.app/; child-src 'none'; img-src 'self' data: https://twemoji.maxcdn.com/ https://www.google-analytics.com/ https://www.facebook.com/ https://www.googletagmanager.com/ https://www.gstatic.com/; font-src 'self' https://cdnjs.cloudflare.com/ https://fonts.gstatic.com/ https://use.fontawesome.com/; connect-src 'self' https://api.github.com/ https://www.google-analytics.com/; manifest-src https://sauravmh.com/ https://*.vercel.app/; base-uri 'self'; form-action 'none'; media-src https://ssl.gstatic.com/; prefetch-src 'none'; worker-src 'none'; report-uri https://gate.rapidsec.net/g/r/csp/4eb26633-2d24-4586-a89d-55bbc0aefe82/0/10/3?sct=2b6841ba-4b31-49d8-9e97-4f24abc790f3&dpos=enforce"
+        },
+        {
+          "key": "content-security-policy-report-only",
+          "value": "frame-ancestors https://sauravmh.com/; block-all-mixed-content; default-src 'none'; script-src 'self' 'report-sample' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com/ https://www.google-analytics.com/ https://ajax.cloudflare.com/ https://static.cloudflareinsights.com/ https://connect.facebook.net/; style-src 'self' 'report-sample' 'unsafe-inline' data: https://cdnjs.cloudflare.com/ https://use.fontawesome.com/ https://fonts.googleapis.com/ https://translate.googleapis.com/; object-src 'none'; frame-src https://*.vercel.app/; child-src 'none'; img-src 'self' data: https://twemoji.maxcdn.com/ https://www.google-analytics.com/ https://www.facebook.com/ https://www.googletagmanager.com/ https://www.gstatic.com/; font-src 'self' https://cdnjs.cloudflare.com/ https://fonts.gstatic.com/ https://use.fontawesome.com/; connect-src 'self' https://api.github.com/ https://www.google-analytics.com/; manifest-src https://sauravmh.com/ https://*.vercel.app/; base-uri 'self'; form-action 'none'; media-src https://ssl.gstatic.com/; prefetch-src 'none'; worker-src 'none'; report-uri https://gate.rapidsec.net/g/r/csp/4eb26633-2d24-4586-a89d-55bbc0aefe82/0/10/3?sct=2b6841ba-4b31-49d8-9e97-4f24abc790f3&dpos=report"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "deny"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "origin-when-cross-origin"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "strict-transport-security",
+          "value": "max-age=15768000"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "picture-in-picture 'self'; geolocation *"
+        }
+      ]
+    }
   ]
 }
