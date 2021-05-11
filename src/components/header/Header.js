@@ -35,7 +35,7 @@ const Header = () => {
           <li>
             <a href="#opensource">Open Source</a>
           </li>
-          {showExperience === true && (
+          {showExperience && (
             <li>
               <a href="#experience">Work Experiences</a>
             </li>
