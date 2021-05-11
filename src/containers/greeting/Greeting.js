@@ -1,11 +1,11 @@
-﻿import "./Greeting.css";
-import React, { useContext } from "react";
-import emoji from "react-easy-emoji";
-import { Fade } from "react-reveal";
-import SocialMedia from "../../components/socialMedia/SocialMedia";
-import Button from "../../components/button/Button";
-import { greeting } from "../../portfolio";
-import StyleContext from "../../contexts/StyleContext";
+﻿import './Greeting.css';
+import React, { useContext } from 'react';
+import emoji from 'react-easy-emoji';
+import { Fade } from 'react-reveal';
+import SocialMedia from '../../components/socialMedia/SocialMedia';
+import Button from '../../components/button/Button';
+import { greeting } from '../../portfolio';
+import StyleContext from '../../contexts/StyleContext';
 
 const Greeting = () => {
   const { isDark } = useContext(StyleContext);
@@ -15,38 +15,20 @@ const Greeting = () => {
         <div className="greeting-main">
           <div className="greeting-text-div">
             <div>
-              <h1
-                className={isDark ? "dark-mode greeting-text" : "greeting-text"}
-              >
-                {" "}
-                {greeting.title}{" "}
-                <span className="wave-emoji">{emoji("👋")}</span>
+              <h1 className={isDark ? 'dark-mode greeting-text' : 'greeting-text'}>
+                {' '}
+                {greeting.title} <span className="wave-emoji">{emoji('👋')}</span>
               </h1>
-              <p
-                className={
-                  isDark
-                    ? "dark-mode greeting-text-p"
-                    : "greeting-text-p subTitle"
-                }
-              >
-                {greeting.subTitle}
-              </p>
+              <p className={isDark ? 'dark-mode greeting-text-p' : 'greeting-text-p subTitle'}>{greeting.subTitle}</p>
               <SocialMedia />
               <div className="button-greeting-div">
                 <Button text="Contact me" href="#contact" />
-                <Button
-                  newTab
-                  text="See my resume"
-                  href={greeting.resumeLink}
-                />
+                <Button newTab text="See my resume" href={greeting.resumeLink} />
               </div>
             </div>
           </div>
           <div className="greeting-image-div">
-            <img
-              alt="standing in work area"
-              src={require("../../assets/images/greeting.gif")}
-            />
+            <img alt="standing in work area" src="/images/greeting.gif" />
           </div>
         </div>
       </div>

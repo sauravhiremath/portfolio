@@ -129,7 +129,7 @@ const workExperiences = {
     {
       role: 'Software Engineer Fellow',
       company: 'MLH & Facebook',
-      companylogo: require('./assets/images/facebookLogo.png'),
+      companylogo: '/images/facebookLogo.png',
       date: 'June 2020 – August 2020',
       desc: 'Contributed to Facebook/Jest project causing a distinct semantic release.',
       descBullets: [
@@ -140,7 +140,7 @@ const workExperiences = {
     {
       role: 'Software Developer Intern',
       company: 'Vicara',
-      companylogo: require('./assets/images/vicaraLogo.jpg'),
+      companylogo: '/images/vicaraLogo.jpg',
       date: 'Jan 2020 – August 2020',
       desc: 'Joined as a software developer to develop and deploy the distribution infrastructure for the company',
       descBullets: [
@@ -151,7 +151,7 @@ const workExperiences = {
     {
       role: 'Data Science Head',
       company: 'CamCann',
-      companylogo: require('./assets/images/camcannLogo.png'),
+      companylogo: '/images/camcannLogo.png',
       date: 'Jan 2020 – August 2020',
       desc: 'Formed and Lead the first Data Science division',
       descBullets: [
@@ -188,7 +188,7 @@ const achievementSection = {
     {
       title: 'Code for Good Winner, 2020',
       subtitle: 'National Hackathon by JP Morgan & Chase',
-      image: require('./assets/images/jpmcLogo.jpg'),
+      image: '/images/jpmcLogo.jpg',
       footerLink: [
         {
           name: 'Built solution for Panah Foundation NGO managing their internal workflows',
@@ -200,7 +200,7 @@ const achievementSection = {
     {
       title: 'MLH Fellow of class 2020',
       subtitle: 'Selected for contributing to Facebook projects amongst students applied from 20+ countries',
-      image: require('./assets/images/mlhFellowship.svg'),
+      image: '/images/mlhFellowship.svg',
       footerLink: [
         {
           name: 'Our Team Won (Execute.ly) Blog',
@@ -215,7 +215,7 @@ const achievementSection = {
     {
       title: 'Venturesity Hackathon Winner',
       subtitle: 'Developed a platform to anonymously report Tuberculosis cases, and predict TB using Deep Learning',
-      image: require('./assets/images/venturesityHack.png'),
+      image: '/images/venturesityHack.png',
       footerLink: [
         {
           name: 'What is it?',
@@ -230,7 +230,7 @@ const achievementSection = {
     {
       title: 'Government recognition for Plastic Road Construction',
       subtitle: 'Layed out one of the first 50m stretch of Eco-friendly Bitumen-Plastic Road in India',
-      image: require('./assets/images/plasticRoad.png'),
+      image: '/images/plasticRoad.png',
       footerLink: [
         {
           name: 'Yes, we are in the news',
@@ -247,7 +247,7 @@ const educationInfo = {
   schools: [
     {
       schoolName: 'Vellore Institute of Technology, Vellore',
-      logo: require('./assets/images/vitLogo.jpg'),
+      logo: '/images/vitLogo.jpg',
       subHeader: 'B.Tech in Computer Science with Specialisation in Bioinformatics',
       duration: '2018 - 2022 (Present)',
       desc: 'Senior Member of CSI-VIT Technical Chapter',
