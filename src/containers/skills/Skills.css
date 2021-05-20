@@ -10,6 +10,10 @@
   margin-left: 50px;
 }
 
+.skills-text {
+  font-size: 18px;
+}
+
 .skills-main-div > * {
   flex: 1;
   margin-bottom: 30px;
@@ -50,10 +54,10 @@
     margin: 20px;
   }
   .skills-text {
-    font-size: 16px;
+    font-size: 18px;
   }
   .skills-text-subtitle {
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
   }
   .skills-image-div {
