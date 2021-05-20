@@ -29,7 +29,7 @@
         },
         {
           "key": "Permissions-Policy",
-          "value": "picture-in-picture 'self'; geolocation 'self'"
+          "value": "picture-in-picture=(self), geolocation=*"
         }
       ]
     }
