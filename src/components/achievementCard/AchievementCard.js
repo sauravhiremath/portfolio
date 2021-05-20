@@ -1,12 +1,15 @@
 import './AchievementCard.css';
 import React from 'react';
+import LazyLoad from 'react-lazyload';
 import { openUrlInNewTab } from '../helper';
 
 const AchievementCard = ({ cardInfo, isDark }) => {
   return (
     <div className={isDark ? 'dark-mode certificate-card' : 'certificate-card'}>
       <div className="certificate-image-div">
-        <img src={cardInfo.image} alt="achievement" className="card-image" />
+        <LazyLoad height="250px" offset={100}>
+          <img src={cardInfo.image} alt="achievement" className="card-image" />
+        </LazyLoad>
       </div>
       <div className="certificate-detail-div">
         <h5 className={isDark ? 'dark-mode card-title' : 'card-title'}>{cardInfo.title}</h5>

@@ -1,6 +1,7 @@
-import "./ExperienceCard.css";
-import React, { useState, createRef } from "react";
-import ColorThief from "colorthief";
+import './ExperienceCard.css';
+import React, { useState, createRef } from 'react';
+import ColorThief from 'colorthief';
+import LazyLoad from 'react-lazyload';
 
 const ExperienceCard = ({ cardInfo }) => {
   const [colorArrays, setColorArrays] = useState([]);
@@ -12,14 +13,12 @@ const ExperienceCard = ({ cardInfo }) => {
   }
 
   function rgb(values) {
-    return typeof values === "undefined"
-      ? null
-      : "rgb(" + values.join(", ") + ")";
+    return typeof values === 'undefined' ? null : 'rgb(' + values.join(', ') + ')';
   }
 
   const GetDescBullets = ({ descBullets }) => {
     return descBullets
-      ? descBullets.map((item) => (
+      ? descBullets.map(item => (
         <li key={item} className="subTitle">
           {item}
         </li>
@@ -29,23 +28,22 @@ const ExperienceCard = ({ cardInfo }) => {
 
   return (
     <div className="experience-card">
-      <div
-        style={{ background: rgb(colorArrays) }}
-        className="experience-banner"
-      >
+      <div style={{ background: rgb(colorArrays) }} className="experience-banner">
         <div className="experience-blurred_div" />
         <div className="experience-div-company">
           <h5 className="experience-text-company">{cardInfo.company}</h5>
         </div>
 
-        <img
-          ref={imgRef}
-          crossOrigin="anonymous"
-          className="experience-roundedimg"
-          src={cardInfo.companylogo}
-          alt={cardInfo.company}
-          onLoad={() => getColorArrays()}
-        />
+        <LazyLoad once height="8rem" offset={100}>
+          <img
+            ref={imgRef}
+            crossOrigin="anonymous"
+            className="experience-roundedimg"
+            src={cardInfo.companylogo}
+            alt={cardInfo.company}
+            onLoad={() => getColorArrays()}
+          />
+        </LazyLoad>
       </div>
       <div className="experience-text-details">
         <h5 className="experience-text-role">{cardInfo.role}</h5>
