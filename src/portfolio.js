@@ -345,7 +345,7 @@ const talkSection = {
 const contactInfo = {
   title: emoji('Contact Me 📞'),
   subtitle: 'Got an interesting project to work on? Or just wanna hangout over a coffee. Lemme know when and where',
-  email_address: 'sauravhiremath@gmail.com'
+  email_address: 'vitsaurav@gmail.com'
 };
 
 //Twitter Section

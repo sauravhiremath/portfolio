@@ -9355,6 +9355,11 @@ react-lazyload@^3.2.0:
   resolved "https://registry.yarnpkg.com/react-lazyload/-/react-lazyload-3.2.0.tgz#497bd06a6dbd7015e3376e1137a67dc47d2dd021"
   integrity sha512-zJlrG8QyVZz4+xkYZH5v1w3YaP5wEFaYSUWC4CT9UXfK75IfRAIEdnyIUF+dXr3kX2MOtL1lUaZmaQZqrETwgw==
 
+react-obfuscate@^3.6.8:
+  version "3.6.8"
+  resolved "https://registry.yarnpkg.com/react-obfuscate/-/react-obfuscate-3.6.8.tgz#31deede7ad8e69672165ec38b4d662135c6bdb5f"
+  integrity sha512-Pc47sbOJEGqOQ65y22ZFwCGHlSwGn0tykl+sQ64wHy/ALcyZxK6zsNYD8Fp3YBcU2EhmJPSKR7BypBYtnAqqyA==
+
 react-proptype-conditional-require@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/react-proptype-conditional-require/-/react-proptype-conditional-require-1.0.4.tgz#69c2d5741e6df5e08f230f36bbc2944ee1222555"

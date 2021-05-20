@@ -1,9 +1,10 @@
-import "./Contact.css";
-import React, { useContext } from "react";
-import { Fade } from "react-reveal";
-import SocialMedia from "../../components/socialMedia/SocialMedia";
-import { contactInfo } from "../../portfolio";
-import StyleContext from "../../contexts/StyleContext";
+import './Contact.css';
+import React, { useContext } from 'react';
+import { Fade } from 'react-reveal';
+import Obfuscate from 'react-obfuscate';
+import SocialMedia from '../../components/socialMedia/SocialMedia';
+import { contactInfo } from '../../portfolio';
+import StyleContext from '../../contexts/StyleContext';
 
 const Contact = () => {
   const { isDark } = useContext(StyleContext);
@@ -13,32 +14,25 @@ const Contact = () => {
         <div className="contact-div-main">
           <div className="contact-header">
             <h1 className="heading contact-title">{contactInfo.title}</h1>
-            <p
-              className={
-                isDark
-                  ? "dark-mode contact-subtitle"
-                  : "subTitle contact-subtitle"
-              }
-            >
+            <p className={isDark ? 'dark-mode contact-subtitle' : 'subTitle contact-subtitle'}>
               {contactInfo.subtitle}
             </p>
 
-            <div
-              className={
-                isDark ? "dark-mode contact-text-div" : "contact-text-div"
-              }
-            >
-              <a className="contact-detail" href={"tel:" + contactInfo.number}>
+            <div className={isDark ? 'dark-mode contact-text-div' : 'contact-text-div'}>
+              <a className="contact-detail" href={'tel:' + contactInfo.number}>
                 {contactInfo.number}
               </a>
               <br />
               <br />
-              <a
+              <Obfuscate
                 className="contact-detail-email"
-                href={"mailto:" + contactInfo.email_address}
+                email={contactInfo.email_address}
+                headers={{
+                  subject: 'Reaching out from sauravmh.com!'
+                }}
               >
                 {contactInfo.email_address}
-              </a>
+              </Obfuscate>
               <br />
               <br />
               <SocialMedia />
