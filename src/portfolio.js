@@ -2,9 +2,9 @@
 
 const greeting = {
   username: 'Saurav M. H',
-  title: "Heya, I'm Saurav",
+  title: "Hi there, I'm Saurav",
   subTitle: emoji(
-    'Your friendly neighbourhood Software Developer 🚀 experienced in building Full-Stack Responsive Web applications with TypeScript / Reactjs / NodeJS and cloud deployments using Nginx, Docker and Kubernetes.'
+    'Your friendly neighbourhood Software Developer 🚀 with experience building Full-Stack Web and Security applications. Shh... secretly a DevOps Ninja 🥷'
   ),
   resumeLink: 'https://drive.google.com/file/d/156SNgRtP1MVdoWAk2qCFxYaTeGiGFnKu/view?usp=sharing'
 };
@@ -14,33 +14,43 @@ const socialMediaLinks = {
   linkedin: 'https://www.linkedin.com/in/sauravmh/',
   gmail: 'vitsaurav@gmail.com',
   twitter: 'https://twitter.com/sauravmh/',
-  gitlab: 'https://gitlab.com/sauravmh/',
-  facebook: 'https://www.facebook.com/sauravmh/',
   instagram: 'https://www.instagram.com/sauravv_404/'
 };
 
 const skillsSection = {
-  title: 'What I do? 🤔',
-  subTitle: 'PRETTY MUCH EVERYTHING FROM BUILDING A PRODUCT AND DEPLOYING IT',
+  title: 'What do I bring to the table? 🤔',
+  subTitle: 'Being a tenacious programmer I aim to build top-notch quality products',
   skills: [
-    emoji('🚀 Build stable and secure backend infrastructure using NodeJS / Golang'),
-    emoji('💻 Develop highly interactive Front end / User Interfaces as Single-Page-Applications '),
-    emoji('✨ Integration of third party services such as Firebase / GCP / Digital Ocean'),
-    emoji('🎨 Design user-centric UI/UX prototypes for web and mobile applications')
+    emoji('🚀 Build stable and secure product platforms'),
+    emoji('🏛 Design and develop robust and scalable product architecture'),
+    emoji('🛡️ Scaling your product, all while maintaining high security standards'),
+    emoji('🎨 Design accessible and user friendly web apps and tools')
   ],
 
   softwareSkills: [
     {
-      skillName: 'reactjs',
+      skillName: 'Reactjs',
       fontAwesomeClassname: 'fab fa-react'
     },
     {
-      skillName: 'nodejs',
+      skillName: 'NextJS',
+      fontAwesomeClassname: 'fa fa-code'
+    },
+    {
+      skillName: 'Nodejs',
       fontAwesomeClassname: 'fab fa-node'
     },
     {
-      skillName: 'mongoDB',
+      skillName: 'MongoDB',
       fontAwesomeClassname: 'fas fa-database'
+    },
+    {
+      skillName: 'Docker',
+      fontAwesomeClassname: 'fab fa-docker'
+    },
+    {
+      skillName: 'Kubernetes',
+      fontAwesomeClassname: 'fab fa-cloudflare'
     },
     {
       skillName: 'Golang',
@@ -63,36 +73,32 @@ const skillsSection = {
       fontAwesomeClassname: 'fab fa-yarn'
     },
     {
-      skillName: 'sql-database',
+      skillName: 'SQL Database',
       fontAwesomeClassname: 'fas fa-database'
     },
     {
-      skillName: 'nginx',
+      skillName: 'Nginx',
       fontAwesomeClassname: 'fas fa-server'
     },
     {
-      skillName: 'html-5',
+      skillName: 'HTML-5',
       fontAwesomeClassname: 'fab fa-html5'
     },
     {
-      skillName: 'css3',
+      skillName: 'CSS',
       fontAwesomeClassname: 'fab fa-css3-alt'
     },
     {
-      skillName: 'gcp',
+      skillName: 'GCP',
       fontAwesomeClassname: 'fab fa-google'
     },
     {
-      skillName: 'firebase',
+      skillName: 'Firebase',
       fontAwesomeClassname: 'fas fa-fire'
     },
     {
-      skillName: 'python',
+      skillName: 'Python',
       fontAwesomeClassname: 'fab fa-python'
-    },
-    {
-      skillName: 'docker',
-      fontAwesomeClassname: 'fab fa-docker'
     }
   ]
 };
@@ -113,8 +119,12 @@ const techStack = {
       progressPercentage: '80%'
     },
     {
-      Stack: 'UI/UX Design',
+      Stack: 'Security and System Design',
       progressPercentage: '75%'
+    },
+    {
+      Stack: 'UI/UX Design',
+      progressPercentage: '70%'
     }
   ]
 };
@@ -127,38 +137,51 @@ const workExperiences = {
   viewExperiences: true,
   experience: [
     {
+      role: 'Software Developer Consultant',
+      company: 'RapidSec',
+      companylogo: '/images/rapidsecLogo.png',
+      date: 'Feb 2021 – Current',
+      desc: 'R&D on core company products.'
+    },
+    {
+      role: 'Technical Content Writer',
+      company: 'LogRocket',
+      companylogo: '/images/logRocketLogo.jpg',
+      date: 'March 2021 – Current',
+      desc: 'I produce articles and informatics on latest developments in tech industry'
+    },
+    {
       role: 'Software Engineer Fellow',
       company: 'MLH & Facebook',
       companylogo: '/images/facebookLogo.png',
       date: 'June 2020 – August 2020',
-      desc: 'Contributed to Facebook/Jest project causing a distinct semantic release.',
-      descBullets: [
-        'Introduced emitting events from worker-threads back to the parent (both inBand and parallel run)',
-        'Developed a feature for reporting progress of individual test cases on the jest-circus test runner'
-      ]
+      desc: 'Contributed to Facebook/Jest project causing a distinct semantic release.'
+      // descBullets: [
+      //   'Introduced emitting events from worker-threads back to the parent (both inBand and parallel run)',
+      //   'Developed a feature for reporting progress of individual test cases on the jest-circus test runner'
+      // ]
     },
     {
       role: 'Software Developer Intern',
       company: 'Vicara',
       companylogo: '/images/vicaraLogo.jpg',
       date: 'Jan 2020 – August 2020',
-      desc: 'Joined as a software developer to develop and deploy the distribution infrastructure for the company',
-      descBullets: [
-        'Designed and developed multi-threaded test-suite in Golang for benchmarking parallel requests measuring latency, throughput and other metrics through synthetic loads',
-        'Utilised technologies as NodeJS, Docker, Typescript, MySQL and websockets to aid development of a microservices manager from scratch using lightweight custom protocols'
-      ]
+      desc: 'Joined as a software developer to develop and deploy the distribution infrastructure for the company'
+      // descBullets: [
+      //   'Designed and developed multi-threaded test-suite in Golang for finding network bottlenecks',
+      //   'Utilised technologies as NodeJS, Docker, Typescript, MySQL and websockets to aid development of a microservices manager'
+      // ]
     },
     {
       role: 'Data Science Head',
       company: 'CamCann',
       companylogo: '/images/camcannLogo.png',
       date: 'Jan 2020 – August 2020',
-      desc: 'Formed and Lead the first Data Science division',
-      descBullets: [
-        'Designed and developed Computer Vision solutions to support running on embedded systems such as Raspberry Pi utilising Open Vino, C++ and Python.',
-        'Delivered a working solution to a client which utilised tensorflow.js and websockets.',
-        'Managed a team of 4 people to develop and deliver a Virtual makeup assistant and providing real-time valuable data insights through the live video'
-      ]
+      desc: 'Formed and Lead the first Data Science division'
+      // descBullets: [
+      //   'Designed and developed Computer Vision solutions to support running on embedded systems utilising Open Vino, C++ and Python.',
+      //   'Managed a team of 4 people to develop and deliver a AI powered Virtual makeup assistant'
+      // ]
     }
   ]
 };
@@ -186,6 +209,29 @@ const achievementSection = {
 
   achivementsCards: [
     {
+      title: 'Oxford University Hack Winner, 2020',
+      subtitle: 'Winner for VMWare Track',
+      image: '/images/oxfordHack2020Logo.jpg',
+      footerLink: [
+        {
+          name:
+            'AI based interactive solution for those who want to get rid of their old items, as well as for those who collect them.',
+          url: 'https://devpost.com/software/connectup-io'
+        }
+      ]
+    },
+    {
+      title: 'Cambridge University Hack Winner, 2020',
+      subtitle: 'Grand Prize Winner for BlackRock Sponsor',
+      image: '/images/hexCambridgeHackLogo.svg',
+      footerLink: [
+        {
+          name: 'A tool to empower small businesses to become financially healthy and crisis-proof',
+          url: 'https://devpost.com/software/fin-wrapped'
+        }
+      ]
+    },
+    {
       title: 'Code for Good Winner, 2020',
       subtitle: 'National Hackathon by JP Morgan & Chase',
       image: '/images/jpmcLogo.jpg',
@@ -198,37 +244,19 @@ const achievementSection = {
       ]
     },
     {
-      title: 'MLH Fellow of class 2020',
-      subtitle: 'Selected for contributing to Facebook projects amongst students applied from 20+ countries',
-      image: '/images/mlhFellowship.svg',
+      title: 'DeveloperWeek Hackathon, 2021',
+      subtitle: 'Winner for TypingDNA Sponsor',
+      image: '/images/developerWeek2021HackLogo.jpg',
       footerLink: [
         {
-          name: 'Our Team Won (Execute.ly) Blog',
-          url: 'https://news.mlh.io/mlh-fellowship-kicks-off-07-06-2020'
-        },
-        {
-          name: 'Selection Post',
-          url: 'https://www.linkedin.com/posts/sauravmh_opensource-mlhfellowship-activity-6670759773010579456-p6LX'
+          name:
+            'Secure your data using your typing pattern with additional layers of encryption',
+          url: 'https://embed.sauravmh.com/'
         }
       ]
     },
     {
-      title: 'Venturesity Hackathon Winner',
-      subtitle: 'Developed a platform to anonymously report Tuberculosis cases, and predict TB using Deep Learning',
-      image: '/images/venturesityHack.png',
-      footerLink: [
-        {
-          name: 'What is it?',
-          url: 'https://github.com/sauravhiremath/tb-saathi/blob/master/presentation/phosphorus-rev3.pdf'
-        },
-        {
-          name: 'Certification',
-          url: 'https://drive.google.com/file/d/12IUdDQwOHyDiJtnKLEJywweYA6CRKykg/view?usp=sharing'
-        }
-      ]
-    },
-    {
-      title: 'Government recognition for Plastic Road Construction',
+      title: 'Government Recognition',
       subtitle: 'Layed out one of the first 50m stretch of Eco-friendly Bitumen-Plastic Road in India',
       image: '/images/plasticRoad.png',
       footerLink: [
@@ -248,10 +276,10 @@ const educationInfo = {
     {
       schoolName: 'Vellore Institute of Technology, Vellore',
       logo: '/images/vitLogo.jpg',
-      subHeader: 'B.Tech in Computer Science with Specialisation in Bioinformatics',
+      subHeader: 'B.Tech in Computer Science with Specialization in Bioinformatics',
       duration: '2018 - 2022 (Present)',
-      desc: 'Senior Member of CSI-VIT Technical Chapter',
-      descBullets: ['Winner of various inhouse and international hacks', 'Member of Bioinformatics Club']
+      desc: 'Core Member of Bioinformatics Club',
+      descBullets: ['Winner of various inhouse and international hacks']
     }
   ]
 };
