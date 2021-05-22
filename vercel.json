@@ -30,6 +30,10 @@
         {
           "key": "Permissions-Policy",
           "value": "picture-in-picture=(self), geolocation=*"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://sauravmh.com"
         }
       ]
     }
