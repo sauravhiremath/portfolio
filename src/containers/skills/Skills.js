@@ -1,7 +1,6 @@
 import './Skills.css';
 import React, { useContext } from 'react';
 import { Fade } from 'react-reveal';
-import LazyLoad from 'react-lazyload';
 import SoftwareSkill from '../../components/softwareSkills/SoftwareSkill';
 import { skillsSection } from '../../portfolio';
 import StyleContext from '../../contexts/StyleContext';
@@ -13,9 +12,7 @@ const Skills = () => {
       <div className="skills-main-div">
         <Fade left duration={1000}>
           <div className="skills-image-div">
-            <LazyLoad once offset={100}>
-              <img alt="Working" src="/images/rotatingChair.gif" />
-            </LazyLoad>
+            <img alt="Working" src="/images/rotatingChair.gif" />
           </div>
         </Fade>
         <Fade right duration={1000}>
