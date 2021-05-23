@@ -1,0 +1,50 @@
+
+image:
+  file: .gitpod.dockerfile
+
+# List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/config-ports/
+ports:
+  - port: 3000 # dashboard server
+    onOpen: open-browser
+
+# List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
+tasks:
+  - name: Run primary server
+    init: |
+      printf "REACT_APP_GITHUB_TOKEN=${GH_PAT}" > .env && \
+      sleep 15 && yarn install
+    command: yarn start 
+    openMode: tab-after
+
+vscode:
+  extensions:
+    - github.vscode-pull-request-github
+    - equinusocio.vsc-material-theme-icons
+    - sdras.night-owl
+    - coenraads.bracket-pair-colorizer-2
+    - dbaeumer.vscode-eslint
+    - tombonnike.vscode-status-bar-format-toggle
+    - codezombiech.gitignore
+    - eamodio.gitlens
+    - kisstkondoros.vscode-gutter-preview
+    - christian-kohler.npm-intellisense
+    - esbenp.prettier-vscode
+
+github:
+  prebuilds:
+    # enable for the master/default branch (defaults to true)
+    master: false
+    # enable for all branches in this repo (defaults to false)
+    branches: false
+    # enable for pull requests coming from this repo (defaults to true)
+    pullRequests: true
+    # enable for pull requests coming from forks (defaults to false)
+    pullRequestsFromForks: false
+    # add a check to pull requests (defaults to true)
+    addCheck: false
+    # add a "Review in Gitpod" button as a comment to pull requests (defaults to false)
+    addComment: true
+    # add a "Review in Gitpod" button to the pull request's description (defaults to false)
+    addBadge: false
+    # add a label once the prebuild is ready to pull requests (defaults to false)
+    addLabel: true
