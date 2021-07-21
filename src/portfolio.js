@@ -274,12 +274,12 @@ const educationInfo = {
   display: true, // Set false to hide this section, defaults to true
   schools: [
     {
-      schoolName: 'Vellore Institute of Technology, Vellore',
+      schoolName: 'Vellore Institute of Technology (VIT), Vellore',
       logo: '/images/vitLogo.jpg',
-      subHeader: 'B.Tech in Computer Science with Specialization in Bioinformatics',
+      subHeader: 'B.Tech in Computer Science with specialization in Bioinformatics',
       duration: '2018 - 2022 (Present)',
       desc: 'Core Member of Bioinformatics Club',
-      descBullets: ['Winner of various inhouse and international hacks']
+      descBullets: ['Winner of various national and international hacks']
     }
   ]
 };
