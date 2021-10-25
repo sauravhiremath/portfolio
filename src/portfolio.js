@@ -137,7 +137,7 @@ const workExperiences = {
   viewExperiences: true,
   experience: [
     {
-      role: 'Software Developer Consultant',
+      role: 'Full Stack Software Engineer',
       company: 'RapidSec',
       companylogo: '/images/rapidsecLogo.png',
       date: 'Feb 2021 – Current',
