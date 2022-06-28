@@ -38,10 +38,10 @@ const index = () => {
     )
 }
 
-const Airbnb = () => {
+const Google = () => {
     return (
         <>
-            <a href="#" className="flex justify-center items-center">
+            <a className="flex justify-center items-center cursor-pointer">
                 <svg className="h-9 hover:text-gray-900 dark:hover:text-white" viewBox="0 0 86 29" fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -56,10 +56,10 @@ const Airbnb = () => {
 }
 
 
-const Google = () => {
+const Airbnb = () => {
     return (
         <>
-            <a href="#" className="flex justify-center items-center">
+            <a className="flex justify-center items-center cursor-pointer">
                 <svg className="h-9 hover:text-gray-900 dark:hover:text-white" viewBox="0 0 125 35" fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -74,7 +74,7 @@ const Google = () => {
 }
 const Microsoft = () => {
     return (
-        <>   <a href="#" className="flex justify-center items-center">
+        <>   <a className="flex justify-center items-center cursor-pointer">
             <svg className="h-8 hover:text-gray-900 dark:hover:text-white" viewBox="0 0 151 34" fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_3753_27919)">
@@ -97,7 +97,7 @@ const Microsoft = () => {
 const Spotify = () => {
     return (
         <>
-            <a href="#" className="flex justify-center items-center">
+            <a className="flex justify-center items-center cursor-pointer">
                 <svg className="h-9 hover:text-gray-900 dark:hover:text-white" viewBox="0 0 124 38" fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -113,7 +113,7 @@ const Spotify = () => {
 const MailChimp = () => {
     return (
         <>
-            <a href="#" className="flex justify-center items-center">
+            <a className="flex justify-center items-center cursor-pointer">
                 <svg className="h-9 hover:text-gray-900 dark:hover:text-white" viewBox="0 0 137 37" fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -178,7 +178,7 @@ const MailChimp = () => {
 const Mashable = () => {
     return (
         <>
-            <a href="#" className="flex justify-center items-center">
+            <a className="flex justify-center items-center cursor-pointer">
                 <svg className="h-6 hover:text-gray-900 dark:hover:text-white" viewBox="0 0 124 21" fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
