@@ -198,7 +198,7 @@ const ProjectItem = ({ projectData, i }) => {
                     </div>
 
                 </div>
-                <div className="hidden lg:flex w-full h-full  gap-12">
+                <div className="hidden lg:flex w-full h-full gap-10">
                     <div
                         data-aos="fade-left"
                         data-aos-duration="800"
@@ -210,18 +210,18 @@ const ProjectItem = ({ projectData, i }) => {
                         data-aos="fade-left"
                         data-aos-duration="800"
                         data-aos-delay="400"
-                        className="h-full hidden lg:flex min-w-[6rem] bg-red-500">
+                        className="h-full hidden lg:flex min-w-[4rem] bg-red-400">
                     </div>
                 </div>
             </div>
             <div className={`${i % 2 === 1 && 'hidden'} grid place-items-center grid-cols-1 md:grid-cols-2 gap-12`}>
 
-                <div className="flex   w-full h-full  gap-12">
+                <div className="flex w-full h-full gap-10">
                     <div
                         data-aos="fade-right"
                         data-aos-duration="800"
                         data-aos-delay="200"
-                        className="h-full hidden lg:flex min-w-[6rem] bg-red-500">
+                        className="h-full hidden lg:flex min-w-[4rem] bg-red-400">
                     </div>
                     <div
                         data-aos="fade-right"
@@ -286,7 +286,7 @@ const ProjectItem = ({ projectData, i }) => {
 
 const ProjectBadge = ({ innerText, bgColor, color }) => {
     return (
-        <div className={`font-semibold border w-fit rounded-sm py-1 px-2 uppercase text-sm tracking-widest ${color} ${bgColor}`}>
+        <div className={`font-semibold w-fit rounded-sm py-1 px-2 uppercase text-sm tracking-widest ${color} ${bgColor}`}>
             {innerText}
         </div>
     )
