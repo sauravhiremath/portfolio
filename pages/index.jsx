@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Layout from '../components/Layout'
 import Hero from '../components/Home/Hero'
 import Projects from '../components/Home/Projects'
-import Writing from '../components/Home/Writing'
+import Writing from '../components/Home/Writing/Writing'
 import { Suspense, useEffect, useState } from 'react'
 import AOS from 'aos'
 import "aos/dist/aos.css";
@@ -19,6 +19,7 @@ const Home = () => {
     AOS.refresh({
       duration: 500
     });
+    console.log('calld')
   }, [offset])
   return (
     <Layout>
@@ -27,16 +28,16 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Suspense>
-        <div className=" w-10/12 mx-auto ">
+        <div className=" w-11/12 md:w-10/12 mx-auto ">
           <Hero />
         </div>
-        <section id='opensource' className=" lg:w-full mx-auto pt-16">
+        <section id='opensource' className=" w-11/12 mx-auto  lg:w-full pt-8 md:pt-16">
           <Projects />
         </section>
-        <section id='experience' className=" lg:w-full mx-auto pt-16">
+        <section id='experience' className="w-11/12 mx-auto lg:w-full pt-8 md:pt-16">
           <Brands />
         </section>
-        <section id='writing' className=" lg:w-full mx-auto py-16">
+        <section id='writing' className="md:w-11/12 mx-auto lg:w-full py-8 md:py-16">
           <Writing />
         </section>
       </Suspense>

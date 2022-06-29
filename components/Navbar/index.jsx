@@ -87,7 +87,10 @@ const index = () => {
                         data-aos="fade-down"
                         data-aos-duration="500"
                         data-aos-delay={`900`}
-                        onClick={toggleDarkMode} className="cursor-pointer text-lg p-3 ml-4 rounded-md text-darkColor dark:text-white bg-blue-100 hover:bg-blue-200 dark:bg-opacity-40 dark:hover:bg-opacity-20">
+                        style={{
+                            backgroundImage: `${mounted && resolvedTheme && theme === 'light' ? '' : ` linear-gradient(135deg, #061120, #061120)`}`,
+                        }}
+                        onClick={toggleDarkMode} className=" dark:border dark:border-slate-900 cursor-pointer text-lg p-3 ml-4 rounded-md text-darkColor dark:text-white bg-blue-100 hover:bg-blue-200 dark:bg-opacity-40 dark:hover:bg-opacity-20">
                         {resolvedTheme === 'dark' ? <BsMoonFill /> :
                             <FiSun />
                         }

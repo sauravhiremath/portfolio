@@ -111,3 +111,10 @@
 .hue-rotate:hover {
     scale: 1.1;
 }
+
+.slick-dots li button:before {
+    font-size: 12px !important;
+    color: #F35C6A !important;
+    border-radius: 100%;
+    margin-top: 20px !important;
+}

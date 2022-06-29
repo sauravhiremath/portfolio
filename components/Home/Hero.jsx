@@ -28,12 +28,12 @@ const Hero = () => {
 
         <div
 
-            className='bg-fixed  dark:border dark:border-slate-900 dark:shadow-2xl backdrop-blur-xl top-0 w-full py-10 mt-6 rounded-lg min-h-[30rem]'
+            className='bg-fixed  dark:border dark:border-slate-900 dark:shadow-2xl top-0 w-full py-10 mt-6 rounded-lg min-h-[30rem]'
             style={{
-                backgroundImage: `${mounted && resolvedTheme && theme === 'light' ? 'linear-gradient(135deg, rgba(243,92,107,0.2), #f8efff 55%, rgba(252,95,46,0.2))' : `url('/images/grid.png'), linear-gradient(135deg, rgba(11,36,58, 0.5), #030611 45%,  rgba(11,36,58, 0.5))`}`,
+                backgroundImage: `${mounted && resolvedTheme && theme === 'light' ? 'linear-gradient(135deg, rgba(243,92,107,0.2), #f8efff 55%, rgba(252,95,46,0.2))' : ` linear-gradient(135deg, rgba(11,36,58, 0.5), #030611 45%,  rgba(11,36,58, 0.5))`}`,
             }}>
-            <div className='container w-full'>
-                <div className="flex w-full items-center pt-12 pl-10 flex-col ">
+            <div className='container relative h-full flex justify-between items-start w-full'>
+                <div className="flex w-full items-center pt-4 md:pt-12 pl-10 flex-col ">
                     <div className="flex items-start w-full  justify-center h-full flex-col space-y-6">
                         {/* <h2
                             data-aos="fade-down"
@@ -82,7 +82,10 @@ const Hero = () => {
                         <BsMouse className='text-2xl md:text-4xl animate-bounce' />
                     </div> */}
                 </div>
-                <div className="flex flex-col space-y-6"></div>
+                {/* <div style={{ backgroundImage: 'url(/images/hero.png)' }} className="!bg-cover flex min-h-[25rem] min-w-[30rem] flex-col h-full w-full flex-1 space-y-6">
+
+                </div> */}
+                <img src='/images/hero.png' className='absolute md:right-12 md:min-w-[30rem] object-contain md:min-h-[32rem] bottom-[-22rem] md:top-[-3rem] ' />
             </div>
         </div >
     )
