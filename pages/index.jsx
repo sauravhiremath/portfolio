@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import Hero from '../components/Home/Hero'
 import Projects from '../components/Home/Projects'
 import Writing from '../components/Home/Writing/Writing'
+import Journey from '../components/Home/Journey'
 import { Suspense, useEffect, useState } from 'react'
 import AOS from 'aos'
 import "aos/dist/aos.css";
@@ -36,6 +37,9 @@ const Home = () => {
         </section>
         <section id='experience' className="w-11/12 mx-auto lg:w-full pt-8 md:pt-16">
           <Brands />
+        </section>
+        <section id='writing' className="md:w-11/12 mx-auto lg:w-full py-8 md:py-16">
+          <Journey />
         </section>
         <section id='writing' className="md:w-11/12 mx-auto lg:w-full py-8 md:py-16">
           <Writing />

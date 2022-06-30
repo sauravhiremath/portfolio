@@ -103,9 +103,8 @@
 
 .ball {
     z-index: 1;
-    opacity: 0.16;
-    -webkit-filter: blur(100px);
-    filter: blur(100px);
+    -webkit-filter: blur(40px);
+    filter: blur(40px);
 }
 
 .hue-rotate:hover {
@@ -117,4 +116,9 @@
     color: #F35C6A !important;
     border-radius: 100%;
     margin-top: 20px !important;
+}
+
+.moon {
+    box-shadow: 0 0 300px 10px #fff;
+    transition: all ease 1s;
 }
