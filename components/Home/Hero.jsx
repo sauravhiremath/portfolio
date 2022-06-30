@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import { useTheme } from 'next-themes';
 
 const Hero = () => {
+
     useEffect(() => {
         AOS.init();
         AOS.refresh();
@@ -17,18 +18,21 @@ const Hero = () => {
     useEffect(() => {
         setMounted(true)
     }, [])
+
     const [screen, setScreen] = useState(0)
+
     useEffect(() => {
         if (typeof window != 'undefined') {
             const width = document.documentElement.clientWidth
             setScreen(width)
         }
     }, [typeof window != 'undefined' && window])
+
     return (
 
         <div
 
-            className='bg-fixed border  overflow-hidden   dark:border dark:border-slate-900 dark:shadow-2xl top-0 w-full py-10 mt-6 rounded-lg min-h-[30rem]'
+            className='lg:w-11/12 max-h-[70vh] lg:max-h-[100%] mx-auto bg-fixed border border-[#f8c4c8] dark:border overflow-hidden dark:border-slate-900 dark:shadow-2xl top-0 py-10 mt-6 rounded-lg min-h-[30rem]'
             style={{
                 backgroundImage: `${mounted && resolvedTheme && theme === 'light' ? 'linear-gradient(135deg, rgba(243,92,107,0.2), #f8efff 55%, rgba(252,95,46,0.2))' : ` linear-gradient(135deg, rgba(11,36,58, 0.5), #030611 45%,  rgba(11,36,58, 0.5))`}`,
             }}>
@@ -76,22 +80,46 @@ const Hero = () => {
                         <BsMouse className='text-2xl md:text-4xl animate-bounce' />
                     </div> */}
                 </div>
-                <div className="flex-1 bg-red-500 relative">
+                <div className="flex-1 relative">
 
-                    <div
-                        style={{
-                            background: `linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9))`,
-                            borderRadius: '50%'
-                        }}
-                        className="w-[50vw] flex items-start justify-center z-20 moon min-h-[50vw] top-12 h-full left-[15vw] absolute">
+                    <div className="absolute w-[120vw] lg:w-[50vw] min-h-[50vw] top-[40vh] lg:top-12 h-full lg:left-[15vw]">
                         <div
+                            data-aos="zoom-in-up"
+                            data-aos-delay={`300`}
+                            data-aos-duration="800"
                             style={{
-                                background: `linear-gradient(rgba(255,255,255,0.3),rgba(253,95,42,0.3))`,
-                                borderRadius: '50%'
+                                background: `linear-gradient(rgba(255, 255, 255,0.9),rgba(255, 255, 255,0.9))`,
+                                borderRadius: '50%',
+
                             }}
-                            className=" ball rounded-full h-32 w-32 mt-[7vw] mr-[20vw]"></div>
+                            className="flex items-start justify-center z-20 moon h-full relative">
+                            <div className="hidden dark:flex">
+                                <div
+                                    className="moon-texture absolute rounded-full h-32 w-32 right-[30vw] top-[10vw]"></div>
+                                <div
+                                    className="moon-texture absolute rounded-full h-8 w-8 right-[26vw] top-[16vw]"></div>
+                                <div
+                                    className="moon-texture absolute rounded-full h-16 w-16 right-[28vw] top-[4vw]"></div>
+                                <div
+                                    className="moon-texture absolute rounded-full h-24 w-24 right-[42vw] top-[14vw]"></div>
+                            </div>
+                            <div className=" dark:hidden flex">
+                                <div
+                                    className="moon-texture-light absolute rounded-full h-32 w-32 right-[30vw] top-[10vw]"></div>
+                                <div
+                                    className="moon-texture-light absolute rounded-full h-8 w-8 right-[26vw] top-[16vw]"></div>
+                                <div
+                                    className="moon-texture-light absolute rounded-full h-16 w-16 right-[28vw] top-[4vw]"></div>
+                                <div
+                                    className="moon-texture-light absolute rounded-full h-24 w-24 right-[42vw] top-[14vw]"></div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="z-50 absolute top-[-4rem]">
+                    <div
+                        data-aos="fade-left"
+                        data-aos-delay={`400`}
+                        data-aos-duration="1800"
+                        className="z-30 lg:absolute top-[-4rem]">
                         <img src='/images/rocket.png' />
                     </div>
                 </div>

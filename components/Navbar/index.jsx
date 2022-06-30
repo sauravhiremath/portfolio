@@ -90,7 +90,7 @@ const index = () => {
                         style={{
                             backgroundImage: `${mounted && resolvedTheme && theme === 'light' ? '' : ` linear-gradient(135deg, #061120, #061120)`}`,
                         }}
-                        onClick={toggleDarkMode} className=" dark:border dark:border-slate-900 cursor-pointer text-lg p-3 ml-4 rounded-md text-darkColor dark:text-white bg-blue-100 hover:bg-blue-200 dark:bg-opacity-40 dark:hover:bg-opacity-20">
+                        onClick={toggleDarkMode} className="dark:border dark:border-slate-900 cursor-pointer text-lg p-3 mx-4 rounded-md text-darkColor dark:text-white bg-blue-100 hover:bg-blue-200 dark:bg-opacity-40 dark:hover:bg-opacity-20">
                         {resolvedTheme === 'dark' ? <BsMoonFill /> :
                             <FiSun />
                         }

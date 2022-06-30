@@ -29,10 +29,10 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Suspense>
-        <div className=" w-11/12 md:w-10/12 mx-auto ">
+        <div className="w-11/12 lg:w-w-full mx-auto ">
           <Hero />
         </div>
-        <section id='opensource' className=" w-11/12 mx-auto  lg:w-full pt-8 md:pt-16">
+        <section id='opensource' className="w-11/12 mx-auto  lg:w-full pt-8 md:pt-16">
           <Projects />
         </section>
         <section id='experience' className="w-11/12 mx-auto lg:w-full pt-8 md:pt-16">

@@ -99,7 +99,7 @@ const Projects = () => {
                 style={{
                     backgroundImage: `${mounted && resolvedTheme && theme === 'light' ? 'linear-gradient(#F9FAFB,#F9FAFB)' : ` linear-gradient(135deg, rgba(11,36,58, 0.5), #030611 45%,  rgba(11,36,58, 0.5))`}`,
                 }}
-                className='bg-lightGray bg-fixed  dark:border dark:border-slate-900 rounded-lg dark:bg-[#080c1a] py-8 lg:py-12 overflow-hidden mx-auto space-y-16 container'>
+                className='bg-lightGray bg-fixed dark:border dark:border-slate-900 rounded-lg dark:bg-[#080c1a] p-8 lg:py-12 overflow-hidden mx-auto space-y-16 container'>
                 {projects.map((project, i) => (
                     <>
                         <div className="max-w-[30rem] mx-auto md:max-w-full">
