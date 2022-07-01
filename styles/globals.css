@@ -139,3 +139,27 @@
     height: 100%;
     width: 4px;
 }
+
+.right-border-white {
+    border-right: 2px dashed white;
+    border-top: 2px dashed white;
+    border-radius: 0 400px 0px 0;
+}
+
+.left-border-white {
+    border-left: 2px dashed white;
+    border-top: 2px dashed white;
+    border-radius: 400px 0px 0px 0;
+}
+
+.right-border-dark {
+    border-right: 2px dashed gray;
+    border-top: 2px dashed gray;
+    border-radius: 0 400px 0px 0;
+}
+
+.left-border-dark {
+    border-left: 2px dashed gray;
+    border-top: 2px dashed gray;
+    border-radius: 400px 0px 0px 0;
+}
