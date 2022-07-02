@@ -31,12 +31,11 @@ const Hero = () => {
     return (
 
         <div
-
-            className='lg:w-11/12 max-h-[70vh] lg:max-h-[100%] mx-auto bg-fixed border border-[#f8c4c8] dark:border overflow-hidden dark:border-slate-900 dark:shadow-2xl top-0 py-10 mt-6 rounded-lg min-h-[30rem]'
+            className='lg:w-10/12 max-h-[70vh] lg:max-h-[100%] mx-auto bg-fixed overflow-hidden dark:shadow-2xl top-0 py-10 mt-6 rounded-lg min-h-[30rem]'
             style={{
                 backgroundImage: `${mounted && resolvedTheme && theme === 'light' ? 'linear-gradient(135deg, rgba(243,92,107,0.2), #f8efff 55%, rgba(252,95,46,0.2))' : ` linear-gradient(135deg, rgba(11,36,58, 0.5), #030611 45%,  rgba(11,36,58, 0.5))`}`,
             }}>
-            <div className='container  h-full flex flex-col lg:flex-row justify-between items-start w-full'>
+            <div className='h-full flex flex-col lg:flex-row justify-between items-start w-full'>
                 <div className="flex flex-1 w-full items-center pt-4 md:pt-12 pl-10 flex-col ">
                     <div className="flex items-start w-full  justify-center h-full flex-col space-y-6">
                         <div className="flex">

@@ -23,7 +23,8 @@ const index = () => {
     }, [mounted])
 
     const [navOpen, setNavOpen] = useState(false)
-    return (
+
+    return mounted && (
         <div
             style={{
                 background: `${theme && mounted && theme === 'light' ? 'linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5))' : 'linear-gradient(rgba(2,4,12,0.5), rgba(2,4,12,0.5))'}`
@@ -91,9 +92,7 @@ const index = () => {
                             backgroundImage: `${mounted && resolvedTheme && theme === 'light' ? '' : ` linear-gradient(135deg, #061120, #061120)`}`,
                         }}
                         onClick={toggleDarkMode} className="dark:border dark:border-slate-900 cursor-pointer text-lg p-3 mx-4 rounded-md text-darkColor dark:text-white bg-blue-100 hover:bg-blue-200 dark:bg-opacity-40 dark:hover:bg-opacity-20">
-                        {resolvedTheme === 'dark' ? <BsMoonFill /> :
-                            <FiSun />
-                        }
+                        {resolvedTheme === 'dark' ? <BsMoonStarsFill /> : <FiSun />}
                     </div>
                 </div>
             </div>

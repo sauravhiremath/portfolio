@@ -11,7 +11,7 @@ module.exports = {
         'dmSans': ['DM Sans', 'sans-serif']
       },
       colors: {
-        'darkColor': '#030611',
+        'darkColor': '#24242d',
         'textDark': '#092545',
         'themeBlue': '#2d6ae3',
         'themePink': '#F35C6C',
