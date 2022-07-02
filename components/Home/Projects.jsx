@@ -107,7 +107,7 @@ const Projects = () => {
             >
                 {projects.map((project, i) => (
                     <>
-                        <div className="max-w-full mx-auto md:max-w-full">
+                        <div className="max-w-[30rem] mx-auto md:max-w-full">
                             <ProjectItem key={i} i={i + 1} projectData={project} />
                         </div>
                     </>
@@ -172,7 +172,7 @@ const ProjectItem = ({ projectData, i }) => {
                         data-aos="fade-right"
                         data-aos-duration="800"
                         data-aos-delay="300"
-                        className='text-xl  font-semibold lg:max-w-[80%] text-[#444] dark:text-white md:text-2xl lg:text-3xl'>
+                        className='text-xl font-semibold lg:max-w-[80%] text-[#444] dark:text-white md:text-2xl lg:text-3xl'>
                         {projectData?.detailedTitle}
                     </h1>
                     <div
@@ -193,7 +193,7 @@ const ProjectItem = ({ projectData, i }) => {
                         data-aos="fade-right"
                         data-aos-duration="800"
                         data-aos-delay="500"
-                        className='text-lg lg:text-xl'>
+                        className='text-sm lg:text-xl w-3/4 text-neutral-500 dark:text-neutral-500 tracking-wide'>
                         {projectData.desc}
                     </p>
                     <div
@@ -277,7 +277,7 @@ const ProjectItem = ({ projectData, i }) => {
                         data-aos="fade-left"
                         data-aos-duration="800"
                         data-aos-delay="500"
-                        className='text-lg lg:text-xl'>
+                        className='text-lg lg:text-xl w-3/4 text-neutral-500 dark:text-neutral-500 tracking-wide '>
                         {projectData.desc}
                     </p>
                     <div
