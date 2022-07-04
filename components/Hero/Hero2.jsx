@@ -55,9 +55,21 @@ const Hero = () => {
                     </div>
                 </div>
                 <div className="col-span-1 md:col-span-2 flex flex-col">
-                    <h1 className='text-4xl text-center md:text-left lg:text-6xl font-bold mt-3 text-[#222] !z-10 dark:text-white'><span className='relative dark:text-[#ff6122] bg-yellowish'>Work</span> by day.</h1>
-                    <h1 className='text-4xl text-center md:text-left lg:text-6xl font-bold mt-3 text-[#222] dark:text-white'><span className='relative bg-reddish'>Game</span> by night.</h1>
-                    <h1 className='text-4xl text-center md:text-left lg:text-6xl font-bold mt-3 text-[#222] dark:text-white'>and a Full-time <span className=' relative bg-blueish'>Overthinker.</span></h1>
+                    <h1 className='text-4xl text-center md:text-left lg:text-6xl font-bold mt-3 text-[#222] !z-10 dark:text-white' ><span
+                        style={{
+                            backgroundImage: `url(/images/hero/yellowish.png)`
+                        }}
+                        className='relative dark:text-[#ff6122] bg-yellowish'>Work</span> by day.</h1>
+                    <h1 className='text-4xl text-center md:text-left lg:text-6xl font-bold mt-3 text-[#222] dark:text-white'><span
+                        style={{
+                            backgroundImage: `url(/images/hero/reddish.png)`
+                        }}
+                        className='relative bg-reddish'>Game</span> by night.</h1>
+                    <h1 className='text-4xl text-center md:text-left lg:text-6xl font-bold mt-3 text-[#222] dark:text-white'>and a Full-time <span
+                        style={{
+                            backgroundImage: `url(/images/hero/blueish.png)`
+                        }}
+                        className=' relative bg-blueish'>Overthinker.</span></h1>
                 </div>
                 <div className="hidden col-span-1 min-h-[25rem] md:flex items-center">
                     <div className='w-full  rotate-[25deg] flex flex-col '>

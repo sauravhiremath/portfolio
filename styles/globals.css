@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Indie+Flower&family=Shadows+Into+Light&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Indie+Flower&family=Shadows+Into+Light&display=swap');
 
 @font-face {
     font-family: 'Agustina Regular';
@@ -178,7 +179,7 @@
 
 .bg-yellowish {
     width: 100%;
-    background-image: url('../public/images/hero/yellowish.png');
+    /* background-image: ; */
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
@@ -186,7 +187,6 @@
 
 .bg-reddish {
     width: 100%;
-    background-image: url('../public/images/hero/reddish.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
@@ -195,7 +195,6 @@
 
 .bg-blueish {
     width: 100%;
-    background-image: url('../public/images/hero/blueish.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
