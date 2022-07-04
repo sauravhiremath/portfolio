@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { createRef, useEffect, useState } from 'react'
 import { BsMouse } from 'react-icons/bs'
 import Button from '../utils/Button'
 import AOS from 'aos'
@@ -28,10 +28,13 @@ const Hero = () => {
         }
     }, [typeof window != 'undefined' && window])
 
+
+    const imageRef = createRef()
+
     return (
 
         <div
-            className='lg:w-10/12 max-h-[70vh] lg:max-h-[100%] mx-auto bg-fixed overflow-hidden dark:shadow-2xl top-0 py-10 mt-6 rounded-lg min-h-[30rem]'
+            className='w-full max-h-[70vh] lg:max-h-[100%] mx-auto bg-fixed overflow-hidden dark:shadow-2xl top-0 py-10 mt-6 rounded-lg min-h-[30rem]'
             style={{
                 backgroundImage: `${mounted && resolvedTheme && theme === 'light' ? 'linear-gradient(135deg, rgba(243,92,107,0.2), #f8efff 55%, rgba(252,95,46,0.2))' : ` linear-gradient(135deg, rgba(11,36,58, 0.5), #030611 45%,  rgba(11,36,58, 0.5))`}`,
             }}>
@@ -79,7 +82,7 @@ const Hero = () => {
                         <BsMouse className='text-2xl md:text-4xl animate-bounce' />
                     </div> */}
                 </div>
-                <div className="flex-1 relative">
+                <div className="flex-1 animate-hero-img  relative">
 
                     <div className="absolute w-[120vw] lg:w-[50vw] min-h-[50vw] top-[40vh] lg:top-12 h-full lg:left-[15vw]">
                         <div
@@ -117,9 +120,9 @@ const Hero = () => {
                     <div
                         data-aos="fade-left"
                         data-aos-delay={`400`}
-                        data-aos-duration="1800"
+                        data-aos-duration="800"
                         className="z-30 lg:absolute top-[-4rem]">
-                        <img src='/images/rocket.png' />
+                        <img ref={imageRef} src='/images/rocket.png' className='hero-img' />
                     </div>
                 </div>
             </div>

@@ -29,7 +29,7 @@ const index = () => {
             style={{
                 background: `${theme && mounted && theme === 'light' ? 'linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5))' : 'linear-gradient(rgba(2,4,12,0.5), rgba(2,4,12,0.5))'}`
             }}
-            className='border-b dark:border-slate-900 w-full z-50 h-full backdrop-blur-md sticky inset-0'>
+            className=' w-full z-50 h-full backdrop-blur-md sticky inset-0'>
 
             <div className="w-0">
                 <NavDrawer open={navOpen} setOpen={setNavOpen} />

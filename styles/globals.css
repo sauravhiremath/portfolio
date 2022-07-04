@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Indie+Flower&family=Shadows+Into+Light&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
 @font-face {
     font-family: 'Agustina Regular';
@@ -18,19 +19,11 @@
     font-display: swap;
 }
 
-@font-face {
-    font-family: "DMsans";
-    src: url("../public/fonts/DMSans-Medium.ttf");
-    src: url("../public/fonts/DMSans-Medium.ttf") format("woff"),
-        url("../public/fonts/DMSans-Medium.ttf") format("opentype"),
-        url("../public/fonts/DMSans-Medium.ttf") format("svg");
-}
-
 
 
 @layer components {
     .container {
-        @apply max-w-[80rem] !w-full mx-auto !important;
+        @apply max-w-[80rem] !w-full mx-auto px-4 !important;
     }
 }
 
@@ -39,7 +32,15 @@
 }
 
 .dmsans {
-    font-family: 'DMsans' !important;
+    font-family: 'DM Sans', sans-serif;
+}
+
+* {
+    scroll-behavior: smooth !important;
+}
+
+.indie {
+    font-family: 'Indie Flower', cursive !important;
 }
 
 /* .dmsans {
@@ -74,20 +75,6 @@
     color: white;
 }
 
-.text-gradient {
-    display: inline-block;
-    background-image: -webkit-linear-gradient(left, #f15b74, #ff6021);
-    background-image: -moz-linear-gradient(left, #f15b74, #ff6021);
-    background-image: -ms-linear-gradient(left, #f15b74, #ff6021);
-    background-image: -o-linear-gradient(left, #f15b74, #ff6021);
-    background-image: linear-gradient(to right, #f15b74, #ff7138);
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    transition: all ease .5s;
-    font-family: 'DMsans' !important;
-    cursor: pointer;
-}
 
 .MuiDrawer-paperAnchorLeft {
     background: transparent !important;
@@ -162,4 +149,57 @@
     border-left: 2px dashed gray;
     border-top: 2px dashed gray;
     border-radius: 400px 0px 0px 0;
+}
+
+
+
+.animate-hero-img:hover .hero-img {
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0.275, 0.82, 0.165, 1);
+    animation-iteration-count: infinite;
+    animation-name: animatee;
+    animation-fill-mode: backwards;
+}
+
+@keyframes animatee {
+    0% {
+        margin-left: 0%;
+        margin-top: 0%;
+    }
+
+    50% {
+        margin-left: 20%;
+        margin-top: 5%;
+    }
+
+    100% {
+        margin-left: 0%;
+        margin-top: 0%;
+    }
+}
+
+
+.bg-yellowish {
+    width: 100%;
+    background-image: url('../public/images/hero/yellowish.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+}
+
+.bg-reddish {
+    width: 100%;
+    background-image: url('../public/images/hero/reddish.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+}
+
+
+.bg-blueish {
+    width: 100%;
+    background-image: url('../public/images/hero/blueish.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
 }

@@ -11,14 +11,13 @@ module.exports = {
         'dmSans': ['DM Sans', 'sans-serif']
       },
       colors: {
-        'darkColor': '#24242d',
+        'darkColor': '#0b0e1a',
         'textDark': '#092545',
         'themeBlue': '#2d6ae3',
         'themePink': '#F35C6C',
         'themeOrange': '#FD5F28',
         'darkThemeTextColor': '#C2C9E4',
         'lightGray': '#F9FAFB'
-
       },
       scale: {
         '105': '1.05',

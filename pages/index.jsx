@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Layout from '../components/Layout'
-import Hero from '../components/Home/Hero'
+import Hero from '../components/Hero'
+import Hero2 from '../components/Hero/Hero2'
 import Projects from '../components/Home/Projects'
 import Writing from '../components/Home/Writing/Writing'
 import Journey from '../components/Home/Journey'
@@ -13,7 +14,7 @@ const Home = () => {
   const [offset, setOffset] = useState(0)
   typeof window != 'undefined' &&
     window.addEventListener('scroll', () => {
-      window.pageYOffset < 1000 && setOffset(window.pageYOffset)
+      window.pageYOffset < 100 && setOffset(window.pageYOffset)
     })
   useEffect(() => {
     AOS.init();
@@ -29,19 +30,20 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Suspense>
-        <section id='home' className="w-11/12 lg:w-10/12 mx-auto ">
-          <Hero />
+        <section id='home' className="container mx-auto ">
+          {/* <Hero /> */}
+          <Hero2 />
         </section>
-        <section id='opensource' className="w-11/12 mx-auto lg:w-10/12 pt-8 md:pt-16">
+        <section id='opensource' className="container pt-8 md:pt-16">
           <Projects />
         </section>
-        <section id='experience' className="w-11/12 mx-auto lg:w-full pt-8 md:pt-16">
+        <section id='experience' className=" pt-8 md:pt-16">
           <Brands />
         </section>
-        <section id='writing' className="md:w-11/12 mx-auto lg:w-full py-8 md:py-16">
+        <section id='writing' className="container py-8 md:py-16">
           <Journey />
         </section>
-        <section id='writing' className="md:w-11/12 mx-auto lg:w-full py-8 md:py-16">
+        <section id='writing' className="container overflow-hidden py-8 md:py-16">
           <Writing />
         </section>
       </Suspense>

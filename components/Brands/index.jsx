@@ -8,7 +8,6 @@ const index = () => {
         <Spotify />,
         <MailChimp />,
         <Mashable />,
-
     ]
     return (
         <div className='  w-full z-20 h-full backdrop-blur-md sticky inset-0'>
