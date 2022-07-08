@@ -2,9 +2,10 @@ import Head from 'next/head'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import Hero2 from '../components/Hero/Hero2'
-import Projects from '../components/Home/Projects'
-import Writing from '../components/Home/Writing/Writing'
-import Journey from '../components/Home/Journey'
+import Projects from '../components/Projects'
+import Writing from '../components/Writing'
+import Testimonial from '../components/Testimonial'
+import Journey from '../components/Journey'
 import { Suspense, useEffect, useState } from 'react'
 import AOS from 'aos'
 import "aos/dist/aos.css";
@@ -34,13 +35,16 @@ const Home = () => {
           {/* <Hero /> */}
           <Hero2 />
         </section>
-        <section id='opensource' className="container pt-8 md:pt-16">
+        <section id='opensource' className="max-w-[90rem] mx-auto pt-8 md:pt-16">
           <Projects />
         </section>
         <section id='experience' className=" pt-8 md:pt-16">
           <Brands />
         </section>
-        <section id='writing' className="container py-8 md:py-16">
+        <section id='clients' className="pt-8 md:pt-16 container">
+          <Testimonial />
+        </section>
+        <section id='writing' className="max-w-[90rem] mx-auto py-8 md:py-16">
           <Journey />
         </section>
         <section id='writing' className="container overflow-hidden py-8 md:py-16">

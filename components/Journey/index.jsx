@@ -59,7 +59,7 @@ const index = () => {
                     </svg>
                     {/*<div className="bg-[#1d263a] mt-2 h-[1px] w-full max-w-[20rem]"></div>*/}
                 </div>
-                <div className="flex flex-col w-full !mt-[-80rem] space-y-8">
+                <div className="flex flex-col container w-full !mt-[-80rem] space-y-8">
 
                     {/* {journeyData.map(({ imageUrl, pattern, smallText1, smallText2, icon, subHeading, title, }) => (
                     pattern === 'imageToText' ? (

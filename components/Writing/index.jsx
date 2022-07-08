@@ -1,30 +1,63 @@
-import Link from 'next/link'
-import React from 'react'
-import { BsArrowRight } from 'react-icons/bs'
+import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick';
-import { GrCaretNext, GrCaretPrevious } from 'react-icons/gr';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { AiOutlineSwapLeft } from 'react-icons/ai';
+import { useTheme } from 'next-themes';
 
-function SampleNextArrow() {
-    return (
-        <div
-            className={`className`}
-            style={{ display: "block", background: "red" }}
-        />
-    );
-}
 
-function SamplePrevArrow() {
-    return (
-        <div
-            className='p-4 '
-            style={{ display: "block" }}
-        />
-    );
-}
 
+const SlickArrowLeft = ({ currentSlide, theme, mounted, slideCount, ...props }) => (
+    <button
+        {...props}
+        className={
+            "absolute group shadow-md overflow-hidden z-30  py-6 flex items-center justify-center text-red-500 left-0 top-[30%] p-4" +
+            (currentSlide === 0 ? " slick-disabled" : "")
+        }
+        style={{
+            background: `${theme && mounted && theme === 'light' ? 'linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9))' : 'linear-gradient(rgba(2,4,12,0.7), rgba(2,4,12,0.7))'}`
+        }}
+        aria-hidden="true"
+        aria-disabled={currentSlide === 0 ? true : false}
+        type="button"
+    >
+        <AiOutlineSwapLeft className='text-2xl' />
+        <div className="absolute z-10 bg-gradient-to-b from-themeOrange flex items-center justify-center transition-all duration-300 to-themePink h-full w-full inset-0 top-[-100%] group-hover:top-0">
+            <AiOutlineSwapLeft className='text-2xl z-20 text-white ' />
+        </div>
+    </button>
+);
+const SlickArrowRight = ({ currentSlide, theme, mounted, slideCount, ...props }) => (
+    <button
+
+        {...props}
+        className={
+            "absolute shadow-md group rotate-180 overflow-hidden z-30 bg-white py-6 right-0 top-[30%] p-4" +
+            (currentSlide === 0 ? " slick-disabled" : "")
+        }
+        style={{
+            background: `${theme && mounted && theme === 'light' ? 'linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9))' : 'linear-gradient(rgba(2,4,12,0.7), rgba(2,4,12,0.7))'}`
+        }}
+        aria-hidden="true"
+        aria-disabled={currentSlide === 0 ? true : false}
+        type="button"
+    >
+        <AiOutlineSwapLeft className='text-2xl z-20 text-themePink ' />
+        <div className="absolute z-10 bg-gradient-to-b from-themeOrange flex items-center justify-center transition-all duration-300 to-themePink h-full w-full inset-0 top-[-100%] group-hover:top-0">
+            <AiOutlineSwapLeft className='text-2xl z-20 text-white ' />
+        </div>
+    </button>
+);
 const index = () => {
+    const [mounted, setMounted] = useState(false)
+    const { theme } = useTheme()
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+
+
     var settings = {
         infinite: true,
         speed: 800,
@@ -32,8 +65,8 @@ const index = () => {
         dots: true,
         slidesToScroll: 3,
         initialSlide: 0,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
+        nextArrow: <SlickArrowRight theme={theme} mounted={mounted} />,
+        prevArrow: <SlickArrowLeft theme={theme} mounted={mounted} />,
         responsive: [
             {
                 breakpoint: 1024,
@@ -86,6 +119,18 @@ const index = () => {
             imageUrl: '/images/writing.png',
             link: 'https://blog.sauravmh.com/socket-io-games-the-right-way-using-nodejs-and-react-not-a-chat-app-part-1/'
         },
+        {
+            title: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, perspiciatis.',
+            description: ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet excepturi cupiditate perferendis possimus itaque quas praesentium ex, ea odit fugit?',
+            imageUrl: '/images/writing.png',
+            link: 'https://blog.sauravmh.com/socket-io-games-the-right-way-using-nodejs-and-react-not-a-chat-app-part-1/'
+        },
+        {
+            title: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, perspiciatis.',
+            description: ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet excepturi cupiditate perferendis possimus itaque quas praesentium ex, ea odit fugit?',
+            imageUrl: '/images/writing.png',
+            link: 'https://blog.sauravmh.com/socket-io-games-the-right-way-using-nodejs-and-react-not-a-chat-app-part-1/'
+        },
     ]
     const truncate = (text, sliceNumber) => {
         return (
@@ -100,11 +145,11 @@ const index = () => {
 
     return (
         <div>
-            <Slider {...settings} className='flex container md:!space-x-6 justify-center'>
+            <Slider {...settings} className='flex container justify-center'>
                 {writingPosts?.map((post, i) => (
                     <div className='w-full md:px-2'>
                         <div
-                            className="dark:bg-[#121422] pb-6 bg-lightGray border-gray-200 rounded-lg border border-transparent dark:border-slate-800 overflow-hidden transition-all duration-500 flex w-full flex-col space-y-4">
+                            className="dark:bg-[#202120] pb-6 bg-lightGray border-gray-200 rounded-lg border border-transparent dark:border-[#242424] overflow-hidden transition-all duration-500 flex w-full flex-col space-y-4">
                             <img
                                 data-aos="fade-down"
                                 data-aos-duration="500"
