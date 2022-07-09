@@ -10,7 +10,7 @@ import { Suspense, useEffect, useState } from 'react'
 import AOS from 'aos'
 import "aos/dist/aos.css";
 import Brands from "../components/Brands";
-
+import { testimonials, journey, workExperience, blogs, about, contact } from '../portfolio'
 const Home = () => {
   const [offset, setOffset] = useState(0)
   typeof window != 'undefined' &&
@@ -22,10 +22,9 @@ const Home = () => {
     AOS.refresh({
       duration: 500
     });
-    console.log('calld')
   }, [offset])
   return (
-    <Layout>
+    <Layout contact={contact}>
       <Head>
         <title>Saurav M. H · Software Developer · VIT</title>
         <link rel="icon" href="/favicon.ico" />
@@ -33,22 +32,22 @@ const Home = () => {
       <Suspense>
         <section id='home' className="container mx-auto ">
           {/* <Hero /> */}
-          <Hero2 />
+          <Hero2 about={about} />
         </section>
         <section id='opensource' className="max-w-[90rem] mx-auto pt-8 md:pt-16">
-          <Projects />
+          <Projects workExperience={workExperience} />
         </section>
         <section id='experience' className=" pt-8 md:pt-16">
           <Brands />
         </section>
-        <section id='clients' className="pt-8 md:pt-16 container">
-          <Testimonial />
+        <section id='clients' className="pt-8 md:pt-16 max-w-[90rem] overflow-hidden mx-auto relative">
+          <Testimonial testimonials={testimonials} />
         </section>
         <section id='writing' className="max-w-[90rem] mx-auto py-8 md:py-16">
           <Journey />
         </section>
-        <section id='writing' className="container overflow-hidden py-8 md:py-16">
-          <Writing />
+        <section id='writing' className="py-8 md:py-16">
+          <Writing blogs={blogs} />
         </section>
       </Suspense>
     </Layout >

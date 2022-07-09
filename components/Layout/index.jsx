@@ -3,7 +3,7 @@ import Navbar from '../Navbar'
 import Footer from '../Footer'
 import { useTheme } from 'next-themes'
 
-const index = ({ children }) => {
+const index = ({ children, contact }) => {
     const [mounted, setMounted] = useState(false)
     const { setTheme, resolvedTheme, theme } = useTheme()
 
@@ -35,7 +35,7 @@ const index = ({ children }) => {
                 <main className='z-20 min-h-screen'>
                     {children}
                 </main>
-                <Footer />
+                <Footer contact={contact} />
             </div>
         </div>
     )

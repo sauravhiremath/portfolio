@@ -2,87 +2,87 @@ import { useTheme } from 'next-themes'
 import React, { createRef, Suspense, useEffect, useState } from 'react'
 import { BsArrow90DegRight, BsArrowRight } from 'react-icons/bs'
 import { Waypoint } from 'react-waypoint';
-const Projects = () => {
-    const allProjects = [
-        {
-            shortTitle: 'AIRBNB EXPERIENCE DESIGN INTERN',
-            detailedTitle: 'Summer 2019 Internship with Airbnb Plus Internal Tools team',
-            desc: 'Designing internal tools and visual systems to improve the employee onboarding experience and workflow efficiency',
-            badge: {
-                color: 'text-[#ee7675]',
-                bgColor: 'bg-[#f7e6e6]',
-                innerText: 'lorem ipsum dolor',
-            },
-            imageUrl: 'https://dl.dropboxusercontent.com/s/v6m5rfky69w8ffm/airbnbhomecover.mp4?dl=0'
+const Projects = ({ workExperience }) => {
+    // const allProjects = [
+    //     {
+    //         shortTitle: 'AIRBNB EXPERIENCE DESIGN INTERN',
+    //         detailedTitle: 'Summer 2019 Internship with Airbnb Plus Internal Tools team',
+    //         desc: 'Designing internal tools and visual systems to improve the employee onboarding experience and workflow efficiency',
+    //         badge: {
+    //             color: 'text-[#ee7675]',
+    //             bgColor: 'bg-[#f7e6e6]',
+    //             innerText: 'lorem ipsum dolor',
+    //         },
+    //         imageUrl: 'https://dl.dropboxusercontent.com/s/v6m5rfky69w8ffm/airbnbhomecover.mp4?dl=0'
 
-        },
-        {
-            shortTitle: 'AIRBNB EXPERIENCE DESIGN INTERN',
-            detailedTitle: 'Summer 2019 Internship with Airbnb Plus Internal Tools team',
-            desc: 'Designing internal tools and visual systems to improve the employee onboarding experience and workflow efficiency',
-            badge: {
-                color: 'text-[#ee7675]',
-                bgColor: 'bg-[#f7e6e6]',
-                innerText: 'lorem ipsum dolor',
-            },
-            imageUrl: 'https://dl.dropboxusercontent.com/s/v6m5rfky69w8ffm/airbnbhomecover.mp4?dl=0'
+    //     },
+    //     {
+    //         shortTitle: 'AIRBNB EXPERIENCE DESIGN INTERN',
+    //         detailedTitle: 'Summer 2019 Internship with Airbnb Plus Internal Tools team',
+    //         desc: 'Designing internal tools and visual systems to improve the employee onboarding experience and workflow efficiency',
+    //         badge: {
+    //             color: 'text-[#ee7675]',
+    //             bgColor: 'bg-[#f7e6e6]',
+    //             innerText: 'lorem ipsum dolor',
+    //         },
+    //         imageUrl: 'https://dl.dropboxusercontent.com/s/v6m5rfky69w8ffm/airbnbhomecover.mp4?dl=0'
 
-        },
-        {
-            shortTitle: 'AIRBNB EXPERIENCE DESIGN INTERN',
-            detailedTitle: 'Summer 2019 Internship with Airbnb Plus Internal Tools team',
-            desc: 'Designing internal tools and visual systems to improve the employee onboarding experience and workflow efficiency',
-            badge: {
-                color: 'text-[#ee7675]',
-                bgColor: 'bg-[#f7e6e6]',
-                innerText: 'lorem ipsum dolor',
-            },
-            imageUrl: 'https://dl.dropboxusercontent.com/s/v6m5rfky69w8ffm/airbnbhomecover.mp4?dl=0'
+    //     },
+    //     {
+    //         shortTitle: 'AIRBNB EXPERIENCE DESIGN INTERN',
+    //         detailedTitle: 'Summer 2019 Internship with Airbnb Plus Internal Tools team',
+    //         desc: 'Designing internal tools and visual systems to improve the employee onboarding experience and workflow efficiency',
+    //         badge: {
+    //             color: 'text-[#ee7675]',
+    //             bgColor: 'bg-[#f7e6e6]',
+    //             innerText: 'lorem ipsum dolor',
+    //         },
+    //         imageUrl: 'https://dl.dropboxusercontent.com/s/v6m5rfky69w8ffm/airbnbhomecover.mp4?dl=0'
 
-        },
-        {
-            shortTitle: 'AIRBNB EXPERIENCE DESIGN INTERN',
-            detailedTitle: 'Summer 2019 Internship with Airbnb Plus Internal Tools team',
-            desc: 'Designing internal tools and visual systems to improve the employee onboarding experience and workflow efficiency',
-            badge: {
-                color: 'text-[#ee7675]',
-                bgColor: 'bg-[#f7e6e6]',
-                innerText: 'lorem ipsum dolor',
-            },
-            imageUrl: 'https://dl.dropboxusercontent.com/s/v6m5rfky69w8ffm/airbnbhomecover.mp4?dl=0'
+    //     },
+    //     {
+    //         shortTitle: 'AIRBNB EXPERIENCE DESIGN INTERN',
+    //         detailedTitle: 'Summer 2019 Internship with Airbnb Plus Internal Tools team',
+    //         desc: 'Designing internal tools and visual systems to improve the employee onboarding experience and workflow efficiency',
+    //         badge: {
+    //             color: 'text-[#ee7675]',
+    //             bgColor: 'bg-[#f7e6e6]',
+    //             innerText: 'lorem ipsum dolor',
+    //         },
+    //         imageUrl: 'https://dl.dropboxusercontent.com/s/v6m5rfky69w8ffm/airbnbhomecover.mp4?dl=0'
 
-        },
-        {
-            shortTitle: 'AIRBNB EXPERIENCE DESIGN INTERN',
-            detailedTitle: 'Summer 2019 Internship with Airbnb Plus Internal Tools team',
-            desc: 'Designing internal tools and visual systems to improve the employee onboarding experience and workflow efficiency',
-            badge: {
-                color: 'text-[#ee7675]',
-                bgColor: 'bg-[#f7e6e6]',
-                innerText: 'lorem ipsum dolor',
-            },
-            imageUrl: 'https://dl.dropboxusercontent.com/s/v6m5rfky69w8ffm/airbnbhomecover.mp4?dl=0'
+    //     },
+    //     {
+    //         shortTitle: 'AIRBNB EXPERIENCE DESIGN INTERN',
+    //         detailedTitle: 'Summer 2019 Internship with Airbnb Plus Internal Tools team',
+    //         desc: 'Designing internal tools and visual systems to improve the employee onboarding experience and workflow efficiency',
+    //         badge: {
+    //             color: 'text-[#ee7675]',
+    //             bgColor: 'bg-[#f7e6e6]',
+    //             innerText: 'lorem ipsum dolor',
+    //         },
+    //         imageUrl: 'https://dl.dropboxusercontent.com/s/v6m5rfky69w8ffm/airbnbhomecover.mp4?dl=0'
 
-        },
-        {
-            shortTitle: 'AIRBNB EXPERIENCE DESIGN INTERN',
-            detailedTitle: 'Summer 2019 Internship with Airbnb Plus Internal Tools team',
-            desc: 'Designing internal tools and visual systems to improve the employee onboarding experience and workflow efficiency',
-            badge: {
-                color: 'text-[#ee7675]',
-                bgColor: 'bg-[#f7e6e6]',
-                innerText: 'lorem ipsum dolor',
-            },
-            imageUrl: 'https://dl.dropboxusercontent.com/s/v6m5rfky69w8ffm/airbnbhomecover.mp4?dl=0'
+    //     },
+    //     {
+    //         shortTitle: 'AIRBNB EXPERIENCE DESIGN INTERN',
+    //         detailedTitle: 'Summer 2019 Internship with Airbnb Plus Internal Tools team',
+    //         desc: 'Designing internal tools and visual systems to improve the employee onboarding experience and workflow efficiency',
+    //         badge: {
+    //             color: 'text-[#ee7675]',
+    //             bgColor: 'bg-[#f7e6e6]',
+    //             innerText: 'lorem ipsum dolor',
+    //         },
+    //         imageUrl: 'https://dl.dropboxusercontent.com/s/v6m5rfky69w8ffm/airbnbhomecover.mp4?dl=0'
 
-        },
-    ]
+    //     },
+    // ]
 
     const [projects, setProjects] = useState([])
     const [slice, setSlice] = useState(2)
     const [animate, setAnimate] = useState(false)
     useEffect(() => {
-        setProjects(allProjects.slice(0, slice))
+        setProjects(workExperience.experiences.slice(0, slice))
     }, [slice])
 
     const [mounted, setMounted] = useState(false)
@@ -115,7 +115,7 @@ const Projects = () => {
                             </div>
                         </>
                     ))}
-                    {projects.length != allProjects?.length &&
+                    {projects.length != workExperience.experiences.length &&
                         <div className="container">
                             <div
                                 data-aos="fade-down"
@@ -142,7 +142,8 @@ const Projects = () => {
 
 const ProjectItem = ({ projectData, i }) => {
 
-
+    const { title, heading, description, colors, logo, tags } = projectData
+    tags = tags.slice(0, 3)
     return (
         <>
             <div
@@ -155,7 +156,7 @@ const ProjectItem = ({ projectData, i }) => {
                         className="flex-1 w-full relative">
                         <video
                             autoPlay={true} loop={true} preload="autoplay">
-                            <source src={projectData.imageUrl} type="video/mp4" />
+                            <source src={logo} type="video/mp4" />
                         </video>
                     </div>
                     <div
@@ -173,35 +174,43 @@ const ProjectItem = ({ projectData, i }) => {
                         data-aos-duration="800"
                         data-aos-delay="200"
                         className='text-sm lg:text-base tracking-widest uppercase text-[#7e7e7e] dark:text-neutral-500 font-semibold'>
-                        {projectData?.shortTitle}
+                        {title}
                     </h1>
                     <h1
                         data-aos="fade-right"
                         data-aos-duration="800"
                         data-aos-delay="300"
                         className='text-xl font-semibold lg:max-w-[80%] text-[#444] dark:text-white md:text-2xl lg:text-3xl'>
-                        {projectData?.detailedTitle}
+                        {heading}
                     </h1>
-                    <div
-                        data-aos="fade-right"
-                        data-aos-duration="800"
-                        data-aos-delay="400"
-                    >
+                    {tags.length > 1 &&
+                        <div
+                            data-aos="fade-right"
+                            data-aos-duration="800"
+                            data-aos-delay="400"
+                        >
 
-                        <ProjectBadge
-                            innerText={projectData?.badge?.innerText}
-                            bgColor={projectData?.badge?.bgColor}
-                            color={projectData?.badge?.color}
-                            borderColor={projectData?.badge?.borderColor}
-                        />
-
-                    </div>
+                            <div className="flex flex-wrap">
+                                {tags.map(tag => (
+                                    <>
+                                        <div className="mr-4 my-2">
+                                            <ProjectBadge
+                                                innerText={tag}
+                                                bgColor='bg-[#f7e6e6]'
+                                                color='text-[#ee7675]'
+                                            />
+                                        </div>
+                                    </>
+                                ))}
+                            </div>
+                        </div>
+                    }
                     <p
                         data-aos="fade-right"
                         data-aos-duration="800"
                         data-aos-delay="500"
                         className='text-base lg:text-xl pr-2 md:pr-0 lg:w-3/4 text-neutral-500 dark:text-neutral-500 tracking-wide'>
-                        {projectData.desc}
+                        {description}
                     </p>
                     <div
                         data-aos="fade-right"
@@ -219,7 +228,7 @@ const ProjectItem = ({ projectData, i }) => {
                         data-aos-delay="300"
                         className="flex-1 w-full relative">
                         <video autoPlay={true} loop={true} preload="autoplay">
-                            <source src={projectData.imageUrl} type="video/mp4" />
+                            <source src={logo} type="video/mp4" />
                         </video>
                     </div>
                     <div
@@ -246,7 +255,7 @@ const ProjectItem = ({ projectData, i }) => {
                         className="flex-1 w-full relative"
                     >
                         <video autoPlay={true} loop={true} preload="autoplay">
-                            <source src={projectData.imageUrl} type="video/mp4" />
+                            <source src={logo} type="video/mp4" />
                         </video>
                     </div>
 
@@ -257,35 +266,44 @@ const ProjectItem = ({ projectData, i }) => {
                         data-aos-duration="800"
                         data-aos-delay="200"
                         className='text-sm lg:text-base tracking-widest uppercase text-[#7e7e7e] dark:text-neutral-500 font-semibold'>
-                        {projectData?.shortTitle}
+                        {title}
                     </h1>
                     <h1
                         data-aos="fade-left"
                         data-aos-duration="800"
                         data-aos-delay="300"
                         className='text-xl font-semibold lg:max-w-[80%] text-[#444] dark:text-white md:text-2xl lg:text-3xl'>
-                        {projectData?.detailedTitle}
+                        {heading}
                     </h1>
-                    <div
-                        data-aos="fade-left"
-                        data-aos-duration="800"
-                        data-aos-delay="400"
-                    >
+                    {tags.length > 1 &&
+                        <div
+                            data-aos="fade-left"
+                            data-aos-duration="800"
+                            data-aos-delay="400"
+                        >
 
-                        <ProjectBadge
-                            innerText={projectData?.badge?.innerText}
-                            bgColor={projectData?.badge?.bgColor}
-                            color={projectData?.badge?.color}
-                            borderColor={projectData?.badge?.borderColor}
-                        />
+                            <div className="flex flex-wrap">
+                                {tags.map(tag => (
+                                    <>
+                                        <div className="mr-4 my-2">
+                                            <ProjectBadge
+                                                innerText={tag}
+                                                bgColor='bg-[#f7e6e6]'
+                                                color='text-[#ee7675]'
+                                            />
+                                        </div>
+                                    </>
+                                ))}
+                            </div>
 
-                    </div>
+                        </div>
+                    }
                     <p
                         data-aos="fade-left"
                         data-aos-duration="800"
                         data-aos-delay="500"
                         className='text-base lg:text-xl pr-2 md:pr-0 lg:w-3/4 text-neutral-500 tracking-wide '>
-                        {projectData.desc}
+                        {description}
                     </p>
                     <div
                         data-aos="fade-left"

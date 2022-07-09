@@ -1,8 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Fira+Sans:wght@800&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Fira+Code:wght@600;700&family=Indie+Flower&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap');
 
 @font-face {
     font-family: 'Agustina Regular';
@@ -11,14 +10,6 @@
     src: local('Agustina Regular'), url('../public/fonts/Agustina.woff') format('woff');
     font-display: swap;
 }
-
-
-@font-face {
-    font-family: 'Montserrat';
-    src: local('Montserrat'), url('../public/fonts/Montserrat-Regular.ttf') format('woff');
-    font-display: swap;
-}
-
 
 
 @layer components {
@@ -40,7 +31,7 @@
 }
 
 .firaCode {
-    font-family: 'Fira Code', monospace;
+    font-family: 'Fira Sans', monospace;
     font-weight: 900 !important;
 
 }
