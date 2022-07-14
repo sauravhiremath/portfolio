@@ -170,14 +170,14 @@ const index = ({ blogs }) => {
                                     data-aos="fade-down"
                                     data-aos-duration="500"
                                     data-aos-delay={`${i + 2}00`}
-                                    className='group hover:opacity-70 transition-all duration-500 text-lg md:text-2xl lg:text-2xl  flex font-semibold' ><span>{truncate(heading, 55)}</span>
+                                    className='group hover:opacity-70 transition-all duration-500 text-xl md:text-2xl flex font-semibold' ><span>{truncate(heading, 55)}</span>
                                 </a>
 
                                 <p
                                     data-aos="fade-down"
                                     data-aos-duration="500"
                                     data-aos-delay={`${i + 3}00`}
-                                    className='text-sm md:text-base dark:text-[#808C9C]'>{truncate(description, 160)}</p>
+                                    className='text-sm md:text-base dark:text-[#808C9C]'>{truncate(description, 140)}</p>
 
                                 <a
                                     target='_blank'

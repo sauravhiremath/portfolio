@@ -43,8 +43,8 @@ const Home = () => {
         <section id='clients' className="pt-8 md:pt-16 max-w-[90rem] overflow-hidden mx-auto relative">
           <Testimonial testimonials={testimonials} />
         </section>
-        <section id='writing' className="max-w-[90rem] mx-auto py-8 md:py-16">
-          <Journey />
+        <section id='writing' className="max-w-[90rem] mx-auto py-8 md:py-32">
+          <Journey journey={journey} />
         </section>
         <section id='writing' className="py-8 md:py-16">
           <Writing blogs={blogs} />

@@ -1,4 +1,5 @@
-import React from 'react'
+import { useTheme } from 'next-themes'
+import React, { useEffect, useState } from 'react'
 
 const index = () => {
     const brands = [
@@ -9,9 +10,19 @@ const index = () => {
         <MailChimp />,
         <Mashable />,
     ]
+    const [mounted, setMounted] = useState(false)
+    const { setTheme, resolvedTheme, theme } = useTheme()
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
     return (
         <div className='  w-full z-20 h-full backdrop-blur-md sticky inset-0'>
-            <section className="bg-gray-50 dark:bg-gray-900">
+            <section
+                style={{
+                    background: `${theme && mounted && theme === 'light' ? 'linear-gradient(rgba(230,230,230,0.3),rgba(230,230,230,0.3))' : 'linear-gradient(rgba(2,4,12,0.5), rgba(2,4,12,0.5))'}`
+                }}
+                className="bg-gray-50 dark:bg-gray-900">
                 <div className="py-8 lg:py-16 mx-auto max-w-screen-xl px-4">
                     <h2
                         data-aos="fade-down"

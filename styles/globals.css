@@ -176,26 +176,18 @@
     }
 }
 
-
-.bg-yellowish {
-    width: 100%;
-    /* background-image: ; */
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
+.animation-rotate {
+    animation: rotate 9s linear infinite;
+    transition-delay: 1s;
 }
 
-.bg-reddish {
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
-}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
 
+    100% {
+        transform: rotate(360deg);
+    }
 
-.bg-blueish {
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
 }
