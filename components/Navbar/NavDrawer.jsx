@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { AiFillGithub, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineTwitter } from 'react-icons/ai'
 import React from 'react'
 import Button from '../utils/Button'
-import { routeData } from '../dummyData'
+import { routeData } from '../routeData'
 import { RiCloseLine } from 'react-icons/ri'
 import { useTheme } from 'next-themes'
 
@@ -56,8 +56,13 @@ const NavDrawer = ({ open, setOpen }) => {
                                 data-aos-duration="1300"
                                 data-aos-delay={`1200`}
                             >
-                                <a href='/#contact'>
-                                    <button className="transition duration-500 bg-gradient-to-r hover:shadow-button py-3 px-8 rounded-full hover:from-themeOrange hover:to-themePink from-themePink font-medium to-themeOrange text-white">Contact Me</button>
+                                <a href="/#contact" className="relative inline-flex text-md group">
+                                    <span className="relative z-10 block px-4 py-2 overflow-hidden font-medium leading-tight text-coolGray-800 dark:text-blueGray-100 transition-colors duration-300 ease-out border-2 border-coolGray-900 dark:border-coolGray-50 rounded-md group-hover:text-white dark:group-hover:text-coolGray-900">
+                                        <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-md bg-coolGray-50 dark:bg-darkColor"/>
+                                        <span className="absolute left-0 w-40 h-40 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-coolGray-900 dark:bg-coolGray-50 group-hover:-rotate-180 ease"/>
+                                        <span className="relative">Contact Me</span>
+                                    </span>
+                                    <span className="absolute bottom-0 right-0 w-full h-10 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-coolGray-900 dark:bg-coolGray-50 rounded-md group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-md"/>
                                 </a>
                             </li>
 
