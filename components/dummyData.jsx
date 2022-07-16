@@ -1,35 +1,22 @@
 export const routeData = [
     {
-        label: 'Skills',
-        slug: '#skills'
+        label: 'My Work',
+        slug: '#work'
     },
     {
-        label: 'Open Source',
-        slug: '#opensource'
-    },
-    {
-        label: 'Work Experiences',
-        slug: '#experience'
-    },
-    {
-        label: 'Journey ',
-        slug: '#journey '
+        label: 'Technologies',
+        slug: '#technologies'
     },
     // {
-    //     label: 'Education',
-    //     slug: '#education'
-    // },
-    // {
-    //     label: 'Achievements',
-    //     slug: '#achievements'
+    //     label: 'Testimonials',
+    //     slug: '#testimonial'
     // },
     {
-        label: 'Writing ',
-        slug: '#writing '
+        label: 'Journey',
+        slug: '#journey'
     },
-    // {
-    //     label: 'Talks & Workshops',
-    //     slug: '#talks '
-    // },
-
+    {
+        label: 'Blogs',
+        slug: '#blogs'
+    },
 ]
