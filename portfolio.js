@@ -1,5 +1,6 @@
 import emoji from "react-easy-emoji";
 import en from "./locale/en.json";
+import testimonial from "./components/Testimonial";
 
 const current_locale = en
 
@@ -21,4 +22,14 @@ export const technologies = {
     frameworks: current_locale.technologies.frameworks
 }
 
-export const { testimonials, journey, blogs, contact } = current_locale
+export const testimonials = current_locale.testimonials.map(({ name, company, description, image }) => {
+    return {
+        display: false,
+        name,
+        company,
+        description,
+        image
+    }
+})
+
+export const { journey, blogs, contact } = current_locale

@@ -17,7 +17,7 @@ const index = ({ testimonials }) => {
         setMounted(true)
     }, [])
 
-    var settings = {
+    const settings = {
         infinite: true,
         speed: 800,
         slidesToShow: 1,
@@ -27,18 +27,23 @@ const index = ({ testimonials }) => {
         nextArrow: <SlickArrowRight theme={theme} mounted={mounted} />,
         prevArrow: <SlickArrowLeft theme={theme} mounted={mounted} />,
     }
+
+    if (testimonials.every(({ display }) => !display)) {
+        return
+    }
+
     return (
         <>
             <div className='absolute left-0 w-fit -rotate-90  h-full whitespace-nowrap mr-auto -top-8 z-0'>
                 <h1 className='text-[80px] ml-[-60px] text-neutral-100 dark:text-[#1D1D1D] uppercase font-black'>TESTIMONIALS</h1>
             </div>
             <Slider {...settings} className='flex container justify-center'>
-                {testimonials.map(({ name, company, description, image }, i) => (
+                {testimonials.map(({ display, name, company, description, image }, i) => display && (
                     <div key={i} className='flex overflow-hidden w-full group flex-col  space-y-6'>
                         <div className="max-w-[50rem] py-20 h-full mx-auto grid grid-rows-1 md:grid-rows-1 md:grid-cols-5">
                             <div className="md:col-span-2 mx-auto relative">
-                                <div className="md:flex hidden w-[70%] z-[-1] h-[80%] group-hover:top-[40%] transition-all duration-700 delay-100 bg-gradient-to-r from-themeOrange to-themePink absolute rounded-full top-[-2rem] left-[-5rem]"></div>
-                                <div className="md:flex hidden absolute  transition-all duration-700 delay-100 group-hover:bottom-[60%] w-32 bottom-[-1rem] right-4 h-32 z-[-1] rounded-full shadow-lg bg-gradient-to-r from-themeOrange to-themePink"></div>
+                                <div className="md:flex hidden w-[70%] z-[-1] h-[80%] group-hover:top-[40%] transition-all duration-700 delay-100 bg-gradient-to-r from-themeOrange to-themePink absolute rounded-full top-[-2rem] left-[-5rem]" />
+                                <div className="md:flex hidden absolute  transition-all duration-700 delay-100 group-hover:bottom-[60%] w-32 bottom-[-1rem] right-4 h-32 z-[-1] rounded-full shadow-lg bg-gradient-to-r from-themeOrange to-themePink" />
                                 <img src={image || '/images/girl.png'} className='max-w-[9rem] max-h-[9rem] md:max-w-[18rem] object-cover w-full h-full md:max-h-[18rem] rounded-full' />
                             </div>
                             <div className="md:col-span-3 mt-6 md:mt-0 relative h-full flex flex-col">
