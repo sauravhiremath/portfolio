@@ -45,14 +45,14 @@ const index = () => {
                     </div>
                 </div>
                 <div className="flex items-center">
-                    <ul className=" pr-4 border-r hidden lg:flex text-textDark space-x-4 xl:space-x-8 dark:text-white items-center">
+                    <ul className="pr-4 hidden lg:flex text-textDark space-x-4 xl:space-x-8 dark:text-white items-center cursor-pointer">
                         {routeData.map((route, i) => (
                             <li
                                 key={i}
                                 data-aos="fade-down"
                                 data-aos-duration="500"
                                 data-aos-delay={`${i + 1}00`}
-                                className='link relative '>
+                                className='relative hover:bg-blue-200 dark:hover:bg-coolGray-700 px-3 py-2 rounded-md'>
                                 <Link href={route.slug}>{route.label}</Link>
                             </li>
                         ))}
@@ -62,12 +62,12 @@ const index = () => {
                             data-aos-delay={`800`}
                         >
                             <a href="/#contact" className="relative inline-flex text-md group">
-                                <span className="relative z-10 block px-4 py-2 overflow-hidden font-medium leading-tight text-coolGray-800 dark:text-blueGray-100 transition-colors duration-300 ease-out border-2 border-coolGray-900 dark:border-coolGray-50 rounded-md group-hover:text-white dark:group-hover:text-coolGray-900">
+                                <span className="relative z-10 block px-4 py-2 overflow-hidden font-medium leading-tight text-coolGray-800 dark:text-blueGray-100 transition-colors duration-300 ease-out border-2 border-coolGray-900 dark:border-coolGray-300 rounded-md group-hover:text-white dark:group-hover:text-coolGray-900">
                                     <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-md bg-coolGray-50 dark:bg-darkColor"/>
-                                    <span className="absolute left-0 w-40 h-40 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-coolGray-900 dark:bg-coolGray-50 group-hover:-rotate-180 ease"/>
+                                    <span className="absolute left-0 w-40 h-40 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-coolGray-900 dark:bg-coolGray-300 group-hover:-rotate-180 ease"/>
                                     <span className="relative">Contact Me</span>
                                 </span>
-                                <span className="absolute bottom-0 right-0 w-full h-10 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-coolGray-900 dark:bg-coolGray-50 rounded-md group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-md"/>
+                                <span className="absolute bottom-0 right-0 w-full h-10 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-coolGray-900 dark:bg-coolGray-300 rounded-md group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-md"/>
                             </a>
                         </li>
                     </ul>
@@ -78,12 +78,12 @@ const index = () => {
                             data-aos-delay={`800`}
                         >
                             <a href="/#contact" className="relative inline-flex text-md group">
-                                <span className="relative z-10 block px-4 py-2 overflow-hidden font-medium leading-tight text-coolGray-800 dark:text-blueGray-100 transition-colors duration-300 ease-out border-2 border-coolGray-900 dark:border-coolGray-50 rounded-md group-hover:text-white dark:group-hover:text-coolGray-900">
+                                <span className="relative z-10 block px-4 py-2 overflow-hidden font-medium leading-tight text-coolGray-800 dark:text-blueGray-100 transition-colors duration-300 ease-out border-2 border-coolGray-900 dark:border-coolGray-300 rounded-md group-hover:text-white dark:group-hover:text-coolGray-900">
                                     <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-md bg-coolGray-50 dark:bg-darkColor"/>
-                                    <span className="absolute left-0 w-40 h-40 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-coolGray-900 dark:bg-coolGray-50 group-hover:-rotate-180 ease"/>
+                                    <span className="absolute left-0 w-40 h-40 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-coolGray-900 dark:bg-coolGray-300 group-hover:-rotate-180 ease"/>
                                     <span className="relative">Contact Me</span>
                                 </span>
-                                <span className="absolute bottom-0 right-0 w-full h-10 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-coolGray-900 dark:bg-coolGray-50 rounded-md group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-md"/>
+                                <span className="absolute bottom-0 right-0 w-full h-10 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-coolGray-900 dark:bg-coolGray-300 rounded-md group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-md"/>
                             </a>
                         </li>
                     </ul>
@@ -91,10 +91,7 @@ const index = () => {
                         data-aos="fade-down"
                         data-aos-duration="500"
                         data-aos-delay={`900`}
-                        style={{
-                            backgroundImage: `${mounted && resolvedTheme && theme === 'light' ? '' : ` linear-gradient(135deg, #061120, #061120)`}`,
-                        }}
-                        onClick={toggleDarkMode} className="dark:border dark:border-slate-900 cursor-pointer text-lg p-3 mx-4 rounded-md text-darkColor dark:text-white bg-blue-100 hover:bg-blue-200 dark:bg-opacity-40 dark:hover:bg-opacity-20">
+                        onClick={toggleDarkMode} className="cursor-pointer text-lg p-3 mx-4 rounded-md text-darkColor dark:text-white bg-blue-100 hover:bg-blue-200 dark:bg-coolGray-300 dark:bg-opacity-60 dark:hover:bg-opacity-20">
                         {resolvedTheme === 'dark' ? <BsMoonStarsFill /> : <FiSun />}
                     </div>
                 </div>
