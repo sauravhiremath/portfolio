@@ -124,8 +124,8 @@
       "image": ""
     }
   ],
-  "journey": {
-    "1": {
+  "journey": [
+    {
       "type": "Education",
       "heading": "Vellore Institute of Technology (VIT), Vellore",
       "subheading": "B.Tech in Computer Science with specialization in Bioinformatics",
@@ -133,7 +133,7 @@
       "start": "2018",
       "end": "2022"
     },
-    "2": {
+    {
       "type": "Hackathon",
       "heading": "First International Hack Win",
       "subheading": "Won First prize for HexCambridge hosted by Cambridge University, London",
@@ -141,7 +141,7 @@
       "start": "Nov-2020",
       "end": "Nov-2020"
     },
-    "3": {
+    {
       "type": "Trip",
       "heading": "First International Trip",
       "subheading": "Visited my office in Israel and went to Jamaica for a fun getaway!",
@@ -149,7 +149,7 @@
       "start": "May-2022",
       "end": "May-2022"
     },
-    "4": {
+    {
       "type": "Media",
       "heading": "My story Published in Newspapers and TV",
       "subheading": "Story covered on plastic road construction by us. Maybe I am a celebrity {emoji}",
@@ -157,7 +157,7 @@
       "start": "Feb-2015",
       "end": "April-2015"
     }
-  },
+  ],
   "blogs": [
     {
       "heading": "Building a multiplayer game using WebSockets - Part 1",
