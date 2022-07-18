@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Fira+Sans:wght@800&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @font-face {
     font-family: 'Agustina Regular';
@@ -10,6 +7,12 @@
     src: local('Agustina Regular'), url('../public/fonts/Agustina.woff') format('woff');
     font-display: swap;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 
 
 @layer components {
@@ -190,4 +193,14 @@
         transform: rotate(360deg);
     }
 
+}
+
+.background-lines {
+    background-size: 100%;
+}
+
+@media (max-width:610px) {
+    .background-lines {
+        background-size: 300% !important;
+    }
 }
