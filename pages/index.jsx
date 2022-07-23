@@ -11,6 +11,7 @@ import AOS from 'aos'
 import "aos/dist/aos.css";
 import Brands from "../components/Brands";
 import { testimonials, journey, workExperience, blogs, about, contact } from '../portfolio'
+
 const Home = () => {
   const [offset, setOffset] = useState(0)
   typeof window != 'undefined' &&
@@ -30,23 +31,23 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Suspense>
-        <section id='home' className="container mx-auto ">
+        <section id='home' className="container mx-auto">
           {/* <Hero /> */}
           <Hero2 about={about} />
         </section>
-        <section id='opensource' className="max-w-[90rem] mx-auto pt-8 md:pt-16">
+        <section id='work' className="max-w-[90rem] mx-auto pt-8 md:pt-16">
           <Projects workExperience={workExperience} />
         </section>
-        <section id='experience' className=" pt-8 md:pt-16">
+        <section id='technologies' className=" pt-8 md:pt-16">
           <Brands />
         </section>
-        <section id='clients' className="pt-8 md:pt-16 max-w-[90rem] overflow-hidden mx-auto relative">
+        <section id='testimonials' className="pt-8 md:pt-16 max-w-[90rem] overflow-hidden mx-auto relative">
           <Testimonial testimonials={testimonials} />
         </section>
-        <section id='writing' className="max-w-[90rem] mx-auto py-8 md:py-32">
+        <section id='journey' className="max-w-[90rem] mx-auto py-8 md:py-32">
           <Journey journey={journey} />
         </section>
-        <section id='writing' className="py-8 md:py-16">
+        <section id='blogs' className="py-8 md:py-16">
           <Writing blogs={blogs} />
         </section>
       </Suspense>

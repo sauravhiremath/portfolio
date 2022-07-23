@@ -19,6 +19,11 @@
     .container {
         @apply max-w-[80rem] !w-full mx-auto px-4 !important;
     }
+
+    .stripe-pattern {
+        background-size: 5rem 5rem;
+        background-image: linear-gradient(45deg, #454545 25%, #e6f076 25%, #e6f076 50%, #454545 50%, #454545 75%, #e6f076 75%, #e6f076 100%);
+    }
 }
 
 .austina {
