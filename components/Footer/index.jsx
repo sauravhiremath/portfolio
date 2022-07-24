@@ -8,10 +8,6 @@ const index = ({ contact }) => {
     useEffect(() => {
         setMounted(true)
     }, [])
-    // { icon: <AiOutlineInstagram />, href: 'https://www.instagram.com/sauravv_404/' },
-    // { icon: <AiOutlineLinkedin />, href: 'https://www.linkedin.com/in/sauravmh/' },
-    // { icon: <AiFillGithub />, href: 'https://github.com/sauravhiremath/' },
-    // { icon: <AiOutlineTwitter />, href: 'https://twitter.com/sauravmh/' },
     return (
         <div
             style={{

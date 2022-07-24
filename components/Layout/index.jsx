@@ -3,7 +3,7 @@ import Navbar from '../Navbar'
 import Footer from '../Footer'
 import { useTheme } from 'next-themes'
 
-const index = ({ children, contact }) => {
+const index = ({ children, highlightedLink, contact }) => {
     const [mounted, setMounted] = useState(false)
     const { setTheme, resolvedTheme, theme } = useTheme()
 
@@ -31,7 +31,7 @@ const index = ({ children, contact }) => {
                     }}
                     className="!hidden lg:!flex  fixed ball z-10 right-0 bottom-0 hue-rotate bg-transparent min-w-[20rem] min-h-[20rem] " >
                 </div>
-                <Navbar />
+                <Navbar highlightedLink={highlightedLink} />
                 <main className='z-20 min-h-screen'>
                     {children}
                 </main>

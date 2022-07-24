@@ -7,7 +7,8 @@ import { routeData } from '../routeData'
 import Link from 'next/link';
 import NavDrawer from './NavDrawer';
 import Logo from '../utils/Logo';
-const index = () => {
+import { useRouter } from 'next/router';
+const index = ({ highlightedLink }) => {
     const [mounted, setMounted] = useState(false)
     const { setTheme, resolvedTheme, theme } = useTheme()
 
@@ -26,7 +27,10 @@ const index = () => {
 
     return mounted && (
         <div
-            className='bg-white dark:bg-[#0D0F12] py-1 w-full z-50 h-full backdrop-blur-md sticky inset-0'>
+            style={{
+                background: `${theme && mounted && theme === 'light' ? 'linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5))' : 'linear-gradient(rgba(2,4,12,0.5), rgba(2,4,12,0.5))'}`
+            }}
+            className='backdrop-blur-md py-1 w-full z-50 h-full sticky inset-0'>
             <div className="w-0">
                 <NavDrawer open={navOpen} setOpen={setNavOpen} />
             </div>
@@ -36,9 +40,6 @@ const index = () => {
                         <RiMenu2Line />
                     </div>
                     <div className=""
-                        data-aos="zoom-in-down"
-                        data-aos-delay={`100`}
-                        data-aos-duration="500"
                     >
                         <Logo theme={theme} />
                     </div>
@@ -48,17 +49,11 @@ const index = () => {
                         {routeData.map((route, i) => (
                             <li
                                 key={i}
-                                data-aos="fade-down"
-                                data-aos-duration="500"
-                                data-aos-delay={`${i + 1}00`}
-                                className='relative hover:bg-blue-200 dark:hover:bg-coolGray-700 px-3 py-2 rounded-md'>
+                                className={`relative hover:bg-blue-200 ${highlightedLink === route.slug ? 'dark:bg-coolGray-700' : 'bg-transparent'} dark:hover:bg-coolGray-700 px-3 py-2 rounded-md`}>
                                 <Link href={route.slug}>{route.label}</Link>
                             </li>
                         ))}
                         <li
-                            data-aos="fade-down"
-                            data-aos-duration="500"
-                            data-aos-delay={`800`}
                         >
                             <a href="/#contact" className="relative inline-flex text-md group">
                                 <span className="relative z-10 block px-4 py-2 overflow-hidden font-medium leading-tight text-coolGray-800 dark:text-blueGray-100 transition-colors duration-300 ease-out border-2 border-coolGray-900 dark:border-coolGray-300 rounded-md group-hover:text-white dark:group-hover:text-coolGray-900">
@@ -72,9 +67,6 @@ const index = () => {
                     </ul>
                     <ul className='hidden sm:flex lg:hidden'>
                         <li
-                            data-aos="fade-down"
-                            data-aos-duration="500"
-                            data-aos-delay={`800`}
                         >
                             <a href="/#contact" className="relative inline-flex text-md group">
                                 <span className="relative z-10 block px-4 py-2 overflow-hidden font-medium leading-tight text-coolGray-800 dark:text-blueGray-100 transition-colors duration-300 ease-out border-2 border-coolGray-900 dark:border-coolGray-300 rounded-md group-hover:text-white dark:group-hover:text-coolGray-900">
@@ -87,9 +79,6 @@ const index = () => {
                         </li>
                     </ul>
                     <div
-                        data-aos="fade-down"
-                        data-aos-duration="500"
-                        data-aos-delay={`900`}
                         onClick={toggleDarkMode} className="cursor-pointer text-lg p-3 mx-4 rounded-md text-darkColor dark:text-white bg-blue-100 hover:bg-blue-200 dark:bg-coolGray-300 dark:bg-opacity-60 dark:hover:bg-opacity-20">
                         {resolvedTheme === 'dark' ? <BsMoonStarsFill /> : <FiSun />}
                     </div>
