@@ -12,6 +12,9 @@ import "aos/dist/aos.css";
 import Brands from "../components/Brands";
 import { testimonials, journey, workExperience, blogs, about, contact } from '../portfolio'
 import { Waypoint } from 'react-waypoint'
+
+
+
 const Home = () => {
   const [offset, setOffset] = useState(0)
   typeof window != 'undefined' &&
@@ -45,18 +48,17 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Suspense>
-        <section id='home' className="container mx-auto ">
+        <section id='home' className="container mx-auto">
           {/* <Hero /> */}
           <Hero2 about={about} />
         </section>
         <section id='work' className="max-w-[90rem] mx-auto pt-8 md:pt-16">
           <Projects workExperience={workExperience} />
         </section>
-
         <section id='technologies' className=" pt-8 md:pt-16">
           <Brands />
         </section>
-        <section id='clients' className="pt-8 md:pt-16 max-w-[90rem] overflow-hidden mx-auto relative">
+        <section id='testimonials' className="pt-8 md:pt-16 max-w-[90rem] overflow-hidden mx-auto relative">
           <Testimonial testimonials={testimonials} />
         </section>
         <section id='journey' className="max-w-[90rem] mx-auto py-8 md:py-32">
