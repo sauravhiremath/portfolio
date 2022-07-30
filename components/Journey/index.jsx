@@ -68,7 +68,7 @@ const index = ({ journey }) => {
                             style={{
                                 boxShadow: '0 0 50px #E33239'
                             }}
-                            className="absolute flex justify-center rounded-2xl w-[2px] left-[14rem] shadow-2xl top-0 h-[98%]  bg-[#E33239]">
+                            className="absolute flex justify-center rounded-2xl w-[2px] left-[6rem] md:left-[14rem] shadow-2xl top-0 h-[98%]  bg-[#E33239]">
                             <TiArrowSortedDown className='text-2xl absolute text-[#E33239] top-[-2rem]' />
                         </div>
                         {journey.map((data, i) => (
