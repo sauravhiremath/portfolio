@@ -4,7 +4,7 @@ import Button from '../utils/Button'
 import AOS from 'aos'
 import "aos/dist/aos.css";
 import { useTheme } from 'next-themes';
-import {CurvedArrow, Highlighter} from './highlighter'
+import { CurvedArrow, Highlighter } from './highlighter'
 
 const Hero = ({ about }) => {
 
@@ -36,19 +36,16 @@ const Hero = ({ about }) => {
 
         <div
             className='w-full lg:max-h-[100%] mx-auto bg-fixed !overflow-hidden top-0 py-10 pt-16 max-h-screen rounded-lg min-h-[35rem]'
-        // style={{
-        //     backgroundImage: `${mounted && resolvedTheme && theme === 'light' ? 'linear-gradient(135deg, rgba(243,92,107,0.2), #f8efff 55%, rgba(252,95,46,0.2))' : ` linear-gradient(135deg, rgba(11,36,58, 0.5), #030611 45%,  rgba(11,36,58, 0.5))`}`,
-        // }}
         >
             <div className="grid relative grid-cols-1 md:grid-cols-6 items-center">
                 <div className="animation-rotate opacity-40 dark:opacity-5 absolute top-[-100%] right-0">
                     <img src='/images/ellipse-white.png' />
                 </div>
                 <div className="col-span-1 md:col-span-4 md:space-y-2 flex flex-col">
-                    <h1 className='text-[27px] md:text-6xl firaCode relative text-coolGray-800 dark:text-blueGray-100' >
+                    <h1 className='text-[27px] md:text-5xl xl:text-6xl firaCode relative text-coolGray-800 dark:text-blueGray-100' >
                         <span className='z-20 relative'>Work</span>
                         <div className="absolute bottom-0 z-10 hidden md:flex">
-                            <Highlighter theme={theme} type='yellow' props={{ viewbox: "0 0 219 66", height: "48px" }}/>
+                            <Highlighter theme={theme} type='yellow' props={{ viewbox: "0 0 219 66", height: "48px" }} />
                         </div>
                         <div className="absolute bottom-2 z-10 md:hidden flex">
                             <Highlighter theme={theme} type='yellow' props={{ viewbox: "0 0 219 66", height: "24px" }} />
@@ -57,7 +54,7 @@ const Hero = ({ about }) => {
                             by Day.
                         </span>
                     </h1>
-                    <h1 className='text-[27px] md:text-6xl firaCode relative text-coolGray-800 dark:text-white' >
+                    <h1 className='text-[27px] md:text-5xl xl:text-6xl firaCode relative text-coolGray-800 dark:text-white' >
                         <span className='z-20 relative'>Game</span>
                         <div className="absolute bottom-0 z-10 hidden md:flex">
                             <Highlighter theme={theme} type='red' props={{ viewbox: "0 0 202 58", height: "48px" }} />
@@ -69,7 +66,7 @@ const Hero = ({ about }) => {
                             by night.
                         </span>
                     </h1>
-                    <h1 className='text-[27px] flex whitespace-nowrap md:flex-nowrap md:text-6xl firaCode text-coolGray-800 dark:text-white' >
+                    <h1 className='text-[27px] flex whitespace-nowrap md:flex-nowrap md:text-5xl xl:text-6xl firaCode text-coolGray-800 dark:text-white' >
                         <span className=' mr-2 md:mr-4'>
                             And a Full-time
                         </span>

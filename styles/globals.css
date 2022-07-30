@@ -40,9 +40,36 @@
         @apply max-w-[80rem] !w-full mx-auto px-4 !important;
     }
 
-    .stripe-pattern {
-        background-size: 5rem 5rem;
-        background-image: linear-gradient(45deg, #454545 25%, #e6f076 25%, #e6f076 50%, #454545 50%, #454545 75%, #e6f076 75%, #e6f076 100%);
+    .stripe-pattern-violet {
+        background: repeating-linear-gradient(-45deg,
+                #9F76FE,
+                #9F76FE 15px,
+                #A680FF 15px,
+                #A680FF 30px);
+    }
+
+    .stripe-pattern-yellow {
+        background: repeating-linear-gradient(-45deg,
+                #F9BA5E,
+                #F9BA5E 15px,
+                #FCBF68 15px,
+                #FCBF68 30px);
+    }
+
+    .stripe-pattern-red {
+        background: repeating-linear-gradient(-45deg,
+                #FF777E,
+                #FF777E 15px,
+                #FE6E73 15px,
+                #FE6E73 30px);
+    }
+
+    .stripe-pattern-black {
+        background: repeating-linear-gradient(-45deg,
+                #191A21,
+                #191A21 15px,
+                #1D1E24 15px,
+                #1D1E24 30px);
     }
 }
 

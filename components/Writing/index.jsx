@@ -95,45 +95,6 @@ const index = ({ blogs }) => {
         ]
     };
     console.log(blogs)
-    // const writingPosts = [
-    //     {
-    //         title: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, perspiciatis.',
-    //         description: ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet excepturi cupiditate perferendis possimus itaque quas praesentium ex, ea odit fugit?',
-    //         imageUrl: '/images/writing.png',
-    //         link: 'https://blog.sauravmh.com/socket-io-games-the-right-way-using-nodejs-and-react-not-a-chat-app-part-1/'
-    //     },
-    //     {
-    //         title: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, perspiciatis.',
-    //         description: ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet excepturi cupiditate perferendis possimus itaque quas praesentium ex, ea odit fugit?',
-    //         imageUrl: '/images/writing.png',
-    //         link: 'https://blog.sauravmh.com/socket-io-games-the-right-way-using-nodejs-and-react-not-a-chat-app-part-1/'
-    //     },
-    //     {
-    //         title: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, perspiciatis.',
-    //         description: ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet excepturi cupiditate perferendis possimus itaque quas praesentium ex, ea odit fugit?',
-    //         imageUrl: '/images/writing.png',
-    //         link: 'https://blog.sauravmh.com/socket-io-games-the-right-way-using-nodejs-and-react-not-a-chat-app-part-1/'
-    //     },
-    //     {
-    //         title: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, perspiciatis.',
-    //         description: ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet excepturi cupiditate perferendis possimus itaque quas praesentium ex, ea odit fugit?',
-    //         imageUrl: '/images/writing.png',
-    //         link: 'https://blog.sauravmh.com/socket-io-games-the-right-way-using-nodejs-and-react-not-a-chat-app-part-1/'
-    //     },
-    //     {
-    //         title: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, perspiciatis.',
-    //         description: ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet excepturi cupiditate perferendis possimus itaque quas praesentium ex, ea odit fugit?',
-    //         imageUrl: '/images/writing.png',
-    //         link: 'https://blog.sauravmh.com/socket-io-games-the-right-way-using-nodejs-and-react-not-a-chat-app-part-1/'
-    //     },
-    //     {
-    //         title: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, perspiciatis.',
-    //         description: ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet excepturi cupiditate perferendis possimus itaque quas praesentium ex, ea odit fugit?',
-    //         imageUrl: '/images/writing.png',
-    //         link: 'https://blog.sauravmh.com/socket-io-games-the-right-way-using-nodejs-and-react-not-a-chat-app-part-1/'
-    //     },
-    // ]
-
     const blogUrl = 'https://blog.sauravmh.com/socket-io-games-the-right-way-using-nodejs-and-react-not-a-chat-app-part-1/'
     const truncate = (text, sliceNumber) => {
         return (
