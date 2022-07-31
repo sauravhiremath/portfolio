@@ -25,8 +25,8 @@ const index = ({ journey }) => {
         '#F9BA5E', '#1D1E24',
     ]
     const positions = [
-        'left-[6rem] md:left-[14rem] top-[18rem]', 'left-[12rem] md:left-[15rem] top-[31rem]',
-        'left-[1rem] md:left-[15rem] top-[4.5rem]', 'left-[46rem] md:left-[60rem]  top-[9rem]',
+        'left-[4rem] md:left-[10rem] top-[18rem] min-w-[30rem] md:min-w-[40rem]', 'left-[10rem] md:left-[19rem]  min-w-[14rem] top-[31rem]',
+        'left-[1rem] md:left-[5rem] top-[4.5rem]', 'left-[46rem] md:left-[66rem] min-w-[20rem] top-[9rem]',
     ]
     const journeyRef = useRef()
     useEffect(() => {
@@ -52,27 +52,28 @@ const index = ({ journey }) => {
                     style={{
                         background: `${theme && mounted && theme === 'light' ? 'url(/images/lines-white.png), linear-gradient(rgba(233,233,233,0.3),rgba(233,233,233,0.3))' : 'url(/images/lines.png), linear-gradient(rgba(2,4,12,0.3), rgba(2,4,12,0.3))'}`
                     }}
-                    className="flex z-30 background-lines bg-repeat flex-col overflow-x-scroll  bg-red-500 container !px-0 rounded-lg w-[100%] !mt-[-70rem]">
+                    className="flex z-30 background-lines !bg-repeat flex-col overflow-x-scroll  bg-red-500 container !px-0 rounded-lg w-[100%] !mt-[-70rem]">
                     <div className="flex min-w-[100%] pt-8 flex-nowrap">
                         <div className='min-w-[6.5rem] md:min-w-[10rem]'>
                         </div>
                         {[22, 21, 20, 19, 18, 17, 16, 15, 14].map(yr => (
-                            <div className='min-w-[6.5rem] md:min-w-[10rem]'>
+                            <div className='min-w-[6.5rem] md:min-w-[9.4rem]'>
                                 {`20${yr}`}
                             </div>
                         ))}
-
+                        <div className='min-w-[4rem]'>
+                        </div>
                     </div>
                     <div ref={journeyRef} className="flex flex-nowrap relative w-full p-8 space-x-8 min-h-[45rem]">
                         <div
                             style={{
                                 boxShadow: '0 0 50px #E33239'
                             }}
-                            className="absolute flex justify-center rounded-2xl w-[2px] left-[6rem] md:left-[14rem] shadow-2xl top-0 h-[98%]  bg-[#E33239]">
+                            className="absolute flex z-30 justify-center rounded-2xl w-[2px] left-[6rem] md:left-[14rem] shadow-2xl top-0 h-[98%]  bg-[#E33239]">
                             <TiArrowSortedDown className='text-2xl absolute text-[#E33239] top-[-2rem]' />
                         </div>
                         {journey.map((data, i) => (
-                            <div className={`flex flex- 1 ${positions[i]} text-white absolute min-w-[20rem] justify-center items-start`}>
+                            <div className={`flex flex- 1 ${positions[i]} text-white absolute justify-center items-start`}>
                                 <div style={{ boxShadow: `0 6px 20px -10px ${shadows[i]}` }} className={`p-8 relative group rounded-lg w-full  min-h-[7rem]  ${bgColors[i]}`}>
                                     <h1 className='text-xl md:text-2xl font-bold mb-3'>
                                         {data.type}
@@ -80,7 +81,7 @@ const index = ({ journey }) => {
                                     <h1 className='text-base md:text-lmmng font-semibold'>
                                         {data.heading}
                                     </h1>
-                                    <div className={`left-[-10%] text-[#333] dark:text-neutral-300 w-[120%]  hidden group-hover:flex z-50 rounded-2xl ${i === 1 ? 'bottom-[110%]' : 'top-[110%]'} absolute`}>
+                                    <div className={`text-[#333] dark:text-neutral-300 min-w-[20rem] max-w-[30rem] hidden group-hover:flex z-50 rounded-2xl ${i === 1 ? 'bottom-[110%]' : 'top-[110%]'} absolute`}>
                                         <div className="shadow-lg z-20 rounded-2xl border-2 border-gray-200 dark:border-[#444] dark:bg-[#202120] bg-gray-50 flex relative flex-col p-6  w-full h-full space-y-4">
                                             <h1 className='text-xl md:text-2xl font-bold'>
                                                 {data.type}
