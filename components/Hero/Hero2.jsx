@@ -35,10 +35,10 @@ const Hero = ({ about }) => {
     return (
 
         <div
-            className='w-full lg:max-h-[100%] mx-auto bg-fixed !overflow-hidden top-0 py-10 pt-16 max-h-screen rounded-lg min-h-[35rem]'
+            className='w-full lg:max-h-[100%] mx-auto bg-fixed !overflow-hidden top-0 py-10 pt-16 max-h-screen rounded-lg min-h-[38rem]'
         >
             <div className="grid relative grid-cols-1 md:grid-cols-6 items-center">
-                <div className="animation-rotate opacity-40 dark:opacity-5 absolute top-[-100%] right-0">
+                <div className="animation-rotate opacity-40 dark:opacity-5 absolute top-[-80%] right-0">
                     <img src='/images/ellipse-white.png' />
                 </div>
                 <div className="col-span-1 md:col-span-4 md:space-y-2 flex flex-col">

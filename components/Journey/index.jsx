@@ -26,7 +26,7 @@ const index = ({ journey }) => {
     ]
     const positions = [
         'left-[6rem] md:left-[14rem] top-[18rem]', 'left-[12rem] md:left-[15rem] top-[31rem]',
-        'left-[1rem] md:left-[15rem] top-[4.5rem]', 'left-[46rem] md:left-[60rem] top-[9rem]',
+        'left-[1rem] md:left-[15rem] top-[4.5rem]', 'left-[46rem] md:left-[60rem]  top-[9rem]',
     ]
     const journeyRef = useRef()
     useEffect(() => {
