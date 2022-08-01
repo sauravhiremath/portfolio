@@ -48,77 +48,79 @@ const index = ({ journey }) => {
                             fill-opacity={theme === 'light' ? 0.1 : 0.02} />
                     </svg>
                 </div>
-                <div
-                    style={{
-                        background: `${theme && mounted && theme === 'light' ? 'url(/images/lines-white.png), linear-gradient(rgba(233,233,233,0.3),rgba(233,233,233,0.3))' : 'url(/images/lines.png), linear-gradient(rgba(2,4,12,0.3), rgba(2,4,12,0.3))'}`
-                    }}
-                    className="flex z-30 background-lines !bg-repeat flex-col overflow-x-scroll  bg-red-500 container !px-0 rounded-lg w-[100%] !mt-[-70rem]">
-                    <div className="flex min-w-[100%] pt-8 flex-nowrap">
-                        <div className='min-w-[6.5rem] md:min-w-[10rem]'>
-                        </div>
-                        {[22, 21, 20, 19, 18, 17, 16, 15, 14].map(yr => (
-                            <div className='min-w-[6.5rem] md:min-w-[9.4rem]'>
-                                {`20${yr}`}
+                <div className=" overflow-x-scroll flex z-30 background-lines !bg-repeat flex-col container !px-0 rounded-lg w-[100%] !mt-[-70rem]">
+                    <div
+                        style={{
+                            background: `${theme && mounted && theme === 'light' ? 'url(/images/lines-white.png), linear-gradient(rgba(233,233,233,0.3),rgba(233,233,233,0.3))' : 'url(/images/lines.png), linear-gradient(rgba(2,4,12,0.3), rgba(2,4,12,0.3))'}`
+                        }}
+                        className="flex z-30 background-lines !bg-repeat flex-col !px-0 rounded-lg w-fit">
+                        <div className="flex min-w-[100%] pt-8 flex-nowrap">
+                            <div className='min-w-[6.5rem] md:min-w-[10rem]'>
                             </div>
-                        ))}
-                        <div className='min-w-[4rem]'>
+                            {[22, 21, 20, 19, 18, 17, 16, 15, 14].map(yr => (
+                                <div className='min-w-[6.5rem] md:min-w-[9.4rem]'>
+                                    {`20${yr}`}
+                                </div>
+                            ))}
+                            <div className='min-w-[4rem]'>
+                            </div>
                         </div>
-                    </div>
-                    <div ref={journeyRef} className="flex flex-nowrap relative w-full p-8 space-x-8 min-h-[45rem]">
-                        <div
-                            style={{
-                                boxShadow: '0 0 50px #E33239'
-                            }}
-                            className="absolute flex z-30 justify-center rounded-2xl w-[2px] left-[6rem] md:left-[14rem] shadow-2xl top-0 h-[98%]  bg-[#E33239]">
-                            <TiArrowSortedDown className='text-2xl absolute text-[#E33239] top-[-2rem]' />
-                        </div>
-                        {journey.map((data, i) => (
-                            <div className={`flex flex- 1 ${positions[i]} text-white absolute justify-center items-start`}>
-                                <div style={{ boxShadow: `0 6px 20px -10px ${shadows[i]}` }} className={`p-8 relative group rounded-lg w-full  min-h-[7rem]  ${bgColors[i]}`}>
-                                    <h1 className='text-xl md:text-2xl font-bold mb-3'>
-                                        {data.type}
-                                    </h1>
-                                    <h1 className='text-base md:text-lmmng font-semibold'>
-                                        {data.heading}
-                                    </h1>
-                                    <div className={`text-[#333] dark:text-neutral-300 min-w-[20rem] max-w-[30rem] hidden group-hover:flex z-50 rounded-2xl ${i === 1 ? 'bottom-[110%]' : 'top-[110%]'} absolute`}>
-                                        <div className="shadow-lg z-20 rounded-2xl border-2 border-gray-200 dark:border-[#444] dark:bg-[#202120] bg-gray-50 flex relative flex-col p-6  w-full h-full space-y-4">
-                                            <h1 className='text-xl md:text-2xl font-bold'>
-                                                {data.type}
-                                            </h1>
-                                            <h1 className='text-lg md:text-xl font-bold'>
-                                                {data.heading}
-                                            </h1>
-                                            <p className='text-base md:text-lg'>
-                                                {data.subheading}
-                                            </p>
-                                            {data.type === 'Media' ?
-                                                <a href={data.description} className='items-center flex space-x-2 hover:space-x-4 text-lg hover:opacity-100 opacity-70 font-semibold'>
-                                                    <span>Read Article</span>
-                                                    <BsArrowRight />
-                                                </a>
-
-                                                :
-                                                <p className='text-sm md:text-base'>
-                                                    {data.description}
+                        <div ref={journeyRef} className="flex flex-nowrap relative w-full p-8 space-x-8 min-h-[45rem]">
+                            <div
+                                style={{
+                                    boxShadow: '0 0 50px #E33239'
+                                }}
+                                className="absolute flex z-30 justify-center rounded-2xl w-[2px] left-[6rem] md:left-[14rem] shadow-2xl top-0 h-[98%]  bg-[#E33239]">
+                                <TiArrowSortedDown className='text-2xl absolute text-[#E33239] top-[-2rem]' />
+                            </div>
+                            {journey.map((data, i) => (
+                                <div className={`flex flex- 1 ${positions[i]} text-white absolute justify-center items-start`}>
+                                    <div style={{ boxShadow: `0 6px 20px -10px ${shadows[i]}` }} className={`p-8 relative group rounded-lg w-full  min-h-[7rem]  ${bgColors[i]}`}>
+                                        <h1 className='text-xl md:text-2xl font-bold mb-3'>
+                                            {data.type}
+                                        </h1>
+                                        <h1 className='text-base md:text-lmmng font-semibold'>
+                                            {data.heading}
+                                        </h1>
+                                        <div className={`text-[#333] dark:text-neutral-300 min-w-[20rem] max-w-[30rem] hidden group-hover:flex z-50 rounded-2xl ${i === 1 ? 'bottom-[110%]' : 'top-[110%]'} absolute`}>
+                                            <div className="shadow-lg z-20 rounded-2xl border-2 border-gray-200 dark:border-[#444] dark:bg-[#202120] bg-gray-50 flex relative flex-col p-6  w-full h-full space-y-4">
+                                                <h1 className='text-xl md:text-2xl font-bold'>
+                                                    {data.type}
+                                                </h1>
+                                                <h1 className='text-lg md:text-xl font-bold'>
+                                                    {data.heading}
+                                                </h1>
+                                                <p className='text-base md:text-lg'>
+                                                    {data.subheading}
                                                 </p>
-                                            }
-                                            <div
-                                                style={{
-                                                    borderLeft: "20px solid transparent",
-                                                    borderRight: "20px solid transparent",
-                                                    borderTopWidth: "17px",
-                                                    left: 'calc(50% - 20px)'
-                                                }}
-                                                className={`z-[-1] ${i === 1 ? 'rotate-0 bottom-[-16.5px]' : 'rotate-180  top-[-33px]'} border-t dark:border-[#444] border-gray-200 absolute w-0 h-0`}
-                                            >
+                                                {data.type === 'Media' ?
+                                                    <a href={data.description} className='items-center flex space-x-2 hover:space-x-4 text-lg hover:opacity-100 opacity-70 font-semibold'>
+                                                        <span>Read Article</span>
+                                                        <BsArrowRight />
+                                                    </a>
+
+                                                    :
+                                                    <p className='text-sm md:text-base'>
+                                                        {data.description}
+                                                    </p>
+                                                }
+                                                <div
+                                                    style={{
+                                                        borderLeft: "20px solid transparent",
+                                                        borderRight: "20px solid transparent",
+                                                        borderTopWidth: "17px",
+                                                        left: 'calc(50% - 20px)'
+                                                    }}
+                                                    className={`z-[-1] ${i === 1 ? 'rotate-0 bottom-[-16.5px]' : 'rotate-180  top-[-33px]'} border-t dark:border-[#444] border-gray-200 absolute w-0 h-0`}
+                                                >
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
 
+                        </div>
                     </div>
                 </div>
             </div>
