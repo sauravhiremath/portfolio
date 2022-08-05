@@ -25,8 +25,8 @@ const index = ({ journey }) => {
         '#F9BA5E', '#1D1E24',
     ]
     const positions = [
-        'left-[4rem] md:left-[10rem] top-[18rem] min-w-[30rem] md:min-w-[40rem]', 'left-[10rem] md:left-[19rem]  min-w-[14rem] top-[31rem]',
-        'left-[1rem] md:left-[5rem] top-[4.5rem]', 'left-[46rem] md:left-[66rem] min-w-[20rem] top-[9rem]',
+        'left-[3rem] md:left-[13rem] top-[18rem] min-w-[30rem] md:min-w-[40rem]', 'left-[10rem] md:left-[19rem]  min-w-[14rem] top-[31rem]',
+        'left-[4rem] md:left-[15rem] top-[4.5rem]', 'left-[46rem] md:left-[66rem] min-w-[20rem] top-[9rem]',
     ]
     const journeyRef = useRef()
     useEffect(() => {
@@ -48,18 +48,19 @@ const index = ({ journey }) => {
                             fill-opacity={theme === 'light' ? 0.1 : 0.02} />
                     </svg>
                 </div>
-                <div className=" overflow-x-scroll flex z-30 background-lines !bg-repeat flex-col container !px-0 rounded-lg w-[100%] !mt-[-70rem]">
+                <div className=" overflow-x-scroll flex z-30 !bg-repeat flex-col container !px-0 rounded-lg w-[100%] !mt-[-70rem]">
                     <div
                         style={{
-                            background: `${theme && mounted && theme === 'light' ? 'url(/images/lines-white.png), linear-gradient(rgba(233,233,233,0.3),rgba(233,233,233,0.3))' : 'url(/images/lines.png), linear-gradient(rgba(2,4,12,0.3), rgba(2,4,12,0.3))'}`
+                            background:
+                                `${theme && mounted && theme === 'light' ? 'url(/images/lines-white.png), linear-gradient(rgba(233,233,233,0.3),rgba(233,233,233,0.3))' : 'url(/images/lines.png), linear-gradient(rgba(2,4,12,0.3), rgba(2,4,12,0.3))'}`
                         }}
                         className="flex z-30 background-lines !bg-repeat flex-col !px-0 rounded-lg w-fit">
                         <div className="flex min-w-[100%] pt-8 flex-nowrap">
-                            <div className='min-w-[6.5rem] md:min-w-[10rem]'>
+                            <div className='min-w-[2.5rem] md:min-w-[10rem]'>
                             </div>
-                            {[22, 21, 20, 19, 18, 17, 16, 15, 14].map(yr => (
-                                <div className='min-w-[6.5rem] md:min-w-[9.4rem]'>
-                                    {`20${yr}`}
+                            {[23, 22, 21, 20, 19, 18, 17, 16, 15, 14].map(yr => (
+                                <div className='min-w-[6.5rem] flex justify-start md:justify-center md:min-w-[9.4rem]'>
+                                    <span className='pr-2'>{`20${yr}`}</span>
                                 </div>
                             ))}
                             <div className='min-w-[4rem]'>
@@ -70,8 +71,8 @@ const index = ({ journey }) => {
                                 style={{
                                     boxShadow: '0 0 50px #E33239'
                                 }}
-                                className="absolute flex z-30 justify-center rounded-2xl w-[2px] left-[6rem] md:left-[14rem] shadow-2xl top-0 h-[98%]  bg-[#E33239]">
-                                <TiArrowSortedDown className='text-2xl absolute text-[#E33239] top-[-2rem]' />
+                                className="absolute flex z-30 justify-center rounded-2xl w-[2px] left-[3rem] md:left-[14rem] shadow-2xl top-0 h-[98%]  bg-[#E33239]">
+                                <TiArrowSortedDown className='text-2xl absolute text-[#E33239] top-[-2.5rem]' />
                             </div>
                             {journey.map((data, i) => (
                                 <div className={`flex flex- 1 ${positions[i]} text-white absolute justify-center items-start`}>
