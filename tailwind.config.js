@@ -20,7 +20,8 @@ module.exports = {
         'themePink': '#F35C6C',
         'themeOrange': '#FD5F28',
         'darkThemeTextColor': '#C2C9E4',
-        'lightGray': '#F9FAFB'
+        'lightGray': '#F9FAFB',
+        'buttonDark': '#212324'
       },
       scale: {
         '105': '1.05',

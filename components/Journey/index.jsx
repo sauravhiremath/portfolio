@@ -25,14 +25,17 @@ const index = ({ journey }) => {
         '#F9BA5E', '#1D1E24',
     ]
     const positions = [
-        'left-[3rem] md:left-[6rem] top-[18rem] min-w-[30rem] md:min-w-[40rem]', 'left-[10rem] md:left-[19rem]  min-w-[14rem] top-[31rem]',
-        'left-[2rem] md:left-[5rem] top-[4.5rem]', 'left-[46rem] md:left-[66rem] min-w-[20rem] top-[9rem]',
+        'left-[3rem] md:left-[7.5rem] top-[18rem] min-w-[30rem] md:min-w-[47rem]', 'left-[10rem] max-w-[10rem] md:left-[26rem] top-[31rem]',
+        'left-[2rem] md:left-[7rem] top-[4.5rem] max-w-[10rem]', 'left-[46rem] md:left-[73rem] max-w-[10rem] top-[9rem]',
     ]
     const journeyRef = useRef()
     useEffect(() => {
         typeof window != 'undefined' &&
             journeyRef.current.scrollTo(200, 200)
     }, [])
+    const currentMonth = new Date().getMonth() + 1;
+    const linePosition = 18 - currentMonth * 0.65 + 'rem'
+
     return (
         <Waypoint>
             <div className="flex flex-col ">
@@ -67,14 +70,15 @@ const index = ({ journey }) => {
                         <div ref={journeyRef} className="flex flex-nowrap relative w-full p-8 space-x-8 min-h-[45rem]">
                             <div
                                 style={{
-                                    boxShadow: '0 0 50px #E33239'
+                                    boxShadow: '0 0 50px #E33239',
+                                    left: linePosition
                                 }}
-                                className="absolute flex z-30 justify-center rounded-2xl w-[2px] left-[3rem] md:left-[4.5rem] shadow-2xl top-0 h-[98%]  bg-[#E33239]">
+                                className={`absolute flex z-30 justify-center rounded-2xl w-[2px] left-[3rem] shadow-2xl top-0 h-[98%]  bg-[#E33239]`}>
                                 <TiArrowSortedDown className='text-2xl absolute text-[#E33239] top-[-2.5rem]' />
                             </div>
                             {journey.map((data, i) => (
                                 <div className={`flex flex- 1 ${positions[i]} text-white absolute justify-center items-start`}>
-                                    <div style={{ boxShadow: `0 6px 20px -10px ${shadows[i]}` }} className={`p-8 relative group rounded-lg w-full  min-h-[7rem]  ${bgColors[i]}`}>
+                                    <div style={{ boxShadow: `0 6px 20px -10px ${shadows[i]}` }} className={`${i === 0 ? 'p-8' : "p-4"} relative group rounded-lg w-full  min-h-[7rem]  ${bgColors[i]}`}>
                                         <h1 className='text-xl md:text-2xl font-bold mb-3'>
                                             {data.type}
                                         </h1>

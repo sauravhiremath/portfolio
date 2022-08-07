@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useTheme } from "next-themes";
 import { FiSun } from "react-icons/fi";
+import { HiOutlineMailOpen } from "react-icons/hi";
 import { BsMoonStarsFill } from "react-icons/bs";
 import { RiMenu2Line } from "react-icons/ri";
 import { routeData } from '../routeData'
 import Link from 'next/link';
 import NavDrawer from './NavDrawer';
 import Logo from '../utils/Logo';
-import { useRouter } from 'next/router';
 const index = ({ highlightedLink }) => {
     const [mounted, setMounted] = useState(false)
     const { setTheme, resolvedTheme, theme } = useTheme()
@@ -19,10 +19,6 @@ const index = ({ highlightedLink }) => {
     const toggleDarkMode = function () {
         mounted && setTheme(resolvedTheme === 'dark' ? "light" : "dark")
     }
-    useEffect(() => {
-        console.log('theme', theme, 'resolvedTheme', resolvedTheme)
-    }, [mounted])
-
     const [navOpen, setNavOpen] = useState(false)
 
     return mounted && (
@@ -32,13 +28,14 @@ const index = ({ highlightedLink }) => {
             }}
             className='backdrop-blur-md py-1 w-full z-50 h-full sticky inset-0'>
             <div className="w-0">
-                <NavDrawer open={navOpen} setOpen={setNavOpen} />
+                <NavDrawer toggleDarkMode={toggleDarkMode} resolvedTheme={resolvedTheme} setTheme={setTheme} open={navOpen} setOpen={setNavOpen} />
             </div>
             <div className="container flex items-center h-full py-2 md:py-3 lg:py-4 justify-between">
                 <div className="flex items-center space-x-4">
-                    <div onClick={() => setNavOpen(!navOpen)} className={`cursor-pointer flex lg:hidden  bg-gradient-to-r   from-themePink font-medium to-themeOrange text-white hover:rotate-180 text-lg  p-3 transition-all duration-300 rounded-full ml-4`}>
+                    <div onClick={() => setNavOpen(!navOpen)} className={`cursor-pointer flex lg:hidden text-darkColor bg-blue-100 hover:bg-blue-200 dark:text-white dark:hover:bg-[#333] dark:border dark:border-[#444] dark:shadow-sm dark:bg-buttonDark dark:bg-opacity-60 dark:hover:bg-opacity-20 text-lg hover:rotate-180 p-3 transition-all duration-300 rounded-full `}>
                         <RiMenu2Line />
                     </div>
+
                     <div className=""
                     >
                         <Logo theme={theme} />
@@ -79,9 +76,14 @@ const index = ({ highlightedLink }) => {
                         </li>
                     </ul>
                     <div
-                        onClick={toggleDarkMode} className="cursor-pointer text-lg p-3 mx-4 rounded-md text-darkColor dark:text-white bg-blue-100 hover:bg-blue-200 dark:bg-coolGray-300 dark:bg-opacity-60 dark:hover:bg-opacity-20">
+                        onClick={toggleDarkMode} className="cursor-pointer  hidden  lg:flex text-lg p-3 mx-4 rounded-md text-darkColor bg-blue-100 hover:bg-blue-200 dark:text-white dark:hover:bg-[#333] dark:border dark:border-[#444] dark:shadow-sm dark:bg-buttonDark dark:bg-opacity-60 dark:hover:bg-opacity-20">
                         {resolvedTheme === 'dark' ? <BsMoonStarsFill /> : <FiSun />}
                     </div>
+                    <a
+                        href='mailto:contact@sauravmh.com'
+                        className="cursor-pointer flex sm:hidden text-lg p-2 rounded-md text-darkColor bg-blue-100 hover:bg-blue-200 dark:text-white dark:hover:bg-[#333] dark:border dark:border-[#444] dark:shadow-sm dark:bg-buttonDark dark:bg-opacity-60 dark:hover:bg-opacity-20">
+                        <HiOutlineMailOpen className='text-2xl' />
+                    </a>
                 </div>
             </div>
         </div >

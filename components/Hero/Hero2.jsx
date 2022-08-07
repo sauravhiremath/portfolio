@@ -48,7 +48,7 @@ const Hero = ({ about }) => {
                             <Highlighter theme={theme} type='yellow' props={{ viewbox: "0 0 219 66", height: "48px" }} />
                         </div>
                         <div className="absolute bottom-2 z-10 md:hidden flex">
-                            <Highlighter theme={theme} type='yellow' props={{ viewbox: "0 0 219 66", height: "24px" }} />
+                            <Highlighter theme={theme} type='yellow' props={{ viewbox: "0 0 202 58", height: "21px" }} />
                         </div>
                         <span className='ml-2 md:ml-4'>
                             by Day.
@@ -60,7 +60,7 @@ const Hero = ({ about }) => {
                             <Highlighter theme={theme} type='red' props={{ viewbox: "0 0 202 58", height: "48px" }} />
                         </div>
                         <div className="absolute bottom-2 z-10 md:hidden flex">
-                            <Highlighter theme={theme} type='red' props={{ viewbox: "0 0 202 58", height: "24px" }} />
+                            <Highlighter theme={theme} type='red' props={{ viewbox: "0 0 202 58", height: "21px" }} />
                         </div>
                         <span className='ml-2 md:ml-4'>
                             by night.
