@@ -4,11 +4,12 @@ import { FaGraduationCap } from 'react-icons/fa'
 import React, { useEffect, useRef, useState } from 'react'
 import { Waypoint } from 'react-waypoint'
 import { BsArrowRight } from 'react-icons/bs'
+import { useMediaQuery } from '@material-ui/core'
 
 const index = ({ journey }) => {
     const [mounted, setMounted] = useState(false)
     const { theme } = useTheme()
-
+    const matches = useMediaQuery('(max-width:630px)')
     useEffect(() => {
         setMounted(true)
     }, [])
@@ -26,7 +27,7 @@ const index = ({ journey }) => {
     ]
     const positions = [
         'left-[3rem] md:left-[7.5rem] top-[18rem] min-w-[30rem] md:min-w-[47rem]', 'left-[10rem] max-w-[10rem] md:left-[26rem] top-[31rem]',
-        'left-[2rem] md:left-[7rem] top-[4.5rem] max-w-[10rem]', 'left-[46rem] md:left-[73rem] max-w-[10rem] top-[9rem]',
+        'left-[4rem] md:left-[7rem] top-[4.5rem] max-w-[7rem] md:max-w-[10rem]', 'left-[46rem] md:left-[73rem] max-w-[10rem] top-[9rem]',
     ]
     const journeyRef = useRef()
     useEffect(() => {
@@ -34,8 +35,7 @@ const index = ({ journey }) => {
             journeyRef.current.scrollTo(200, 200)
     }, [])
     const currentMonth = new Date().getMonth() + 1;
-    const linePosition = 18 - currentMonth * 0.65 + 'rem'
-
+    const linePosition = typeof window != 'undefined' && window.innerWidth <= 640 ? 17 - currentMonth * 0.99 + 'rem' : 18 - currentMonth * 0.65 + 'rem'
     return (
         <Waypoint>
             <div className="flex flex-col ">
@@ -61,7 +61,7 @@ const index = ({ journey }) => {
                         <div className="flex min-w-[100%] pt-8 flex-nowrap">
                             {[23, 22, 21, 20, 19, 18, 17, 16, 15, 14].map(yr => (
                                 <div className='min-w-[6.5rem] flex justify-center md:min-w-[9.4rem]'>
-                                    <span className='pr-2'>{`20${yr}`}</span>
+                                    <span className='pr-2'>{yr != 23 && `20${yr}`}</span>
                                 </div>
                             ))}
                             <div className='min-w-[4rem]'>
