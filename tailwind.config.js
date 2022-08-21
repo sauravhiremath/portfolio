@@ -1,7 +1,33 @@
 const colors = require('tailwindcss/colors');
+const colorSafeList = []
+
+// Skip these to avoid a load of deprecated warnings when tailwind starts up
+// const deprecated = ["lightBlue", "warmGray", "trueGray", "coolGray", "blueGray"]
+const deprecated = []
+
+for (const colorName in colors) {
+  if (deprecated.includes(colorName)) {
+    continue
+  }
+
+  const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]
+
+  const pallette = colors[colorName]
+
+  if (typeof pallette === "object") {
+    shades.forEach((shade) => {
+      if (shade in pallette) {
+        colorSafeList.push(`from-${colorName}-${shade}`)
+        colorSafeList.push(`via-${colorName}-${shade}`)
+        colorSafeList.push(`to-${colorName}-${shade}`)
+      }
+    })
+  }
+}
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  safelist: colorSafeList,
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',

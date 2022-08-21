@@ -45,10 +45,10 @@ const Hero = ({ about }) => {
                     <h1 className='text-[27px] md:text-5xl xl:text-6xl firaCode relative text-coolGray-800 dark:text-blueGray-100' >
                         <span className='z-20 relative'>Work</span>
                         <div className="absolute bottom-0 z-10 hidden md:flex">
-                            <Highlighter theme={theme} type='yellow' props={{ viewbox: "0 0 219 66", height: "48px" }} />
+                            <Highlighter theme={theme} type='yellow' props={{ viewBox: "0 0 219 66", height: "48px" }} />
                         </div>
                         <div className="absolute bottom-2 z-10 md:hidden flex">
-                            <Highlighter theme={theme} type='yellow' props={{ viewbox: "0 0 202 58", height: "21px" }} />
+                            <Highlighter theme={theme} type='yellow' props={{ viewBox: "0 0 202 58", height: "21px" }} />
                         </div>
                         <span className='ml-2 md:ml-4'>
                             by Day.
@@ -57,10 +57,10 @@ const Hero = ({ about }) => {
                     <h1 className='text-[27px] md:text-5xl xl:text-6xl firaCode relative text-coolGray-800 dark:text-white' >
                         <span className='z-20 relative'>Game</span>
                         <div className="absolute bottom-0 z-10 hidden md:flex">
-                            <Highlighter theme={theme} type='red' props={{ viewbox: "0 0 202 58", height: "48px" }} />
+                            <Highlighter theme={theme} type='red' props={{ viewBox: "0 0 202 58", height: "48px" }} />
                         </div>
                         <div className="absolute bottom-2 z-10 md:hidden flex">
-                            <Highlighter theme={theme} type='red' props={{ viewbox: "0 0 202 58", height: "21px" }} />
+                            <Highlighter theme={theme} type='red' props={{ viewBox: "0 0 202 58", height: "21px" }} />
                         </div>
                         <span className='ml-2 md:ml-4'>
                             by night.
@@ -75,10 +75,10 @@ const Hero = ({ about }) => {
                                 Overthinker
                             </span>
                             <div className="absolute hidden md:flex bottom-0 z-10">
-                                <Highlighter theme={theme} type='blue' props={{ viewbox: "0 0 421 70", height: "58px" }} />
+                                <Highlighter theme={theme} type='blue' props={{ viewBox: "0 0 421 70", height: "58px" }} />
                             </div>
                             <div className="absolute  md:hidden flex bottom-0 z-10">
-                                <Highlighter theme={theme} type='blue' props={{ viewbox: "0 0 421 70", height: "38px" }} />
+                                <Highlighter theme={theme} type='blue' props={{ viewBox: "0 0 421 70", height: "38px" }} />
                             </div>
                         </div>
                     </h1>

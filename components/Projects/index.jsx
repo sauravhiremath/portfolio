@@ -2,6 +2,8 @@ import { useTheme } from 'next-themes'
 import React, { createRef, Suspense, useEffect, useState } from 'react'
 import { BsArrow90DegRight, BsArrowRight } from 'react-icons/bs'
 import { Waypoint } from 'react-waypoint';
+import Image from "next/image";
+
 const Projects = ({ workExperience }) => {
     // const allProjects = [
     //     {
@@ -102,7 +104,7 @@ const Projects = ({ workExperience }) => {
                 <div className={`sticky  top-56`}>
                     <svg width="166" height="624" viewBox="0 0 166 624" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M164 572.78L9.99999 623.16V586.2L146.4 542.42V560.9L9.99999 515.14V482.14L146.4 438.14V455.96L9.99999 411.08V376.98L164 427.36V465.64L44.32 504.58V494.46L164 534.5V572.78ZM165.76 311.992C165.76 324.606 163.12 335.826 157.84 345.652C152.56 355.332 145.373 363.032 136.28 368.752C127.04 374.326 116.553 377.112 104.82 377.112C92.94 377.112 82.4533 374.326 73.36 368.752C64.12 363.032 56.9333 355.332 51.8 345.652C46.52 335.826 43.88 324.606 43.88 311.992C43.88 299.526 46.52 288.379 51.8 278.552C56.9333 268.726 64.0467 261.026 73.14 255.452C82.2333 249.879 92.7933 247.092 104.82 247.092C116.553 247.092 127.04 249.879 136.28 255.452C145.373 261.026 152.56 268.726 157.84 278.552C163.12 288.379 165.76 299.526 165.76 311.992ZM137.6 311.992C137.6 306.272 136.28 301.139 133.64 296.592C131 292.046 127.26 288.452 122.42 285.812C117.433 283.172 111.567 281.852 104.82 281.852C97.9267 281.852 92.06 283.172 87.22 285.812C82.38 288.452 78.64 292.046 76 296.592C73.36 301.139 72.04 306.272 72.04 311.992C72.04 317.712 73.36 322.846 76 327.392C78.64 331.939 82.38 335.606 87.22 338.392C92.06 341.032 97.9267 342.352 104.82 342.352C111.567 342.352 117.433 341.032 122.42 338.392C127.26 335.606 131 331.939 133.64 327.392C136.28 322.846 137.6 317.712 137.6 311.992ZM164 224.152H45.64V191.372H79.08L69.4 195.992C61.04 192.472 54.7333 186.826 50.48 179.052C46.08 171.279 43.88 161.819 43.88 150.672H75.56C75.4133 152.139 75.34 153.459 75.34 154.632C75.1933 155.806 75.12 157.052 75.12 158.372C75.12 167.759 77.8333 175.386 83.26 181.252C88.54 186.972 96.8267 189.832 108.12 189.832H164V224.152ZM139.8 101.671L98 100.791L45.64 45.5706V4.65062L99.54 57.6706L114.06 75.4906L139.8 101.671ZM164 130.051H0.75999L0.75999 95.7306H164V130.051ZM164 41.8306L114.28 81.8706L87.66 60.3106L164 0.250612V41.8306Z" fill="#B3AEAE"
-                            fill-opacity={resolvedTheme && mounted && theme === 'light' ? 0.1 : 0.02} />
+                            fillOpacity={resolvedTheme && mounted && theme === 'light' ? 0.1 : 0.02} />
                     </svg>
                 </div>
                 <div
@@ -142,22 +144,24 @@ const Projects = ({ workExperience }) => {
 
 const ProjectItem = ({ projectData, i }) => {
 
-    const { title, heading, description, colors, logo, tags } = projectData
-    tags = tags.slice(0, 3)
+    const { title, heading, description, colors, media, tags } = projectData
+    const minimal_tags = tags.slice(0, 3)
+    const { source, is_video } = media
     return (
         <>
             <div
-                className={`${i % 2 === 0 && 'hidden'} overflow-hidden grid place-items-center grid-cols-1 md:grid-cols-2 gap-12`}>
-                <div className=" lg:hidden flex w-full h-full  gap-12">
+                className={`${i % 2 === 0 && 'hidden'} overflow-hidden grid place-items-center grid-cols-1 md:grid-cols-2 gap-12 lg:min-h-[40vh]`}>
+                <div className=" lg:hidden flex w-full h-full gap-12">
                     <div
                         data-aos="fade-left"
                         data-aos-duration="800"
                         data-aos-delay="300"
                         className="flex-1 w-full relative">
-                        <video
+                        {is_video && <video
                             autoPlay={true} loop={true} preload="autoplay">
-                            <source src={logo} type="video/mp4" />
-                        </video>
+                            <source src={source} type="video/mp4" />
+                        </video>}
+                        {!is_video && <Image src={source} alt={title} layout="fill" objectFit='cover' />}
                     </div>
                     <div
                         data-aos="fade-left"
@@ -183,7 +187,7 @@ const ProjectItem = ({ projectData, i }) => {
                         className='text-xl font-semibold lg:max-w-[80%] text-[#444] dark:text-white md:text-2xl lg:text-3xl'>
                         {heading}
                     </h1>
-                    {tags.length > 1 &&
+                    {minimal_tags.length > 1 &&
                         <div
                             data-aos="fade-right"
                             data-aos-duration="800"
@@ -191,7 +195,7 @@ const ProjectItem = ({ projectData, i }) => {
                         >
 
                             <div className="flex flex-wrap">
-                                {tags.map(tag => (
+                                {minimal_tags.map(tag => (
                                     <>
                                         <div className="mr-4 my-2">
                                             <ProjectBadge
@@ -227,26 +231,27 @@ const ProjectItem = ({ projectData, i }) => {
                         data-aos-duration="800"
                         data-aos-delay="300"
                         className="flex-1 w-full relative">
-                        <video autoPlay={true} loop={true} preload="autoplay">
-                            <source src={logo} type="video/mp4" />
-                        </video>
+                        {is_video && <video autoPlay={true} loop={true} preload="autoplay">
+                            <source src={source} type="video/mp4" />
+                        </video>}
+                        {!is_video && <Image src={source} alt={title} layout="fill" />}
                     </div>
                     <div
-                        data-aos="fade-left"
+                        data-aos="fade-up"
                         data-aos-duration="800"
                         data-aos-delay="400"
-                        className="h-full hidden lg:flex min-w-[4rem] bg-gradient-to-t from-red-500 via-red-400 to-orange-500">
+                        className={`h-full hidden lg:flex min-w-[4rem] bg-gradient-to-t from-${colors[0]} via-${colors[1]} to-${colors[2]}`}>
                     </div>
                 </div>
             </div>
-            <div className={`${i % 2 === 1 && 'hidden'} overflow-hidden grid place-items-center grid-cols-1 md:grid-cols-2 gap-12`}>
+            <div className={`${i % 2 === 1 && 'hidden'} overflow-hidden grid place-items-center grid-cols-1 md:grid-cols-2 gap-12 lg:min-h-[40vh]`}>
 
                 <div className="flex w-full h-full gap-10">
                     <div
-                        data-aos="fade-right"
+                        data-aos="fade-up"
                         data-aos-duration="800"
                         data-aos-delay="200"
-                        className="h-full hidden lg:flex min-w-[4rem] bg-red-400">
+                        className={`h-full hidden lg:flex min-w-[4rem] bg-gradient-to-t from-${colors[0]} via-${colors[1]} to-${colors[2]}`}>
                     </div>
                     <div
                         data-aos="fade-right"
@@ -254,9 +259,10 @@ const ProjectItem = ({ projectData, i }) => {
                         data-aos-delay="300"
                         className="flex-1 w-full relative"
                     >
-                        <video autoPlay={true} loop={true} preload="autoplay">
-                            <source src={logo} type="video/mp4" />
-                        </video>
+                        {is_video && <video autoPlay={true} loop={true} preload="autoplay">
+                            <source src={source} type="video/mp4" />
+                        </video>}
+                        {!is_video && <Image src={source} alt={title} layout="fill" objectFit='contain' />}
                     </div>
 
                 </div>
@@ -275,7 +281,7 @@ const ProjectItem = ({ projectData, i }) => {
                         className='text-xl font-semibold lg:max-w-[80%] text-[#444] dark:text-white md:text-2xl lg:text-3xl'>
                         {heading}
                     </h1>
-                    {tags.length > 1 &&
+                    {minimal_tags.length > 1 &&
                         <div
                             data-aos="fade-left"
                             data-aos-duration="800"
@@ -283,7 +289,7 @@ const ProjectItem = ({ projectData, i }) => {
                         >
 
                             <div className="flex flex-wrap">
-                                {tags.map(tag => (
+                                {minimal_tags.map(tag => (
                                     <>
                                         <div className="mr-4 my-2">
                                             <ProjectBadge

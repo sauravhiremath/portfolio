@@ -15,9 +15,12 @@
       {
         "title": "Orca Security Software Engineer",
         "heading": "Building an API Security unified solution for the cloud environments.",
-        "description": "Currently researching discovering and providing security to Web Assets and APIs at scale. Providing complete coverage of AWS, GCP and Azure environments.",
-        "logo": "",
-        "colors": [],
+        "description": "Currently researching and providing security to Cloud Assets and APIs at scale.",
+        "media": {
+          "source": "https://res.cloudinary.com/sauravmh/image/upload/q_auto:eco/v1661096776/portfolio-images/orca-team-pic.webp",
+          "is_video": false
+        },
+        "colors": ["blue-900", "blue-500", "blue-300"],
         "tags": [
           "2022",
           "Cloud API Security",
@@ -31,8 +34,11 @@
         "title": "RapidSec FullStack Developer",
         "heading": "Building a comprehensive CSP and client-side web security solution.",
         "description": "Developing dynamic security scanners and extensions for web apps. Probing cookies, response headers amd Client Side Security Policies (CSPs) to provide and improve their comprehensive security posture score.",
-        "logo": "",
-        "colors": [],
+        "media": {
+          "source": "https://res.cloudinary.com/sauravmh/image/upload/q_auto/v1661098605/portfolio-images/rapidsec_qv5wzt.webp",
+          "is_video": false
+        },
+        "colors": ["green-900", "green-500", "green-300"],
         "tags": [
           "2021",
           "Web Security",
@@ -45,8 +51,11 @@
         "title": "Major League Hacking (MLH) Fellowship",
         "heading": "Released 2 major features to Jest project under Facebook.",
         "description": "Redesigned and implemented a parallelized cross-worker thread communication system for jest-core resulting in a 300x speedup over the previous non-parallel architecture.",
-        "logo": "",
-        "colors": [],
+        "media": {
+          "source": "https://res.cloudinary.com/sauravmh/image/upload/q_auto/v1661100650/portfolio-images/EgMuxUcU0AgbiKw_mqzokc.webp",
+          "is_video": false
+        },
+        "colors": ["blue-900", "blue-500", "blue-300"],
         "tags": [
           "2020",
           "Performance Enhancement",
@@ -58,8 +67,11 @@
         "title": "Vicara Software Engineer Intern",
         "heading": "Designed and co-implemented a cloud-native microservice library",
         "description": "Designed an Identity and Access Management (IAM) system and a stress testing workbench - resulting in smooth onboarding for Samsung and Xiaomi as customers.",
-        "logo": "",
-        "colors": [],
+        "media": {
+          "source": "https://res.cloudinary.com/sauravmh/image/upload/q_auto,ar_5:4,c_crop/v1661102150/portfolio-images/1519800745776_zokgzm.webp",
+          "is_video": false
+        },
+        "colors": ["slate-900", "slate-500", "slate-300"],
         "tags": [
           "2020",
           "Microservices",
@@ -71,8 +83,11 @@
         "title": "CamCann Data Science Lead",
         "heading": "Delivering Computer Vision solutions on digital advertising.",
         "description": "Lead a team of 4 people to develop a Digital Makeup Assitant utilizing SSD with MobilenetV1 for object detection in TensorFlow and training a custom CNN model.",
-        "logo": "",
-        "colors": [],
+        "media": {
+          "source": "https://res.cloudinary.com/sauravmh/image/upload/q_auto/v1661096654/portfolio-images/camcann-logo.webp",
+          "is_video": false
+        },
+        "colors": ["red-600", "red-400", "orange-500"],
         "tags": [
           "2020",
           "Data Science",
@@ -182,7 +197,8 @@
       "email": "contact@sauravmh.com",
       "twitter": "https://twitter.com/sauravmh",
       "github": "https://github.com/sauravhiremath",
-      "linkedin": "https://www.linkedin.com/in/sauravmh"
+      "linkedin": "https://www.linkedin.com/in/sauravmh",
+      "valorant_tracker": "https://tracker.gg/valorant/profile/riot/Gordan%20Ramasamy%23donke"
     },
     "credits": "Made with ❤️"
   }

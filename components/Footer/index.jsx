@@ -47,7 +47,7 @@ const index = ({ contact }) => {
                     </div>
                     <div className="flex text-left flex-col space-y-3">
                         <div className="uppercase tracking-widest font-semibold text-[#a5a5a5] dark:text-[#efefef]">{contact.credits}</div>
-                        <p className="text-md text-[#333] dark:text-[#efefef] transition-all duration-300">
+                        <p className="text-lg font-extralight text-[#777] dark:text-[#efefef] transition-all duration-300">
                             Last Updated July, 2022
                         </p>
                     </div>
