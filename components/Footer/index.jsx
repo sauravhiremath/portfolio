@@ -13,7 +13,7 @@ const index = ({ contact }) => {
             style={{
                 background: `${theme && mounted && theme === 'light' ? 'linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5))' : 'linear-gradient(rgba(25,26,25, 1), rgba(2,4,12,1))'}`
             }}
-            className='py-12 lg:py-16 border-t bg-[#292D35] z-50 dark:border-slate-900'
+            className='py-12 lg:py-16 border-t bg-[#292D35] z-50 dark:border-none'
         >
             <div className="container  space-y-12 ">
                 <h1 className="text-base md:text-lg">{contact.description}</h1>
