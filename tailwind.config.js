@@ -2,8 +2,7 @@ const colors = require('tailwindcss/colors');
 const colorSafeList = []
 
 // Skip these to avoid a load of deprecated warnings when tailwind starts up
-// const deprecated = ["lightBlue", "warmGray", "trueGray", "coolGray", "blueGray"]
-const deprecated = []
+const deprecated = ["lightBlue", "warmGray", "trueGray", "coolGray", "blueGray"]
 
 for (const colorName in colors) {
   if (deprecated.includes(colorName)) {
