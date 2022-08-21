@@ -58,7 +58,7 @@ const index = ({ blogs }) => {
 
 
 
-    var settings = {
+    const settings = {
         infinite: true,
         speed: 800,
         slidesToShow: 3,
@@ -115,7 +115,7 @@ const index = ({ blogs }) => {
 
             <Slider {...settings} className='flex container justify-center'>
                 {blogs?.map(({ description, heading, image }, i) => (
-                    <div className=' w-full px-2'>
+                    <div className='w-full px-2' key={heading}>
                         <div
                             className="dark:bg-[#202120] bg-lightGray pb-6 backdrop-blur-lg border-gray-300 rounded-lg border border-transparent dark:border-[#343434] overflow-hidden transition-all duration-500 flex w-full flex-col space-y-4">
                             <img

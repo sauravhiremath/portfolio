@@ -42,7 +42,7 @@ const Hero = ({ about }) => {
                     <img src='/images/ellipse-white.png' />
                 </div>
                 <div className="col-span-1 md:col-span-4 md:space-y-2 flex flex-col">
-                    <h1 className='text-[27px] md:text-5xl xl:text-6xl firaCode relative text-coolGray-800 dark:text-blueGray-100' >
+                    <h1 className='text-[27px] md:text-5xl xl:text-6xl firaCode relative text-gray-800 dark:text-slate-100' >
                         <span className='z-20 relative'>Work</span>
                         <div className="absolute bottom-0 z-10 hidden md:flex">
                             <Highlighter theme={theme} type='yellow' props={{ viewBox: "0 0 219 66", height: "48px" }} />
@@ -54,7 +54,7 @@ const Hero = ({ about }) => {
                             by Day.
                         </span>
                     </h1>
-                    <h1 className='text-[27px] md:text-5xl xl:text-6xl firaCode relative text-coolGray-800 dark:text-white' >
+                    <h1 className='text-[27px] md:text-5xl xl:text-6xl firaCode relative text-gray-800 dark:text-white' >
                         <span className='z-20 relative'>Game</span>
                         <div className="absolute bottom-0 z-10 hidden md:flex">
                             <Highlighter theme={theme} type='red' props={{ viewBox: "0 0 202 58", height: "48px" }} />
@@ -66,7 +66,7 @@ const Hero = ({ about }) => {
                             by night.
                         </span>
                     </h1>
-                    <h1 className='text-[27px] flex whitespace-nowrap md:flex-nowrap md:text-5xl xl:text-6xl firaCode text-coolGray-800 dark:text-white' >
+                    <h1 className='text-[27px] flex whitespace-nowrap md:flex-nowrap md:text-5xl xl:text-6xl firaCode text-gray-800 dark:text-white' >
                         <span className=' mr-2 md:mr-4'>
                             And a Full-time
                         </span>
@@ -96,10 +96,10 @@ const Hero = ({ about }) => {
                                 {about.title}
                             </div>
                         </div>
-                        <p className='text-2xl text-coolGray-800 dark:text-white font-semibold caveat max-w-[20rem] mb-4'>
+                        <p className='text-2xl text-gray-800 dark:text-white font-semibold caveat max-w-[20rem] mb-4'>
                             {about.description[0]}
                         </p>
-                        <div className="flex items-center text-coolGray-800 dark:text-white">
+                        <div className="flex items-center text-gray-800 dark:text-white">
                             {about.description.slice(1, about.description.length)}
                         </div>
                         {mounted && <div className="hidden md:flex">
