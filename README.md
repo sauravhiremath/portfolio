@@ -1,23 +1,17 @@
-# Next.js + Tailwind CSS Example
+![hello-saurav](https://raw.githubusercontent.com/sauravhiremath/sauravhiremath/master/icon/animated-me.gif?token=AG2QVWYXDC4UY2XDPIZKBLC7E3JPO)
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+<h1 align="center">
+  Welcome to my little 🌎
+</h1>
 
-## Deploy your own
+<h6 align="center">
+  Last Updated May, 2022
+</h6>
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+<hr />
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+![dark-mode-ss](https://user-images.githubusercontent.com/28642011/187974037-9835e2ec-b953-4991-8236-3202785b70d4.png)
+<hr />
 
-## How to use
+![light-mode-ss](https://user-images.githubusercontent.com/28642011/187974125-e0aef523-69c6-4d46-8068-3173a6bd40cf.png)
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-# or
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
