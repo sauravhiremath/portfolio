@@ -14,8 +14,6 @@ const Index = ({ journey }) => {
     setMounted(true)
   }, [])
 
-  console.log(journey)
-
   const bgColors = [
     'stripe-pattern-red',
     'stripe-pattern-violet',
