@@ -99,30 +99,12 @@
   "technologies": {
     "heading": "Technologies worked with",
     "frameworks": [
-      {
-        "svg": "base64:png_here",
-        "fallback": "Python"
-      },
-      {
-        "svg": "base64:png_here",
-        "fallback": "React"
-      },
-      {
-        "svg": "base64:png_here",
-        "fallback": "Kubernetes"
-      },
-      {
-        "svg": "base64:png_here",
-        "fallback": "Kafka"
-      },
-      {
-        "svg": "base64:png_here",
-        "fallback": "AWS Cloud"
-      },
-      {
-        "svg": "base64:png_here",
-        "fallback": "Tensorflow"
-      }
+      { "name": "Python"},
+      { "name": "React" },
+      { "name": "NodeJS" },
+      { "name": "Kubernetes" },
+      { "name": "Kafka" },
+      { "name": "AWS" }
     ]
   },
   "testimonials": [
@@ -200,6 +182,7 @@
       "linkedin": "https://www.linkedin.com/in/sauravmh",
       "valorant_tracker": "https://tracker.gg/valorant/profile/riot/Gordan%20Ramasamy%23donke"
     },
+    "lastUpdated": "Last Updated Jan, 2023",
     "credits": "Made with ❤️"
   }
 }

@@ -34,8 +34,8 @@ const Index = ({ journey }) => {
   const currentMonth = new Date().getMonth() + 1
   const linePosition =
     typeof window != 'undefined' && window.innerWidth <= 640
-      ? 17 - currentMonth * 0.99 + 'rem'
-      : 18 - currentMonth * 0.65 + 'rem'
+      ? 6 - currentMonth * 0.99 + 'rem'
+      : 9 - currentMonth * 0.65 + 'rem'
   return (
     <Waypoint>
       <div className="flex flex-col">
@@ -83,7 +83,7 @@ const Index = ({ journey }) => {
             <div className="flex min-w-[100%] pt-8 flex-nowrap">
               {[23, 22, 21, 20, 19, 18, 17, 16, 15, 14].map(yr => (
                 <div className="min-w-[6.5rem] flex justify-center md:min-w-[9.4rem]" key={yr}>
-                  <span className="pr-2">{yr !== 23 && `20${yr}`}</span>
+                  <span className="pr-2">{`20${yr}`}</span>
                 </div>
               ))}
               <div className="min-w-[4rem]"></div>
@@ -165,4 +165,5 @@ const GraduationIcon = () => {
     </>
   )
 }
+
 export default Index

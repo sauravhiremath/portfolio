@@ -200,7 +200,7 @@ const ProjectItem = ({ projectData, i }) => {
               <div className="flex flex-wrap">
                 {minimal_tags.map(tag => (
                   <>
-                    <div className="mr-4 my-2">
+                    <div className="mr-4 my-2 cursor-s-resize">
                       <ProjectBadge innerText={tag} bgColor="bg-[#f7e6e6]" color="text-[#ee7675]" />
                     </div>
                   </>

@@ -5,12 +5,14 @@
 </h1>
 
 <h6 align="center">
-  Last Updated May, 2022
+  Last Updated Jan, 2023
 </h6>
 
 <hr />
 
 ![dark-mode-ss](https://user-images.githubusercontent.com/28642011/187974037-9835e2ec-b953-4991-8236-3202785b70d4.png)
+<hr />
+<p align="center">If you bored, you can look for fun easter-eggs on the site 🎉</p>
 <hr />
 
 ![light-mode-ss](https://user-images.githubusercontent.com/28642011/187974125-e0aef523-69c6-4d46-8068-3173a6bd40cf.png)

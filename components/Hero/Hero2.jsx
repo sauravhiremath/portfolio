@@ -2,6 +2,7 @@ import React, { createRef, useEffect, useState } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { useTheme } from 'next-themes'
+import confetti from 'canvas-confetti'
 import { CurvedArrow, Highlighter } from './highlighter'
 
 const Hero = ({ about }) => {
@@ -103,7 +104,8 @@ const Hero = ({ about }) => {
               <img
                 alt="saurav profile pic"
                 src="/images/saurav.png"
-                className="h-10 w-10 rounded-full"
+                className="h-10 w-10 rounded-full cursor-pointer"
+                onClick={throwConfetti}
               />
               <div className="text-2xl font-semibold caveat  my-6">{about.title}</div>
             </div>
@@ -123,6 +125,18 @@ const Hero = ({ about }) => {
       </div>
     </div>
   )
+}
+
+const throwConfetti = () =>
+  confetti({
+    angle: _randomInRange(55, 125),
+    spread: _randomInRange(50, 70),
+    particleCount: _randomInRange(50, 100),
+    origin: { y: 0.6 },
+  })
+
+const _randomInRange = (min, max) => {
+  return Math.random() * (max - min) + min
 }
 
 export default Hero

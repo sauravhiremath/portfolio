@@ -570,6 +570,11 @@ caniuse-lite@^1.0.30001332, caniuse-lite@^1.0.30001335, caniuse-lite@^1.0.300013
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001358.tgz#473d35dabf5e448b463095cab7924e96ccfb8c00"
   integrity sha512-hvp8PSRymk85R20bsDra7ZTCpSVGN/PAz9pSAjPSjKC+rNmnUk5vCRgJwiTT/O4feQ/yu/drvZYpKxxhbFuChw==
 
+canvas-confetti@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/canvas-confetti/-/canvas-confetti-1.6.0.tgz#193f71aa8f38fc850a5ba94f59091a7afdb43ead"
+  integrity sha512-ej+w/m8Jzpv9Z7W7uJZer14Ke8P2ogsjg4ZMGIuq4iqUOqY2Jq8BNW42iGmNfRwREaaEfFIczLuZZiEVSYNHAA==
+
 chalk@^4.0.0:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
@@ -2179,10 +2184,10 @@ react-dom@18.1.0:
     loose-envify "^1.1.0"
     scheduler "^0.22.0"
 
-react-easy-emoji@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/react-easy-emoji/-/react-easy-emoji-1.6.1.tgz#72a3b6ef1e327d937a865c3795d400d0a178b706"
-  integrity sha512-VCGm1tAAdOCNVh6j+M1KoWZn4FIXcqdnf0rXINo0Sgo7eF2sat/JhITKFl8PmbpfIYqYLOobpFDVpst4ddJUlw==
+react-easy-emoji@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/react-easy-emoji/-/react-easy-emoji-1.8.1.tgz#29fce29ca03fe0e4976f9e3ff2beb984c69f45f1"
+  integrity sha512-wAf2x+cjwtOlLfXnjc0J3k5B2PDZdoxd1BjtfKr5tq2AL7t2ygvByJQWgFOyN28xg3qe8EKBM6pKxGP+qrGWuQ==
   dependencies:
     string-replace-to-array "^2.1.0"
 

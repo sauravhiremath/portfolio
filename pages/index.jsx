@@ -8,7 +8,7 @@ import Journey from '../components/Journey'
 import { Suspense, useEffect, useState } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import Brands from '../components/Brands'
+import Brands from '../components/Technologies'
 import { about, blogs, contact, journey, testimonials, workExperience } from '../portfolio'
 
 const Home = () => {

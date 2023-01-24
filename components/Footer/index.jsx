@@ -74,7 +74,7 @@ const Index = ({ contact }) => {
               {contact.credits}
             </div>
             <p className="text-lg font-extralight text-[#777] dark:text-[#efefef] transition-all duration-300">
-              Last Updated July, 2022
+              {contact.lastUpdated}
             </p>
           </div>
         </div>
