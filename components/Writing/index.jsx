@@ -99,8 +99,6 @@ const Index = ({ blogs }) => {
     ],
   }
 
-  const blogUrl =
-    'https://blog.sauravmh.com/socket-io-games-the-right-way-using-nodejs-and-react-not-a-chat-app-part-1/'
   const truncate = (text, sliceNumber) => {
     return text.length > sliceNumber
       ? text.slice(0, sliceNumber) + '...'
@@ -116,7 +114,7 @@ const Index = ({ blogs }) => {
       </div>
 
       <Slider {...settings} className="flex container justify-center">
-        {blogs?.map(({ description, heading, image }, i) => (
+        {blogs?.map(({ description, heading, image, link }, i) => (
           <div className="w-full px-2" key={heading}>
             <div className="dark:bg-[#202120] bg-lightGray pb-6 backdrop-blur-lg border-gray-300 rounded-lg border border-transparent dark:border-[#343434] overflow-hidden transition-all duration-500 flex w-full flex-col space-y-4">
               <img
@@ -130,7 +128,7 @@ const Index = ({ blogs }) => {
               <div className="flex px-3 flex-col space-y-3">
                 <a
                   target="_blank"
-                  href={blogUrl}
+                  href={link}
                   data-aos="fade-down"
                   data-aos-duration="500"
                   data-aos-delay={`${i + 2}00`}
@@ -151,7 +149,7 @@ const Index = ({ blogs }) => {
 
                 <a
                   target="_blank"
-                  href={blogUrl}
+                  href={link}
                   data-aos="fade-down"
                   data-aos-duration="500"
                   data-aos-delay={`${i + 4}00`}
