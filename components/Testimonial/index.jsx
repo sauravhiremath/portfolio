@@ -4,8 +4,6 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { AiOutlineSwapLeft } from 'react-icons/ai'
 import { useTheme } from 'next-themes'
-import { GoQuote } from 'react-icons/go'
-import Image from 'next/image'
 
 const Index = ({ testimonials }) => {
   const [mounted, setMounted] = useState(false)
@@ -26,54 +24,42 @@ const Index = ({ testimonials }) => {
     prevArrow: <SlickArrowLeft theme={theme} mounted={mounted} />,
   }
 
-  if (testimonials.every(({ display }) => !display)) {
-    return
-  }
-
   return (
     <>
-      <div className="absolute left-0 w-fit -rotate-90  h-full whitespace-nowrap mr-auto -top-8 z-0">
-        <h1 className="text-[80px] ml-[-60px] text-neutral-100 dark:text-[#1D1D1D] uppercase font-black">
+      <div className="absolute left-0 w-fit -rotate-90 h-full whitespace-nowrap mr-auto top-32 z-0">
+        <h1 className="text-[45px] ml-[200px] text-neutral-100 dark:text-[#1D1D1D] uppercase font-black">
           TESTIMONIALS
         </h1>
       </div>
       <Slider {...settings} className="flex container justify-center">
         {testimonials.map(
-          ({ display, name, company, description, image }, i) =>
-            display && (
-              <div key={i} className="flex overflow-hidden w-full group flex-col  space-y-6">
-                <div className="max-w-[50rem] py-20 h-full mx-auto grid grid-rows-1 md:grid-rows-1 md:grid-cols-5">
-                  <div className="md:col-span-2 mx-auto relative">
-                    <div className="md:flex hidden w-[70%] z-[-1] h-[80%] group-hover:top-[40%] transition-all duration-700 delay-100 bg-gradient-to-r from-themeOrange to-themePink absolute rounded-full top-[-2rem] left-[-5rem]" />
-                    <div className="md:flex hidden absolute  transition-all duration-700 delay-100 group-hover:bottom-[60%] w-32 bottom-[-1rem] right-4 h-32 z-[-1] rounded-full shadow-lg bg-gradient-to-r from-themeOrange to-themePink" />
-                    <Image
-                      src={image || '/images/girl.png'}
-                      alt={'testimonial-person'}
-                      className="max-w-[9rem] max-h-[9rem] md:max-w-[18rem] object-cover w-full h-full md:max-h-[18rem] rounded-full"
-                    />
-                  </div>
-                  <div className="md:col-span-3 mt-6 md:mt-0 relative h-full flex flex-col">
-                    <div className="relative max-w-[30rem]">
-                      <div className="absolute opacity-60 dark:text-neutral-500 top-[-3rem] text-2xl md:text-4xl left-0">
-                        <GoQuote />
+          ({ hidden, name, company, description, image }, i) =>
+            !hidden && (
+              <div key={i} className="flex overflow-hidden w-full group flex-col space-y-6">
+                <div className="mx-auto px-4 py-8">
+                  <section className="rounded-lg bg-gray-100 dark:bg-blueGray-400 dark:bg-opacity-5 p-8">
+                    <div className="grid md:grid-cols-4 sm:grid-cols-3 gap-12 sm:items-center">
+                      <div className="md:block hidden">
+                        <img
+                          alt={name}
+                          src={image}
+                          className="aspect-square w-full rounded-lg object-cover"
+                        />
                       </div>
-                      <p className="dark:text-neutral-500 text-base md:text-lg italic ">
-                        {description ||
-                          `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo eum, esse sapiente totam quos necessitatibus nesciunt exercitationem quasi eligendi dolores possimus repudiandae est recusandae! Neque excepturi reiciendis reprehenderit numquam deleniti.`}
-                      </p>
-                      <div className="absolute opacity-60 dark:text-neutral-500 bottom-[-3rem] text-2xl md:text-4xl right-0">
-                        <GoQuote />
-                      </div>
+
+                      <blockquote className="sm:col-span-3">
+                        <p className="lg:text-xl font-extralight text-lg whitespace-pre-line">
+                          {description.replace(/<br\/>/g, '\n\n')}
+                        </p>
+                        <cite className="mt-8 inline-flex items-center not-italic">
+                          <span className="hidden h-px w-6 bg-gray-400 sm:inline-block"></span>
+                          <p className="text-sm sm:ml-3">
+                            <strong>{name}</strong>, {company}.
+                          </p>
+                        </cite>
+                      </blockquote>
                     </div>
-                    <div className="mx-auto md:ml-auto mt-auto ">
-                      <h1 className="text-2xl font-semibold md:text-4xl text-themeOrange">
-                        {name}
-                      </h1>
-                      <p className="text-xs md:text-sm text-left dark:text-neutral-400 italic mt-2">
-                        {company}
-                      </p>
-                    </div>
-                  </div>
+                  </section>
                 </div>
               </div>
             ),

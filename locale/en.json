@@ -109,16 +109,18 @@
   },
   "testimonials": [
     {
-      "name": "Ori Koral",
-      "company": "RapidSec",
-      "description": "",
-      "image": ""
+      "name": "ORI KORAL",
+      "company": "Director of R&D - Orca Security",
+      "description": "You contributed significantly to the APISec product and project, especially in all the data collection parts which required getting into the existing Orca infrastructure, understanding how it works, work with the architects to come up with and implement the best solution.<br/>You are a team player and it's always pleasant to work with you!<br/>You've just started your career and already had significant accomplishments. I'm excited to keep working with you on your evolving career path.",
+      "image": "https://res.cloudinary.com/sauravmh/image/upload/v1678269472/portfolio-images/TEHG4JU2C-U02T12PBD36-1cec7362af40-512_ksrmnb.jpg",
+      "hidden": false
     },
     {
       "name": "Shai Alon",
       "company": "RapidSec",
       "description": "",
-      "image": ""
+      "image": "",
+      "hidden": true
     }
   ],
   "journey": [

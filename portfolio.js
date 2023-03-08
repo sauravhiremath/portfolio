@@ -22,13 +22,13 @@ export const technologies = {
 }
 
 export const testimonials = current_locale.testimonials.map(
-  ({ name, company, description, image }) => {
+  ({ name, company, description, image, hidden }) => {
     return {
-      display: false,
       name,
       company,
       description,
       image,
+      hidden,
     }
   },
 )
