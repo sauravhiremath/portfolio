@@ -1,14 +1,13 @@
 const colors = require('tailwindcss/colors');
 const colorSafeList = []
 
-// Skip these to avoid a load of deprecated warnings when tailwind starts up
-const deprecated = ["lightBlue", "warmGray", "trueGray", "coolGray", "blueGray"]
+delete colors.lightBlue
+delete colors.warmGray
+delete colors.trueGray
+delete colors.coolGray
+delete colors.blueGray
 
 for (const colorName in colors) {
-  if (deprecated.includes(colorName)) {
-    continue
-  }
-
   const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]
 
   const pallette = colors[colorName]
