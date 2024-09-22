@@ -1,6 +1,6 @@
-import "../styles/globals.css";
-import { ThemeProvider } from "next-themes";
-import { Suspense } from "react";
+import '../styles/globals.css'
+import { ThemeProvider } from 'next-themes'
+import { Suspense } from 'react'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </Suspense>
     </ThemeProvider>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

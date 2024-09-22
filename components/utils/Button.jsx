@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const Button = ({ text }) => {
   return (
@@ -10,7 +10,7 @@ const Button = ({ text }) => {
     >
       {text}
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button

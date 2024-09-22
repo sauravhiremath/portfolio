@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 import { AiOutlineSwapLeft } from 'react-icons/ai'
 import { useTheme } from 'next-themes'
 
@@ -71,14 +71,14 @@ const Index = ({ testimonials }) => {
 const SlickArrowLeft = ({ slideCount, theme, mounted, className, ...props }) => (
   <button
     {...props}
-    className='absolute group border dark:border-slate-900 shadow-md overflow-hidden z-30 py-6 flex items-center justify-center text-red-500 left-0 top-[40%] p-4'
+    className="absolute group border dark:border-slate-900 shadow-md overflow-hidden z-30 py-6 flex items-center justify-center text-red-500 left-0 top-[40%] p-4"
     style={{
       background: `${
         theme && mounted && theme === 'light'
           ? 'linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9))'
           : 'linear-gradient(rgba(2,4,12,0.7), rgba(2,4,12,0.7))'
       }`,
-      display: className?.includes("slick-disabled") ? "none" : undefined
+      display: className?.includes('slick-disabled') ? 'none' : undefined,
     }}
     type="button"
   >
@@ -92,14 +92,14 @@ const SlickArrowLeft = ({ slideCount, theme, mounted, className, ...props }) => 
 const SlickArrowRight = ({ slideCount, theme, mounted, className, ...props }) => (
   <button
     {...props}
-    className='absolute shadow-md border group dark:border-slate-900 rotate-180 overflow-hidden z-30 bg-white py-6 right-0 top-[40%] p-4'
+    className="absolute shadow-md border group dark:border-slate-900 rotate-180 overflow-hidden z-30 bg-white py-6 right-0 top-[40%] p-4"
     style={{
       background: `${
         theme && mounted && theme === 'light'
           ? 'linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9))'
           : 'linear-gradient(rgba(2,4,12,0.7), rgba(2,4,12,0.7))'
       }`,
-      display: className?.includes("slick-disabled") ? "none" : undefined
+      display: className?.includes('slick-disabled') ? 'none' : undefined,
     }}
     type="button"
   >

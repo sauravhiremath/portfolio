@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const YellowHighlight = ({ opacity }) => (
   <path
@@ -8,7 +8,7 @@ const YellowHighlight = ({ opacity }) => (
     fill="#FAEF91"
     fillOpacity={opacity}
   />
-);
+)
 
 const RedHighlight = ({ opacity }) => (
   <path
@@ -18,7 +18,7 @@ const RedHighlight = ({ opacity }) => (
     fill="#FA9191"
     fillOpacity={opacity}
   />
-);
+)
 
 const BlueHighlight = ({ opacity }) => (
   <path
@@ -28,26 +28,26 @@ const BlueHighlight = ({ opacity }) => (
     fill="#91A8FA"
     fillOpacity={opacity}
   />
-);
+)
 
 const highlightMap = {
   yellow: YellowHighlight,
   red: RedHighlight,
   blue: BlueHighlight,
-};
+}
 
 export const Highlighter = ({ theme, type, props }) => {
-  const opacity = theme === "light" ? 0.6 : 0.4;
+  const opacity = theme === 'light' ? 0.6 : 0.4
 
   return (
     <svg width="100%" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       {highlightMap[type]({ opacity })}
     </svg>
-  );
-};
+  )
+}
 
 export const CurvedArrow = ({ theme }) => {
-  const fill = theme === "light" ? "#1F2937" : "white";
+  const fill = theme === 'light' ? '#1F2937' : 'white'
 
   return (
     <svg
@@ -64,5 +64,5 @@ export const CurvedArrow = ({ theme }) => {
         fill={fill}
       />
     </svg>
-  );
-};
+  )
+}

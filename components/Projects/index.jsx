@@ -5,7 +5,6 @@ import { Waypoint } from 'react-waypoint'
 import Image from 'next/image'
 
 const Projects = ({ workExperience }) => {
-
   const [projects, setProjects] = useState([])
   const [slice, setSlice] = useState(2)
   const [animate, setAnimate] = useState(false)

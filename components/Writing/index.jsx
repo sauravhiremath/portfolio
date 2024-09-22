@@ -8,14 +8,14 @@ import { useTheme } from 'next-themes'
 const SlickArrowLeft = ({ slideCount, theme, mounted, className, ...props }) => (
   <button
     {...props}
-    className='absolute group shadow-md overflow-hidden z-30  py-6 flex items-center justify-center text-red-500 left-0 top-[40%] p-4'
+    className="absolute group shadow-md overflow-hidden z-30  py-6 flex items-center justify-center text-red-500 left-0 top-[40%] p-4"
     style={{
       background: `${
         theme && mounted && theme === 'light'
           ? 'linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9))'
           : 'linear-gradient(rgba(2,4,12,0.7), rgba(2,4,12,0.7))'
       }`,
-      display: className?.includes("slick-disabled") ? "none" : undefined
+      display: className?.includes('slick-disabled') ? 'none' : undefined,
     }}
     type="button"
   >
@@ -25,17 +25,17 @@ const SlickArrowLeft = ({ slideCount, theme, mounted, className, ...props }) => 
     </div>
   </button>
 )
-const SlickArrowRight = ({ slideCount,theme, mounted, className, ...props }) => (
+const SlickArrowRight = ({ slideCount, theme, mounted, className, ...props }) => (
   <button
     {...props}
-    className='absolute shadow-md group rotate-180 overflow-hidden z-30 bg-white py-6 right-0 top-[40%] p-4'
+    className="absolute shadow-md group rotate-180 overflow-hidden z-30 bg-white py-6 right-0 top-[40%] p-4"
     style={{
       background: `${
         theme && mounted && theme === 'light'
           ? 'linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9))'
           : 'linear-gradient(rgba(2,4,12,0.7), rgba(2,4,12,0.7))'
       }`,
-      display: className?.includes("slick-disabled") ? "none" : undefined
+      display: className?.includes('slick-disabled') ? 'none' : undefined,
     }}
     type="button"
   >
