@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { AiOutlineSwapLeft } from 'react-icons/ai'
 import { useTheme } from 'next-themes'
 
@@ -14,12 +14,11 @@ const Index = ({ testimonials }) => {
   }, [])
 
   const settings = {
-    infinite: true,
+    infinite: false,
+    dots: false,
     speed: 800,
-    slidesToShow: 1,
-    dots: true,
-    slidesToScroll: 1,
     initialSlide: 0,
+    swipeToSlide: true,
     nextArrow: <SlickArrowRight theme={theme} mounted={mounted} />,
     prevArrow: <SlickArrowLeft theme={theme} mounted={mounted} />,
   }
@@ -69,22 +68,18 @@ const Index = ({ testimonials }) => {
   )
 }
 
-const SlickArrowLeft = ({ currentSlide, theme, mounted, slideCount, ...props }) => (
+const SlickArrowLeft = ({ theme, mounted, className, ...props }) => (
   <button
     {...props}
-    className={
-      'absolute group border dark:border-slate-900 shadow-md overflow-hidden z-30  py-6 flex items-center justify-center text-red-500 left-0 top-[90%] md:top-[60%] p-4' +
-      (currentSlide === 0 ? ' slick-disabled' : '')
-    }
+    className='absolute group border dark:border-slate-900 shadow-md overflow-hidden z-30 py-6 flex items-center justify-center text-red-500 left-0 top-[40%] p-4'
     style={{
       background: `${
         theme && mounted && theme === 'light'
           ? 'linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9))'
           : 'linear-gradient(rgba(2,4,12,0.7), rgba(2,4,12,0.7))'
       }`,
+      display: className?.includes("slick-disabled") ? "none" : undefined
     }}
-    aria-hidden="true"
-    aria-disabled={currentSlide === 0 ? true : false}
     type="button"
   >
     <AiOutlineSwapLeft className="text-2xl" />
@@ -93,22 +88,19 @@ const SlickArrowLeft = ({ currentSlide, theme, mounted, slideCount, ...props }) 
     </div>
   </button>
 )
-const SlickArrowRight = ({ currentSlide, theme, mounted, slideCount, ...props }) => (
+
+const SlickArrowRight = ({ theme, mounted, className, ...props }) => (
   <button
     {...props}
-    className={
-      'absolute shadow-md border group dark:border-slate-900 rotate-180 overflow-hidden z-30 bg-white py-6 right-0 top-[90%] md:top-[60%] p-4' +
-      (currentSlide === 0 ? ' slick-disabled' : '')
-    }
+    className='absolute shadow-md border group dark:border-slate-900 rotate-180 overflow-hidden z-30 bg-white py-6 right-0 top-[40%] p-4'
     style={{
       background: `${
         theme && mounted && theme === 'light'
           ? 'linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9))'
           : 'linear-gradient(rgba(2,4,12,0.7), rgba(2,4,12,0.7))'
       }`,
+      display: className?.includes("slick-disabled") ? "none" : undefined
     }}
-    aria-hidden="true"
-    aria-disabled={currentSlide === 0}
     type="button"
   >
     <AiOutlineSwapLeft className="text-2xl z-20 text-themePink " />

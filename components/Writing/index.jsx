@@ -5,22 +5,18 @@ import 'slick-carousel/slick/slick-theme.css'
 import { AiOutlineSwapLeft } from 'react-icons/ai'
 import { useTheme } from 'next-themes'
 
-const SlickArrowLeft = ({ currentSlide, theme, mounted, slideCount, ...props }) => (
+const SlickArrowLeft = ({ theme, mounted, className, ...props }) => (
   <button
     {...props}
-    className={
-      'absolute group shadow-md overflow-hidden z-30  py-6 flex items-center justify-center text-red-500 left-0 top-[30%] p-4' +
-      (currentSlide === 0 ? ' slick-disabled' : '')
-    }
+    className='absolute group shadow-md overflow-hidden z-30  py-6 flex items-center justify-center text-red-500 left-0 top-[40%] p-4'
     style={{
       background: `${
         theme && mounted && theme === 'light'
           ? 'linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9))'
           : 'linear-gradient(rgba(2,4,12,0.7), rgba(2,4,12,0.7))'
       }`,
+      display: className?.includes("slick-disabled") ? "none" : undefined
     }}
-    aria-hidden="true"
-    aria-disabled={currentSlide === 0}
     type="button"
   >
     <AiOutlineSwapLeft className="text-2xl" />
@@ -29,22 +25,18 @@ const SlickArrowLeft = ({ currentSlide, theme, mounted, slideCount, ...props }) 
     </div>
   </button>
 )
-const SlickArrowRight = ({ currentSlide, theme, mounted, slideCount, ...props }) => (
+const SlickArrowRight = ({ theme, mounted, className, ...props }) => (
   <button
     {...props}
-    className={
-      'absolute shadow-md group rotate-180 overflow-hidden z-30 bg-white py-6 right-0 top-[30%] p-4' +
-      (currentSlide === 0 ? ' slick-disabled' : '')
-    }
+    className='absolute shadow-md group rotate-180 overflow-hidden z-30 bg-white py-6 right-0 top-[40%] p-4'
     style={{
       background: `${
         theme && mounted && theme === 'light'
           ? 'linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9))'
           : 'linear-gradient(rgba(2,4,12,0.7), rgba(2,4,12,0.7))'
       }`,
+      display: className?.includes("slick-disabled") ? "none" : undefined
     }}
-    aria-hidden="true"
-    aria-disabled={currentSlide === 0}
     type="button"
   >
     <AiOutlineSwapLeft className="text-2xl z-20 text-themePink " />
@@ -63,10 +55,10 @@ const Index = ({ blogs }) => {
   }, [])
 
   const settings = {
-    infinite: true,
+    infinite: false,
+    dots: false,
     speed: 800,
     slidesToShow: 3,
-    dots: true,
     slidesToScroll: 3,
     initialSlide: 0,
     nextArrow: <SlickArrowRight theme={theme} mounted={mounted} />,

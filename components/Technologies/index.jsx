@@ -1,6 +1,6 @@
 import { useTheme } from 'next-themes'
 import {
-  SiAmazonaws,
+  SiAmazonwebservices,
   SiApachekafka,
   SiGooglecloud,
   SiKubernetes,
@@ -15,7 +15,7 @@ import { technologies } from '../../portfolio'
 const technologies_components_map = {
   React: SiReact,
   GCP: SiGooglecloud,
-  AWS: SiAmazonaws,
+  AWS: SiAmazonwebservices,
   Python: SiPython,
   Tensorflow: SiTensorflow,
   Kubernetes: SiKubernetes,

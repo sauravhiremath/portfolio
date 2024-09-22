@@ -5,7 +5,7 @@
 </h1>
 
 <h6 align="center">
-  Last Updated Jan, 2023
+  Last Updated Sept, 2024
 </h6>
 
 <hr />
