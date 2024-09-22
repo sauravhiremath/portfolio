@@ -1,17 +1,20 @@
-import { Drawer } from '@mui/material'
-import Link from 'next/link'
+import React from 'react'
 import {
   AiFillGithub,
   AiOutlineInstagram,
   AiOutlineLinkedin,
   AiOutlineTwitter,
 } from 'react-icons/ai'
-import React from 'react'
-import { routeData } from '../routeData'
-import { RiCloseLine } from 'react-icons/ri'
-import { useTheme } from 'next-themes'
-import { FiSun } from 'react-icons/fi'
 import { BsMoonStarsFill } from 'react-icons/bs'
+import { FiSun } from 'react-icons/fi'
+import { RiCloseLine } from 'react-icons/ri'
+
+import { useTheme } from 'next-themes'
+import Link from 'next/link'
+
+import { Drawer } from '@mui/material'
+
+import { routeData } from '../routeData'
 
 const NavDrawer = ({ open, toggleDarkMode, resolvedTheme, setOpen }) => {
   const handleClose = () => {

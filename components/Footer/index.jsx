@@ -1,5 +1,6 @@
-import { useTheme } from 'next-themes'
 import React, { useEffect, useState } from 'react'
+
+import { useTheme } from 'next-themes'
 
 const Index = ({ contact }) => {
   const [mounted, setMounted] = useState(false)

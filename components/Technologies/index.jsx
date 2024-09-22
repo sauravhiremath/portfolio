@@ -1,4 +1,4 @@
-import { useTheme } from 'next-themes'
+import React, { useEffect, useState } from 'react'
 import {
   SiAmazonwebservices,
   SiApachekafka,
@@ -9,7 +9,9 @@ import {
   SiReact,
   SiTensorflow,
 } from 'react-icons/si'
-import React, { useEffect, useState } from 'react'
+
+import { useTheme } from 'next-themes'
+
 import { technologies } from '../../portfolio'
 
 const technologies_components_map = {

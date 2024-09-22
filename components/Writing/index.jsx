@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
 import { AiOutlineSwapLeft } from 'react-icons/ai'
+import Slider from 'react-slick'
+
 import { useTheme } from 'next-themes'
+
+import 'slick-carousel/slick/slick-theme.css'
+import 'slick-carousel/slick/slick.css'
 
 const SlickArrowLeft = ({ slideCount, theme, mounted, className, ...props }) => (
   <button

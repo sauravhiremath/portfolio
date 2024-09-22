@@ -1,7 +1,8 @@
-import { useTheme } from 'next-themes'
 import React, { useEffect, useState } from 'react'
 import { BsArrow90DegRight } from 'react-icons/bs'
 import { Waypoint } from 'react-waypoint'
+
+import { useTheme } from 'next-themes'
 import Image from 'next/image'
 
 const Projects = ({ workExperience }) => {

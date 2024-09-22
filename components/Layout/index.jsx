@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from '../Navbar'
-import Footer from '../Footer'
+
 import { useTheme } from 'next-themes'
+
+import Footer from '../Footer'
+import Navbar from '../Navbar'
 
 const Index = ({ children, highlightedLink, contact }) => {
   const [mounted, setMounted] = useState(false)

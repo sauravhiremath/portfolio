@@ -1,8 +1,11 @@
 import React, { createRef, useEffect, useState } from 'react'
+
+import { useTheme } from 'next-themes'
+
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import { useTheme } from 'next-themes'
 import confetti from 'canvas-confetti'
+
 import { CurvedArrow, Highlighter } from './highlighter'
 
 const Hero = ({ about }) => {

@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { useTheme } from 'next-themes'
+import { BsMoonStarsFill } from 'react-icons/bs'
 import { FiSun } from 'react-icons/fi'
 import { HiOutlineMailOpen } from 'react-icons/hi'
-import { BsMoonStarsFill } from 'react-icons/bs'
 import { RiMenu2Line } from 'react-icons/ri'
-import { routeData } from '../routeData'
+
+import { useTheme } from 'next-themes'
 import Link from 'next/link'
-import NavDrawer from './NavDrawer'
+
+import { routeData } from '../routeData'
 import Logo from '../utils/Logo'
+import NavDrawer from './NavDrawer'
 
 const Index = ({ highlightedLink }) => {
   const [mounted, setMounted] = useState(false)

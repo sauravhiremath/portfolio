@@ -1,15 +1,18 @@
-import Head from 'next/head'
-import Layout from '../components/Layout'
-import Hero2 from '../components/Hero/Hero2'
-import Projects from '../components/Projects'
-import Writing from '../components/Writing'
-import Testimonial from '../components/Testimonial'
-import Journey from '../components/Journey'
 import { Suspense, useEffect, useState } from 'react'
+
 import { GoogleTagManager } from '@next/third-parties/google'
+import Head from 'next/head'
+
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+
+import Hero2 from '../components/Hero/Hero2'
+import Journey from '../components/Journey'
+import Layout from '../components/Layout'
+import Projects from '../components/Projects'
 import Brands from '../components/Technologies'
+import Testimonial from '../components/Testimonial'
+import Writing from '../components/Writing'
 import { about, blogs, contact, journey, testimonials, workExperience } from '../portfolio'
 
 const Home = () => {

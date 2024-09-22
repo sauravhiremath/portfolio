@@ -1,9 +1,11 @@
-import { useTheme } from 'next-themes'
-import { TiArrowSortedDown } from 'react-icons/ti'
-import { FaGraduationCap } from 'react-icons/fa'
 import React, { useEffect, useRef, useState } from 'react'
-import { Waypoint } from 'react-waypoint'
 import { BsArrowRight } from 'react-icons/bs'
+import { FaGraduationCap } from 'react-icons/fa'
+import { TiArrowSortedDown } from 'react-icons/ti'
+import { Waypoint } from 'react-waypoint'
+
+import { useTheme } from 'next-themes'
+
 import { useMediaQuery } from '@mui/material'
 
 const Index = ({ journey }) => {

@@ -1,8 +1,10 @@
 import React, { createRef, useEffect, useState } from 'react'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
+
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const Hero = () => {
   useEffect(() => {
