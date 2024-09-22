@@ -6,6 +6,7 @@ import Writing from '../components/Writing'
 import Testimonial from '../components/Testimonial'
 import Journey from '../components/Journey'
 import { Suspense, useEffect, useState } from 'react'
+import { GoogleTagManager } from '@next/third-parties/google'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Brands from '../components/Technologies'
@@ -67,6 +68,7 @@ const Home = () => {
           <Writing blogs={blogs} />
         </section>
       </Suspense>
+      <GoogleTagManager gtmId="G-SNPDEZ3SBB" />
     </Layout>
   )
 }
