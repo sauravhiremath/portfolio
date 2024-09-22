@@ -48,8 +48,27 @@ const Home = () => {
     <>
       <Layout highlightedLink={highlightedLink} contact={contact}>
         <Head>
-          <title>Saurav M. H · Software Developer · VIT</title>
+        <title>Saurav M. H · Software Developer · VIT</title>
           <link rel="icon" href="/favicon.ico" />
+          
+          {/* Added metadata */}
+          <meta name="description" content="Portfolio of Saurav M. H, a Software Developer from VIT. Explore my projects, skills, and experience." />
+          <meta name="keywords" content="Saurav M. H, Software Developer, VIT, Portfolio, Web Development" />
+          <meta name="author" content="Saurav M. H" />
+          
+          {/* Open Graph / Facebook */}
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://sauravmh.com/" />
+          <meta property="og:title" content="Saurav M. H · Software Developer · VIT" />
+          <meta property="og:description" content="Portfolio of Saurav M. H, a Software Developer from VIT. Explore my projects, skills, and experience." />
+          <meta property="og:image" content="https://sauravmh.com/og-image.gif" />
+
+          {/* Twitter */}
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content="https://sauravmh.com/" />
+          <meta property="twitter:title" content="Saurav M. H · Software Developer · VIT" />
+          <meta property="twitter:description" content="Portfolio of Saurav M. H, a Software Developer from VIT. Explore my projects, skills, and experience." />
+          <meta property="twitter:image" content="https://sauravmh.com/og-image.gif" />
         </Head>
         <Suspense>
           <section id="home" className="container mx-auto">
