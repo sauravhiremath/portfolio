@@ -134,7 +134,7 @@ const Index = ({ blogs }) => {
                   data-aos="fade-down"
                   data-aos-duration="500"
                   data-aos-delay={`${i + 3}00`}
-                  className="text-sm md:text-base dark:text-[#808C9C]"
+                  className="text-sm md:text-base dark:text-[#808C9C] h-[5rem]"
                 >
                   {truncate(description, 140)}
                 </p>

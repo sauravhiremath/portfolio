@@ -159,22 +159,28 @@
   ],
   "blogs": [
     {
+      "heading": "Debugging CGo Parse Error in Go Build Process - macOS ARM64",
+      "description": "A journey on resolving CGo parse errors in Go build processes on macOS ARM64 architecture.",
+      "image": "https://res.cloudinary.com/sauravmh/image/upload/f_auto,q_auto/v1/blog-images/2022/01/i60sddjmk14hfpq4yvq4?w=1200&q=80",
+      "link": "https://blog.sauravmh.com/posts/debug-cgo-parser-error-macos-arm64"
+    },
+    {
       "heading": "Building a multiplayer game using WebSockets - Part 1",
-      "description": "A definitive guide for building your multiplayer game on a browser the right way using socket.io on NodeJS and React. Ranging from folder-structure to project deployments",
-      "image": "https://res-3.cloudinary.com/sauravmh/image/upload/q_auto/v1/blog-images/2022/01/1_Rdl_AQurT1KpwIMQdkQK2Q.png",
-      "link": "https://medium.com/swlh/socket-io-games-the-right-way-using-nodejs-and-react-not-a-chat-app-part-1-e7a49d2f3f51"
+      "description": "A definitive guide for building your multiplayer game on a browser the right way using socket.io on NodeJS and React. Ranging from folder-structure to project deployments.",
+      "image": "https://res-3.cloudinary.com/sauravmh/image/upload/f_auto,q_auto/v1/blog-images/2022/01/1_Rdl_AQurT1KpwIMQdkQK2Q.png",
+      "link": "https://blog.sauravmh.com/posts/building-a-multiplayer-game-using-websockets-part-1"
     },
     {
       "heading": "Game Design Using Socket.io and Deployments on Scale - Part 2",
-      "description": "A deep dive into building multiplayer browser games using socket.io using NodeJS and React. And Deploying your application on Scale using Nginx and Clusters",
-      "image": "https://res-3.cloudinary.com/sauravmh/image/upload/q_auto/v1/blog-images/2022/01/1_Rdl_AQurT1KpwIMQdkQK2Q.png",
-      "link": "https://medium.com/swlh/game-design-using-socket-io-and-deployments-on-scale-part-2-254e674bc94b"
+      "description": "A deep dive into building multiplayer browser games using socket.io using NodeJS and React. And Deploying your application on Scale using Nginx and Clusters.",
+      "image": "https://res.cloudinary.com/sauravmh/image/upload/f_auto,q_auto/v1/blog-images/2022/01/zcdq4ziwserthasdjyp8?w=1200&q=80",
+      "link": "https://blog.sauravmh.com/posts/browser-game-design-using-websockets-and-deployments-on-scale-part-2"
     },
     {
-      "heading": "Facebook Jest — A Contributor’s Guide",
+      "heading": "Facebook Jest — A Contributor's Guide",
       "description": "The MLH Fellowship is an internship alternative for software engineers, with a focus on Open Source projects. Instead of working on a project for just one company, students contribute to Open Source projects that are used by companies around the world.",
-      "image": "https://res-4.cloudinary.com/sauravmh/image/upload/q_auto/v1/blog-images/2022/01/xagqzbz5h4rgtemepwp2.png",
-      "link": "https://dev.to/sauravmh/going-opensource-a-dive-into-facebook-s-jest-cgb"
+      "image": "https://res-4.cloudinary.com/sauravmh/image/upload/f_auto,q_auto/v1/blog-images/2022/01/xagqzbz5h4rgtemepwp2.png",
+      "link": "https://blog.sauravmh.com/posts/facebook-jest-opensource"
     }
   ],
   "contact": {
