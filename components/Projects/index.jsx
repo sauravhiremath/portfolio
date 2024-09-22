@@ -43,11 +43,11 @@ const Projects = ({ workExperience }) => {
         </div>
         <div className="container bg-fixed mt-[-65vh] rounded-lg lg:py-12 overflow-hidden mx-auto space-y-16">
           {projects.map((project, i) => (
-            <>
+            <div key={project.title}>
               <div className="max-w-[30rem] mx-auto md:max-w-full">
-                <ProjectItem key={i} i={i + 1} projectData={project} />
+                <ProjectItem i={i + 1} projectData={project} />
               </div>
-            </>
+            </div>
           ))}
           {projects.length != workExperience.experiences.length && (
             <div className="container">
@@ -76,7 +76,7 @@ const ProjectItem = ({ projectData, i }) => {
   const minimal_tags = tags.slice(0, 3)
   const { source, is_video } = media
   return (
-    <>
+    <div key={title}>
       <div
         className={`${
           i % 2 === 0 && 'hidden'
@@ -124,11 +124,11 @@ const ProjectItem = ({ projectData, i }) => {
             <div data-aos="fade-right" data-aos-duration="800" data-aos-delay="400">
               <div className="flex flex-wrap">
                 {minimal_tags.map(tag => (
-                  <>
+                  <div key={tag}>
                     <div className="mr-4 my-2 cursor-s-resize">
                       <ProjectBadge innerText={tag} bgColor="bg-[#f7e6e6]" color="text-[#ee7675]" />
                     </div>
-                  </>
+                  </div>
                 ))}
               </div>
             </div>
@@ -219,11 +219,11 @@ const ProjectItem = ({ projectData, i }) => {
             <div data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
               <div className="flex flex-wrap">
                 {minimal_tags.map(tag => (
-                  <>
+                  <div key={tag}>
                     <div className="mr-4 my-2">
                       <ProjectBadge innerText={tag} bgColor="bg-[#f7e6e6]" color="text-[#ee7675]" />
                     </div>
-                  </>
+                  </div>
                 ))}
               </div>
             </div>
@@ -246,7 +246,7 @@ const ProjectItem = ({ projectData, i }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

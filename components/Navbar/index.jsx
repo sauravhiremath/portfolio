@@ -59,7 +59,7 @@ const Index = ({ highlightedLink }) => {
           <div className="flex items-center">
             <ul className="pr-4 hidden lg:flex text-textDark space-x-4 xl:space-x-8 dark:text-white items-center cursor-pointer">
               {routeData.map((route, i) => (
-                <Link href={route.slug}>
+                <Link key={i} href={route.slug}>
                   <li
                     key={i}
                     className={`relative hover:bg-blue-200 ${
