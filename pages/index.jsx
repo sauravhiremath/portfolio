@@ -1,6 +1,6 @@
 import { Suspense, useEffect, useState } from 'react'
 
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import Head from 'next/head'
 
 import AOS from 'aos'
@@ -76,7 +76,7 @@ const Home = () => {
           </section>
         </Suspense>
       </Layout>
-      <GoogleTagManager gtmId="G-SNPDEZ3SBB" />
+      <GoogleAnalytics gaId="G-SNPDEZ3SBB" />
     </>
   )
 }
