@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import { AiOutlineSwapLeft } from 'react-icons/ai'
 import { useTheme } from 'next-themes'
 
-const SlickArrowLeft = ({ theme, mounted, className, ...props }) => (
+const SlickArrowLeft = ({ slideCount, theme, mounted, className, ...props }) => (
   <button
     {...props}
     className='absolute group shadow-md overflow-hidden z-30  py-6 flex items-center justify-center text-red-500 left-0 top-[40%] p-4'
@@ -25,7 +25,7 @@ const SlickArrowLeft = ({ theme, mounted, className, ...props }) => (
     </div>
   </button>
 )
-const SlickArrowRight = ({ theme, mounted, className, ...props }) => (
+const SlickArrowRight = ({ slideCount,theme, mounted, className, ...props }) => (
   <button
     {...props}
     className='absolute shadow-md group rotate-180 overflow-hidden z-30 bg-white py-6 right-0 top-[40%] p-4'

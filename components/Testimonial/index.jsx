@@ -68,7 +68,7 @@ const Index = ({ testimonials }) => {
   )
 }
 
-const SlickArrowLeft = ({ theme, mounted, className, ...props }) => (
+const SlickArrowLeft = ({ slideCount, theme, mounted, className, ...props }) => (
   <button
     {...props}
     className='absolute group border dark:border-slate-900 shadow-md overflow-hidden z-30 py-6 flex items-center justify-center text-red-500 left-0 top-[40%] p-4'
@@ -89,7 +89,7 @@ const SlickArrowLeft = ({ theme, mounted, className, ...props }) => (
   </button>
 )
 
-const SlickArrowRight = ({ theme, mounted, className, ...props }) => (
+const SlickArrowRight = ({ slideCount, theme, mounted, className, ...props }) => (
   <button
     {...props}
     className='absolute shadow-md border group dark:border-slate-900 rotate-180 overflow-hidden z-30 bg-white py-6 right-0 top-[40%] p-4'

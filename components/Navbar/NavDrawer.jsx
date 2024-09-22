@@ -1,4 +1,4 @@
-import { Drawer } from '@material-ui/core'
+import { Drawer } from '@mui/material'
 import Link from 'next/link'
 import {
   AiFillGithub,

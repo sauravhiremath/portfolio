@@ -4,7 +4,7 @@ import { FaGraduationCap } from 'react-icons/fa'
 import React, { useEffect, useRef, useState } from 'react'
 import { Waypoint } from 'react-waypoint'
 import { BsArrowRight } from 'react-icons/bs'
-import { useMediaQuery } from '@material-ui/core'
+import { useMediaQuery } from '@mui/material'
 
 const Index = ({ journey }) => {
   const [mounted, setMounted] = useState(false)
