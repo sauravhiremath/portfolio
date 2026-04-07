@@ -1,4 +1,5 @@
 import emoji from 'react-easy-emoji'
+
 import en from './locale/en.json'
 
 const current_locale = en

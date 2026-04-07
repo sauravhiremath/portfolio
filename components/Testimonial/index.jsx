@@ -38,7 +38,7 @@ const Index = ({ testimonials }) => {
             !hidden && (
               <div key={i} className="flex overflow-hidden w-full group flex-col space-y-6">
                 <div className="mx-auto px-4 py-8">
-                  <section className="rounded-lg bg-gray-100 dark:bg-blueGray-400 dark:bg-opacity-5 p-8">
+                  <section className="rounded-lg bg-gray-100 dark:bg-slate-400/5 p-8">
                     <div className="grid md:grid-cols-4 sm:grid-cols-3 gap-12 sm:items-center">
                       <div className="md:block hidden">
                         <img
@@ -70,7 +70,7 @@ const Index = ({ testimonials }) => {
   )
 }
 
-const SlickArrowLeft = ({ slideCount, theme, mounted, className, ...props }) => (
+const SlickArrowLeft = ({ slideCount, currentSlide, theme, mounted, className, ...props }) => (
   <button
     {...props}
     className="absolute group border dark:border-slate-900 shadow-md overflow-hidden z-30 py-6 flex items-center justify-center text-red-500 left-0 top-[40%] p-4"
@@ -91,7 +91,7 @@ const SlickArrowLeft = ({ slideCount, theme, mounted, className, ...props }) => 
   </button>
 )
 
-const SlickArrowRight = ({ slideCount, theme, mounted, className, ...props }) => (
+const SlickArrowRight = ({ slideCount, currentSlide, theme, mounted, className, ...props }) => (
   <button
     {...props}
     className="absolute shadow-md border group dark:border-slate-900 rotate-180 overflow-hidden z-30 bg-white py-6 right-0 top-[40%] p-4"

@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tailwind-scrollbar-hide/v4";
+@config "../tailwind.config.js";
 
 @font-face {
     font-family: 'Agustina Regular';
@@ -37,7 +37,7 @@
 
 @layer components {
     .container {
-        @apply max-w-[80rem] !w-full mx-auto px-4 !important;
+        @apply !max-w-[80rem] !w-full !mx-auto !px-4;
     }
 
     .stripe-pattern-violet {

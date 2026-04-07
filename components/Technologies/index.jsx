@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { FaAws } from 'react-icons/fa6'
 import {
-  SiAmazonwebservices,
   SiApachekafka,
   SiGooglecloud,
   SiKubernetes,
@@ -17,7 +17,7 @@ import { technologies } from '../../portfolio'
 const technologies_components_map = {
   React: SiReact,
   GCP: SiGooglecloud,
-  AWS: SiAmazonwebservices,
+  AWS: FaAws,
   Python: SiPython,
   Tensorflow: SiTensorflow,
   Kubernetes: SiKubernetes,

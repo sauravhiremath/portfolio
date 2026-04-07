@@ -95,7 +95,7 @@ const ProjectItem = ({ projectData, i }) => {
                 <source src={source} type="video/mp4" />
               </video>
             )}
-            {!is_video && <Image src={source} alt={title} layout="fill" objectFit="cover" />}
+            {!is_video && <Image src={source} alt={title} fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />}
           </div>
           <div
             data-aos="fade-left"
@@ -163,7 +163,7 @@ const ProjectItem = ({ projectData, i }) => {
                 <source src={source} type="video/mp4" />
               </video>
             )}
-            {!is_video && <Image src={source} alt={title} layout="fill" />}
+            {!is_video && <Image src={source} alt={title} fill sizes="(max-width: 768px) 100vw, 50vw" />}
           </div>
           <div
             data-aos="fade-up"
@@ -196,7 +196,7 @@ const ProjectItem = ({ projectData, i }) => {
                 <source src={source} type="video/mp4" />
               </video>
             )}
-            {!is_video && <Image src={source} alt={title} layout="fill" objectFit="contain" />}
+            {!is_video && <Image src={source} alt={title} fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'contain' }} />}
           </div>
         </div>
         <div className="flex flex-col space-y-5">

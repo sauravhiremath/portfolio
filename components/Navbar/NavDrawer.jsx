@@ -67,7 +67,7 @@ const NavDrawer = ({ open, toggleDarkMode, resolvedTheme, setOpen }) => {
                 </li>
               ))}
               <li className="mr-auto">
-                <a href="/#contact" className="relative mr-auto inline-flex text-md group">
+                <Link href="/#contact" className="relative mr-auto inline-flex text-md group">
                   <span className="relative z-10 block px-4 py-2 overflow-hidden font-medium leading-tight text-gray-800 dark:text-slate-100 transition-colors duration-300 ease-out border-2 border-gray-900 dark:border-gray-300 rounded-md group-hover:text-white dark:group-hover:text-gray-900">
                     <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-md bg-gray-50 dark:bg-darkColor" />
                     <span className="absolute left-0 w-40 h-40 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 dark:bg-gray-300 group-hover:-rotate-180 ease" />
@@ -77,7 +77,7 @@ const NavDrawer = ({ open, toggleDarkMode, resolvedTheme, setOpen }) => {
                     className="absolute bottom-0 right-0 w-full h-10 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 dark:bg-gray-300 rounded-md group-hover:mb-0 group-hover:mr-0"
                     data-rounded="rounded-md"
                   />
-                </a>
+                </Link>
               </li>
               <li>
                 <div
