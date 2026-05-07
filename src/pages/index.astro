@@ -1,0 +1,130 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import ThemeToggle from "~/components/ThemeToggle.astro";
+import HeroCard from "~/components/HeroCard.astro";
+import SocialCard from "~/components/SocialCard.astro";
+import EmailCard from "~/components/EmailCard.astro";
+import BlogCard from "~/components/BlogCard.astro";
+import LuckyCard from "~/components/LuckyCard.astro";
+import DecorCard from "~/components/DecorCard.astro";
+import { socials, blogs } from "~/data/site";
+
+const x = socials.find((s) => s.id === "x")!;
+const gh = socials.find((s) => s.id === "github")!;
+const li = socials.find((s) => s.id === "linkedin")!;
+const co = socials.find((s) => s.id === "contra")!;
+const featuredBlogs = blogs.slice(0, 3);
+---
+
+<Layout>
+  <main class="page">
+    <ThemeToggle />
+
+    <div class="bento-scroller">
+      <section class="bento">
+        <div class="hero-cell"><HeroCard /></div>
+
+        <div class="stack-tall">
+          <SocialCard {...x} variant="tall" />
+          <SocialCard {...li} variant="tall" />
+        </div>
+
+        <div class="stack-short">
+          <SocialCard {...gh} variant="short" />
+          <SocialCard {...co} variant="short" />
+        </div>
+
+        <div class="mail-cell"><EmailCard /></div>
+
+        <div class="decor-cell"><DecorCard /></div>
+
+        <div class="blogs-cell">
+          {featuredBlogs.map((b) => (
+            <BlogCard href={b.href} title={b.title} date={b.date} />
+          ))}
+        </div>
+
+        <div class="lucky-cell"><LuckyCard /></div>
+      </section>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .page {
+    width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0;
+    gap: clamp(32px, 13vh, 144px);
+  }
+
+  .bento-scroller {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: visible; /* computes to auto due to overflow-x; padding gives shadows room */
+    padding: 8px 0;
+    scroll-snap-type: x proximity;
+    scroll-padding-left: 80px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 32px, #000 calc(100% - 32px), transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, #000 32px, #000 calc(100% - 32px), transparent 100%);
+  }
+
+  .bento-scroller::-webkit-scrollbar { display: none; }
+
+  .bento {
+    display: grid;
+    grid-template-columns: 711px 229px 183px 353px 340px 254px;
+    grid-template-rows: 520px;
+    column-gap: 16px;
+    padding: 0 80px;
+    width: max-content;
+    animation: fade-up 700ms cubic-bezier(.22, 1, .36, 1);
+  }
+
+  .hero-cell    { grid-column: 1; grid-row: 1; }
+  .stack-tall   { grid-column: 2; grid-row: 1; }
+  .stack-short  { grid-column: 3; grid-row: 1; }
+  .decor-cell   { grid-column: 4; grid-row: 1; }
+  .blogs-cell   { grid-column: 5; grid-row: 1; display: grid; grid-template-rows: repeat(3, 163px); gap: 16px; }
+  .lucky-cell   { grid-column: 6; grid-row: 1; }
+
+  /* Tall stack: X at top, LinkedIn at bottom (email floats in the 96px gap) */
+  .stack-tall {
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Short stack: GitHub + Contra stacked at the top, empty space below LinkedIn's right */
+  .stack-short {
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Email overlays the middle gap, spanning both stack columns */
+  .mail-cell {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+    align-self: start;
+    margin-top: 228px;  /* 212 (top tall) + 16 (gap) */
+    height: 64px;
+    width: 428px;       /* 229 + 16 + 183 */
+  }
+
+  .hero-cell, .stack-tall > *, .stack-short > *, .decor-cell, .blogs-cell > *, .lucky-cell, .mail-cell {
+    scroll-snap-align: start;
+  }
+
+  @media (max-width: 639.98px) {
+    .bento { padding: 0 16px; }
+    .bento-scroller { scroll-padding-left: 16px; }
+  }
+</style>

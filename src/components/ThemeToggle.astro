@@ -1,0 +1,63 @@
+---
+import Icons from "./Icons.astro";
+---
+
+<div class="theme-toggle" role="tablist" aria-label="Theme">
+  <button type="button" class="theme-btn" data-theme-set="light" role="tab" aria-label="Light theme">
+    <Icons name="sun" size={16} />
+  </button>
+  <button type="button" class="theme-btn" data-theme-set="dark" role="tab" aria-label="Dark theme">
+    <Icons name="moon" size={16} />
+  </button>
+</div>
+
+<style>
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px;
+    background: var(--pop);
+    border-radius: 14px;
+    user-select: none;
+  }
+
+  .theme-btn {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: var(--fg-soft);
+    transition: color 200ms ease, background 200ms ease, box-shadow 200ms ease;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    padding: 0;
+  }
+
+  .theme-btn:hover { color: var(--fg-muted); }
+
+  :global([data-theme="light"]) .theme-btn[data-theme-set="light"],
+  :global([data-theme="dark"]) .theme-btn[data-theme-set="dark"] {
+    color: var(--fg);
+    background: var(--card);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06) inset, 0 2px 4px 0 rgba(0, 0, 0, 0.04);
+  }
+
+  :global([data-theme="dark"]) .theme-btn[data-theme-set="dark"] {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08) inset, 0 2px 4px 0 rgba(0, 0, 0, 0.32);
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>("[data-theme-set]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const theme = btn.dataset.themeSet;
+      if (theme !== "light" && theme !== "dark") return;
+      document.documentElement.setAttribute("data-theme", theme);
+      try { localStorage.setItem("theme", theme); } catch {}
+    });
+  });
+</script>

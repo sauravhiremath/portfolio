@@ -1,0 +1,81 @@
+---
+import Icons from "./Icons.astro";
+import { luckySites } from "~/data/site";
+---
+
+<aside class="lucky card" data-lucky-sites={JSON.stringify(luckySites)}>
+  <div class="lucky-icon" aria-hidden="true">
+    <Icons name="globe" size={24} />
+  </div>
+
+  <div class="lucky-foot">
+    <p class="lucky-title">Go to random page</p>
+    <p class="lucky-sub">Visit a page from a curated list of internet destinations</p>
+    <button type="button" class="lucky-btn" data-lucky-trigger>I'm feeling lucky</button>
+  </div>
+</aside>
+
+<style>
+  .lucky {
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .lucky-icon { color: var(--fg-soft); }
+
+  .lucky-foot { display: flex; flex-direction: column; }
+
+  .lucky-title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--fg);
+  }
+
+  .lucky-sub {
+    margin-top: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--fg-soft);
+  }
+
+  .lucky-btn {
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    border: 0;
+    border-radius: 12px;
+    background: var(--fg);
+    color: var(--bg);
+    font: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    cursor: pointer;
+    transition: background-color 200ms ease;
+  }
+
+  .lucky-btn:hover { background: #3f3f46; }
+
+  :global([data-theme="dark"]) .lucky-btn:hover { background: #e4e4e7; }
+</style>
+
+<script>
+  const card = document.querySelector<HTMLElement>("[data-lucky-sites]");
+  const btn = document.querySelector<HTMLButtonElement>("[data-lucky-trigger]");
+  if (card && btn) {
+    const sites: string[] = JSON.parse(card.dataset.luckySites ?? "[]");
+    let last = -1;
+    btn.addEventListener("click", () => {
+      if (!sites.length) return;
+      let idx = Math.floor(Math.random() * sites.length);
+      if (sites.length > 1 && idx === last) idx = (idx + 1) % sites.length;
+      last = idx;
+      window.open(sites[idx], "_blank", "noopener,noreferrer");
+    });
+  }
+</script>

@@ -1,0 +1,42 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  date: string;
+}
+
+const { href, title, date } = Astro.props;
+---
+
+<a href={href} target="_blank" rel="noopener noreferrer" class="blog card-link">
+  <p class="blog-title">{title}</p>
+  <span class="blog-date">{date}</span>
+</a>
+
+<style>
+  .blog {
+    color: var(--fg);
+    text-decoration: none;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px 22px;
+    height: 100%;
+  }
+
+  .blog-title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    color: var(--fg);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .blog-date {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--fg-soft);
+  }
+</style>
