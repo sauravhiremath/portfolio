@@ -8,8 +8,6 @@ export const site = {
     flag: "🇮🇳",
     timezone: "Asia/Kolkata",
   },
-  avatar: "/images/saurav.webp",
-  avatarThumbnail: "/images/saurav-thumbnail.webp",
 };
 
 export const socials = [

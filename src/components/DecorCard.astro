@@ -44,7 +44,7 @@ const projects = [
     <div class="decor-projects">
       {projects.map((p) => (
         <a href={p.href} target="_blank" rel="noopener noreferrer" class="decor-project">
-          <img src={p.logo} alt="" width="40" height="40" class="decor-project-logo" loading="lazy" decoding="async" />
+          <img src={p.logo} alt="" width="40" height="40" class="decor-project-logo" loading="eager" decoding="async" />
           <div class="decor-project-text">
             <p class="decor-project-name">{p.name}</p>
             <p class="decor-project-domain">{p.domain}</p>

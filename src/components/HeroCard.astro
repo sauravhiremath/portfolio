@@ -1,19 +1,20 @@
 ---
+import { Image } from "astro:assets";
 import { site } from "~/data/site";
+import avatar from "~/assets/saurav.webp";
 ---
 
 <article class="hero card">
   <div class="hero-head">
-    <img
-      src={site.avatarThumbnail}
-      data-src={site.avatar}
-      width="40"
-      height="40"
-      alt={`${site.shortName} profile photo`}
+    <Image
+      src={avatar}
+      width={40}
+      height={40}
+      densities={[1, 2]}
+      alt={site.shortName}
       class="hero-avatar"
       loading="eager"
       decoding="async"
-      data-avatar
     />
     <h1 class="hero-greeting">
       Hey, I'm {site.shortName} <span class="animate-wave" aria-hidden="true">👋🏽</span>
@@ -268,23 +269,10 @@ import { site } from "~/data/site";
     el.textContent = `${time} local time`;
   }
 
-  function upgradeAvatar() {
-    const img = document.querySelector<HTMLImageElement>("[data-avatar]");
-    const fullSrc = img?.dataset.src;
-    if (!img || !fullSrc) return;
-    const full = new Image();
-    full.decoding = "async";
-    full.onload = () => {
-      img.src = fullSrc;
-    };
-    full.src = fullSrc;
-  }
-
   function init() {
     startGlobe();
     updateTime();
     setInterval(updateTime, 30_000);
-    upgradeAvatar();
   }
 
   if (document.readyState === "loading") {
