@@ -1,0 +1,280 @@
+---
+import { site } from "~/data/site";
+---
+
+<article class="hero card">
+  <div class="hero-head">
+    <img
+      src={site.avatar}
+      width="40"
+      height="40"
+      alt={`${site.shortName} profile photo`}
+      class="hero-avatar"
+      loading="eager"
+      decoding="async"
+    />
+    <h1 class="hero-greeting">
+      Hey, I'm {site.shortName} <span class="animate-wave" aria-hidden="true">👋🏽</span>
+    </h1>
+  </div>
+
+  <p class="hero-copy">
+    I'm a senior dev <a href="https://orca.security" target="_blank" rel="noopener noreferrer" class="link-orca">@orca</a>
+    building cool AI things and R&amp;D for API security. A digital nomad discovering and exploring possibilities.
+  </p>
+
+  <div class="hero-meta">
+    <p class="hero-location">{site.location.label} <span aria-hidden="true">{site.location.flag}</span></p>
+    <p class="hero-time" data-local-time>—</p>
+  </div>
+
+  <div class="globe-wrap" aria-hidden="true">
+    <canvas class="globe-canvas" data-globe></canvas>
+  </div>
+
+  <div class="weather-card" aria-hidden="true">
+    <span class="weather-emoji">☀️</span>
+    <div class="weather-info">
+      <p class="weather-city">Bangalore</p>
+      <p class="weather-temp">28° · Sunny</p>
+    </div>
+  </div>
+</article>
+
+<style>
+  .hero {
+    width: 711px;
+    height: 520px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    object-fit: cover;
+    background: var(--pop);
+    flex-shrink: 0;
+  }
+
+  .hero-greeting {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    color: var(--fg);
+  }
+
+  .hero-copy {
+    margin-top: 28px;
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: 400;
+    color: var(--fg);
+    max-width: 540px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .link-orca {
+    color: #0080ff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 200ms ease;
+  }
+  .link-orca:hover { opacity: 0.75; }
+
+  .hero-meta {
+    margin-top: auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-location {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--fg);
+  }
+
+  .hero-time {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--fg-soft);
+  }
+
+  .globe-wrap {
+    position: absolute;
+    right: -87px;
+    bottom: -132px;
+    width: 450px;
+    height: 450px;
+    pointer-events: none;
+    z-index: 1;
+    -webkit-mask-image: radial-gradient(circle, #000 60%, transparent 70%);
+            mask-image: radial-gradient(circle, #000 60%, transparent 70%);
+  }
+
+  .globe-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .weather-card {
+    position: absolute;
+    position-anchor: --cobe-bangalore;
+    bottom: anchor(top);
+    left: anchor(center);
+    translate: -50% -10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px 8px 10px;
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 3;
+    opacity: var(--cobe-visible-bangalore, 0);
+    filter: blur(var(--cobe-visible-bangalore, 6px));
+    transition: opacity 320ms cubic-bezier(.22,1,.36,1), filter 320ms cubic-bezier(.22,1,.36,1);
+  }
+
+  .weather-emoji {
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .weather-info { display: flex; flex-direction: column; line-height: 1.1; }
+
+  .weather-city {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--fg);
+  }
+
+  .weather-temp {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--fg-soft);
+  }
+
+  @supports not (anchor-name: --x) {
+    .weather-card { display: none; }
+  }
+</style>
+
+<script>
+  import createGlobe from "cobe";
+
+  const SIZE = 450;
+
+  type Theme = {
+    dark: number;
+    baseColor: [number, number, number];
+    markerColor: [number, number, number];
+    glowColor: [number, number, number];
+    mapBrightness: number;
+  };
+
+  const lightTheme: Theme = {
+    dark: 0,
+    baseColor: [1, 1, 1],
+    markerColor: [22 / 255, 163 / 255, 74 / 255],
+    glowColor: [1, 1, 1],
+    mapBrightness: 6,
+  };
+
+  const darkTheme: Theme = {
+    dark: 1,
+    baseColor: [0.32, 0.32, 0.36],
+    markerColor: [74 / 255, 222 / 255, 128 / 255],
+    glowColor: [0.16, 0.16, 0.18],
+    mapBrightness: 4,
+  };
+
+  const isDark = () => document.documentElement.getAttribute("data-theme") === "dark";
+
+  function startGlobe() {
+    const canvas = document.querySelector<HTMLCanvasElement>("[data-globe]");
+    if (!canvas) return;
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const px = SIZE * dpr;
+
+    let phi = 4.4;
+
+    const globe = createGlobe(canvas, {
+      devicePixelRatio: dpr,
+      width: px,
+      height: px,
+      phi,
+      theta: 0.25,
+      diffuse: 1.2,
+      mapSamples: 16000,
+      ...(isDark() ? darkTheme : lightTheme),
+      markers: [
+        { id: "bangalore", location: [12.9716, 77.5946], size: 0.04 },
+      ],
+    });
+
+    let raf = 0;
+    function tick() {
+      phi += 0.0035;
+      globe.update({ phi });
+      raf = requestAnimationFrame(tick);
+    }
+    tick();
+
+    new MutationObserver(() => {
+      globe.update(isDark() ? darkTheme : lightTheme);
+    }).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+
+    window.addEventListener("pagehide", () => {
+      cancelAnimationFrame(raf);
+      globe.destroy();
+    }, { once: true });
+  }
+
+  function updateTime() {
+    const el = document.querySelector<HTMLElement>("[data-local-time]");
+    if (!el) return;
+    const time = new Intl.DateTimeFormat("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+      timeZone: "Asia/Kolkata",
+    }).format(new Date());
+    el.textContent = `${time} local time`;
+  }
+
+  function init() {
+    startGlobe();
+    updateTime();
+    setInterval(updateTime, 30_000);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+</script>

@@ -1,0 +1,63 @@
+---
+import Icons from "./Icons.astro";
+
+interface Props {
+  href: string;
+  icon: "x" | "github" | "linkedin" | "contra" | "drive";
+  label: string;
+  variant?: "tall" | "short";
+}
+
+const { href, icon, label, variant = "tall" } = Astro.props;
+---
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  class:list={["social card-link", `social-${variant}`, `social-${icon}`]}
+  aria-label={`${icon}: ${label}`}
+>
+  <span class="social-icon">
+    <Icons name={icon} size={variant === "tall" ? 26 : 24} />
+  </span>
+  <span class="social-handle">{label}</span>
+</a>
+
+<style>
+  .social {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: var(--fg);
+    text-decoration: none;
+  }
+
+  .social-tall  { padding: 20px;     width: 229px; height: 212px; }
+  .social-short { padding: 16px 18px; width: 183px; height: 98px; }
+
+  .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-handle {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--fg);
+  }
+
+  .social-short .social-handle { font-size: 15px; }
+
+  .social-x        .social-icon { color: #000; }
+  .social-github   .social-icon { color: #0d1117; }
+  .social-linkedin .social-icon { color: #0a66c2; }
+  .social-contra   .social-icon { color: #fb4f14; }
+
+  :global([data-theme="dark"]) .social-x        .social-icon { color: #fff; }
+  :global([data-theme="dark"]) .social-github   .social-icon { color: #f0f6fc; }
+  :global([data-theme="dark"]) .social-linkedin .social-icon { color: #fff; }
+  :global([data-theme="dark"]) .social-contra   .social-icon { color: #fb4f14; }
+</style>
