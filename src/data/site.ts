@@ -2,13 +2,14 @@ export const site = {
   name: "Saurav M. Hiremath",
   shortName: "Saurav",
   url: "https://sauravmh.com",
-  description: "Senior dev at Orca Security, building AI things and R&D for API security. Digital nomad, exploring possibilities.",
+  description: "Senior dev at Orca Security, building AI things and ex-API security RnD. Digital nomad, exploring possibilities.",
   location: {
     label: "Currently in Bangalore, India",
     flag: "🇮🇳",
     timezone: "Asia/Kolkata",
   },
-  avatar: "/images/saurav.png",
+  avatar: "/images/saurav.webp",
+  avatarThumbnail: "/images/saurav-thumbnail.webp",
 };
 
 export const socials = [
