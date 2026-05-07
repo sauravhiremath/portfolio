@@ -135,7 +135,11 @@ import avatar from "~/assets/saurav.webp";
     width: 100%;
     height: 100%;
     display: block;
+    pointer-events: auto;
+    touch-action: none;
+    cursor: grab;
   }
+  .globe-canvas:active { cursor: grabbing; }
 
   .weather-card {
     position: absolute;
@@ -213,6 +217,13 @@ import avatar from "~/assets/saurav.webp";
 
   const isDark = () => document.documentElement.getAttribute("data-theme") === "dark";
 
+  // ~0.21 rad/sec — matches the previous 0.0035/frame at 60Hz, but refresh-rate independent.
+  const ROTATION_RATE = 0.00021;
+  // Overdamped spring (ζ ≈ 1.41) — coasts on release, settles without bounce.
+  const SPRING_K = 200;
+  const SPRING_C = 40;
+  const SPRING_M = 1;
+
   function startGlobe() {
     const canvas = document.querySelector<HTMLCanvasElement>("[data-globe]");
     if (!canvas) return;
@@ -221,6 +232,11 @@ import avatar from "~/assets/saurav.webp";
     const px = SIZE * dpr;
 
     let phi = 4.4;
+    let dragTarget = 0;     // radians — set by drag, retained on release
+    let dragValue = 0;      // radians — spring's current displacement
+    let dragVelocity = 0;   // rad/s
+    let lastOffsetPx = 0;
+    let pointerOriginX: number | null = null;
 
     const globe = createGlobe(canvas, {
       devicePixelRatio: dpr,
@@ -237,12 +253,40 @@ import avatar from "~/assets/saurav.webp";
     });
 
     let raf = 0;
-    function tick() {
-      phi += 0.0035;
-      globe.update({ phi });
+    let lastTime = performance.now();
+    function tick(now: number) {
+      const dtMs = now - lastTime;
+      lastTime = now;
+      phi += ROTATION_RATE * dtMs;
+
+      // Semi-implicit Euler spring step toward dragTarget. dt clamped for stability after tab unfreezes.
+      const dt = Math.min(dtMs / 1000, 1 / 60);
+      const accel = (-SPRING_K * (dragValue - dragTarget) - SPRING_C * dragVelocity) / SPRING_M;
+      dragVelocity += accel * dt;
+      dragValue += dragVelocity * dt;
+
+      globe.update({ phi: phi + dragValue });
       raf = requestAnimationFrame(tick);
     }
-    tick();
+    raf = requestAnimationFrame(tick);
+
+    const onDown = (e: PointerEvent) => {
+      pointerOriginX = e.clientX - lastOffsetPx;
+      canvas.setPointerCapture(e.pointerId);
+    };
+    const onMove = (e: PointerEvent) => {
+      if (pointerOriginX === null) return;
+      lastOffsetPx = e.clientX - pointerOriginX;
+      dragTarget = lastOffsetPx / 100;
+    };
+    const onUp = () => {
+      pointerOriginX = null;
+    };
+    canvas.addEventListener("pointerdown", onDown);
+    canvas.addEventListener("pointermove", onMove);
+    canvas.addEventListener("pointerup", onUp);
+    canvas.addEventListener("pointercancel", onUp);
+    canvas.addEventListener("lostpointercapture", onUp);
 
     new MutationObserver(() => {
       globe.update(isDark() ? darkTheme : lightTheme);
