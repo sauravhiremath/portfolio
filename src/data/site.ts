@@ -53,8 +53,8 @@ export const ga = {
 };
 
 export const email = {
-  label: "saurav@orca.security",
-  href: "mailto:saurav@orca.security",
+  label: "greetsaurav@gmail.com",
+  href: "mailto:greetsaurav@gmail.com",
 };
 
 export const blogs = [
