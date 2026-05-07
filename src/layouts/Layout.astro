@@ -1,6 +1,6 @@
 ---
 import "~/styles/global.css";
-import { site } from "~/data/site";
+import { site, ga } from "~/data/site";
 
 interface Props {
   title?: string;
@@ -28,9 +28,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={new URL(site.ogImage, Astro.site).toString()} />
 
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
@@ -58,6 +57,18 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
         }
       })();
     </script>
+
+    {import.meta.env.PROD && (
+      <>
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ga.measurementId}`}></script>
+        <script is:inline define:vars={{ id: ga.measurementId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag("js", new Date());
+          gtag("config", id);
+        </script>
+      </>
+    )}
   </head>
   <body>
     <slot />

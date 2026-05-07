@@ -13,6 +13,7 @@ const x = socials.find((s) => s.id === "x")!;
 const gh = socials.find((s) => s.id === "github")!;
 const li = socials.find((s) => s.id === "linkedin")!;
 const co = socials.find((s) => s.id === "contra")!;
+const re = socials.find((s) => s.id === "resume")!;
 const featuredBlogs = blogs.slice(0, 3);
 ---
 
@@ -30,8 +31,11 @@ const featuredBlogs = blogs.slice(0, 3);
         </div>
 
         <div class="stack-short">
-          <SocialCard {...gh} variant="short" />
-          <SocialCard {...co} variant="short" />
+          <div class="stack-short-top">
+            <SocialCard {...gh} variant="short" />
+            <SocialCard {...co} variant="short" />
+          </div>
+          <SocialCard {...re} variant="short" />
         </div>
 
         <div class="mail-cell"><EmailCard /></div>
@@ -101,9 +105,15 @@ const featuredBlogs = blogs.slice(0, 3);
     justify-content: space-between;
   }
 
-  /* Short stack: GitHub + Contra stacked at the top, empty space below LinkedIn's right */
+  /* Short stack: GitHub + Contra packed at the top, Resume aligned with LinkedIn at the bottom */
   .stack-short {
     height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .stack-short-top {
     display: flex;
     flex-direction: column;
     gap: 16px;

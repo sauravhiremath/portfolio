@@ -3,7 +3,6 @@ export const site = {
   shortName: "Saurav",
   url: "https://sauravmh.com",
   description: "Senior dev at Orca Security, building AI things and R&D for API security. Digital nomad, exploring possibilities.",
-  ogImage: "/og.png",
   location: {
     label: "Currently in Bangalore, India",
     flag: "🇮🇳",
@@ -41,7 +40,18 @@ export const socials = [
     icon: "contra",
     accent: "#fb4f14",
   },
+  {
+    id: "resume",
+    label: "@resume",
+    href: "https://drive.google.com/file/d/156SNgRtP1MVdoWAk2qCFxYaTeGiGFnKu/view",
+    icon: "drive",
+    accent: "#1a73e8",
+  },
 ] as const;
+
+export const ga = {
+  measurementId: "G-SNPDEZ3SBB",
+};
 
 export const email = {
   label: "saurav@orca.security",
