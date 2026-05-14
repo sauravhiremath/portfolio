@@ -1,5 +1,6 @@
 ---
 import "~/styles/global.css";
+import { Font } from "astro:assets";
 import { site, ga } from "~/data/site";
 
 interface Props {
@@ -18,7 +19,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="canonical" href={canonical} />
 
     <title>{title}</title>
@@ -33,17 +35,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap"
-    />
+    <Font cssVariable="--font-figtree" preload />
 
     <script is:inline>
       (function () {
@@ -59,8 +51,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 
     {import.meta.env.PROD && (
       <>
-        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ga.measurementId}`}></script>
-        <script is:inline define:vars={{ id: ga.measurementId }}>
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <script type="text/partytown" async src={`https://www.googletagmanager.com/gtag/js?id=${ga.measurementId}`}></script>
+        <script type="text/partytown" define:vars={{ id: ga.measurementId }}>
           window.dataLayer = window.dataLayer || [];
           function gtag() { dataLayer.push(arguments); }
           gtag("js", new Date());
