@@ -1,18 +1,10 @@
 import { defineConfig, fontProviders } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
-import partytown from '@astrojs/partytown';
 
 export default defineConfig({
   site: 'https://sauravmh.com',
-  integrations: [
-    sitemap(),
-    partytown({
-      config: {
-        forward: ['dataLayer.push', 'gtag'],
-      },
-    }),
-  ],
+  integrations: [sitemap()],
   fonts: [
     {
       name: 'Figtree',
@@ -28,7 +20,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   build: {
-    inlineStylesheets: 'auto',
+    inlineStylesheets: 'always',
   },
   compressHTML: true,
 });

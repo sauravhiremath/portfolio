@@ -195,16 +195,25 @@ import avatar from "~/assets/saurav.webp";
     const load = () =>
       import("~/scripts/globe").then(({ startGlobe }) => startGlobe(canvas, { staticFrame }));
 
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((e) => e.isIntersecting)) {
-          io.disconnect();
-          load();
-        }
-      },
-      { rootMargin: "200px" },
-    );
-    io.observe(canvas);
+    const setupIO = () => {
+      const io = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((e) => e.isIntersecting)) {
+            io.disconnect();
+            load();
+          }
+        },
+        { rootMargin: "200px" },
+      );
+      io.observe(canvas);
+    };
+
+    // Defer past LCP — rIC where supported, setTimeout fallback (Safari).
+    if ("requestIdleCallback" in window) {
+      (window as Window & typeof globalThis).requestIdleCallback(setupIO, { timeout: 2000 });
+    } else {
+      setTimeout(setupIO, 1);
+    }
   }
 
   function updateTime() {

@@ -52,12 +52,29 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     {import.meta.env.PROD && (
       <>
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <script type="text/partytown" async src={`https://www.googletagmanager.com/gtag/js?id=${ga.measurementId}`}></script>
-        <script type="text/partytown" define:vars={{ id: ga.measurementId }}>
-          window.dataLayer = window.dataLayer || [];
-          function gtag() { dataLayer.push(arguments); }
-          gtag("js", new Date());
-          gtag("config", id);
+        <script is:inline define:vars={{ id: ga.measurementId }}>
+          (function () {
+            function loadGA() {
+              var s = document.createElement("script");
+              s.async = true;
+              s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+              document.head.appendChild(s);
+              window.dataLayer = window.dataLayer || [];
+              function gtag() { dataLayer.push(arguments); }
+              window.gtag = gtag;
+              gtag("js", new Date());
+              gtag("config", id);
+            }
+            function schedule() {
+              if ("requestIdleCallback" in window) {
+                requestIdleCallback(loadGA, { timeout: 5000 });
+              } else {
+                setTimeout(loadGA, 1500);
+              }
+            }
+            if (document.readyState === "complete") schedule();
+            else addEventListener("load", schedule, { once: true });
+          })();
         </script>
       </>
     )}
