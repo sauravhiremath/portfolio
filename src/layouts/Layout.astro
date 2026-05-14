@@ -36,6 +36,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <meta name="twitter:description" content={description} />
 
     <Font cssVariable="--font-figtree" preload />
+    <link rel="dns-prefetch" href="https://api.open-meteo.com" />
 
     <script is:inline>
       (function () {

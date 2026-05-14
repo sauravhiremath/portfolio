@@ -37,11 +37,15 @@ export type StartGlobeOptions = {
   staticFrame?: boolean;
 };
 
+// COBE: screen-center longitude (rad) = phi. Bias pushes Bangalore left of center.
+const BANGALORE_LON_RAD = (77.5946 * Math.PI) / 180;
+const LEFT_BIAS_RAD = 1;
+
 export function startGlobe(canvas: HTMLCanvasElement, options: StartGlobeOptions = {}) {
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
   const px = SIZE * dpr;
 
-  let phi = 4.4;
+  let phi = BANGALORE_LON_RAD + LEFT_BIAS_RAD;
   let dragTarget = 0;
   let dragValue = 0;
   let dragVelocity = 0;

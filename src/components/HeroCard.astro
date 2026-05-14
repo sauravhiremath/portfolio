@@ -34,11 +34,11 @@ import avatar from "~/assets/saurav.webp";
     <canvas class="globe-canvas" data-globe></canvas>
   </div>
 
-  <div class="weather-card" aria-hidden="true">
-    <span class="weather-emoji">☀️</span>
+  <div class="weather-card" data-weather aria-hidden="true">
+    <span class="weather-emoji" data-weather-emoji></span>
     <div class="weather-info">
       <p class="weather-city">Bangalore</p>
-      <p class="weather-temp">28° · Sunny</p>
+      <p class="weather-temp" data-weather-temp></p>
     </div>
   </div>
 </article>
@@ -164,6 +164,14 @@ import avatar from "~/assets/saurav.webp";
   .weather-emoji {
     font-size: 22px;
     line-height: 1;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .weather-emoji:empty {
+    width: 22px;
+    height: 22px;
   }
 
   .weather-info { display: flex; flex-direction: column; line-height: 1.1; }
@@ -178,6 +186,35 @@ import avatar from "~/assets/saurav.webp";
     font-size: 11px;
     font-weight: 500;
     color: var(--fg-soft);
+    font-variant-numeric: tabular-nums;
+    position: relative;
+  }
+
+  .weather-temp:empty {
+    width: 88px;
+    height: 12px;
+  }
+
+  .weather-emoji::before,
+  .weather-temp::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--pop);
+    border-radius: 999px;
+    transition: opacity 280ms cubic-bezier(.22, 1, .36, 1);
+  }
+
+  .weather-emoji:not(:empty)::before,
+  .weather-temp:not(:empty)::before {
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .weather-emoji::before,
+    .weather-temp::before {
+      content: none;
+    }
   }
 
   @supports not (anchor-name: --x) {
@@ -228,10 +265,57 @@ import avatar from "~/assets/saurav.webp";
     el.textContent = `${time} local time`;
   }
 
+  // WMO weather codes — https://open-meteo.com/en/docs#weather_variable_documentation
+  function describeWeather(code: number, isDay: boolean) {
+    if (code === 0) return { emoji: isDay ? "☀️" : "🌙", label: isDay ? "Sunny" : "Clear" };
+    if (code <= 2) return { emoji: isDay ? "⛅" : "☁️", label: "Partly cloudy" };
+    if (code === 3) return { emoji: "☁️", label: "Overcast" };
+    if (code <= 48) return { emoji: "🌫️", label: "Foggy" };
+    if (code <= 57) return { emoji: "🌦️", label: "Drizzly" };
+    if (code <= 67) return { emoji: "🌧️", label: "Rainy" };
+    if (code <= 77) return { emoji: "🌨️", label: "Snowy" };
+    if (code <= 82) return { emoji: "🌦️", label: "Showers" };
+    if (code <= 86) return { emoji: "🌨️", label: "Snow" };
+    return { emoji: "⛈️", label: "Stormy" };
+  }
+
+  async function updateWeather() {
+    const card = document.querySelector<HTMLElement>("[data-weather]");
+    const tempEl = document.querySelector<HTMLElement>("[data-weather-temp]");
+    const emojiEl = document.querySelector<HTMLElement>("[data-weather-emoji]");
+    if (!card || !tempEl || !emojiEl) return;
+    try {
+      const r = await fetch(
+        "https://api.open-meteo.com/v1/forecast?latitude=12.9716&longitude=77.5946&current=temperature_2m,weather_code,is_day&timezone=Asia%2FKolkata",
+      );
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const data = await r.json();
+      const c = data.current;
+      const { emoji, label } = describeWeather(c.weather_code, c.is_day === 1);
+      emojiEl.textContent = emoji;
+      tempEl.textContent = `${Math.round(c.temperature_2m)}° · ${label}`;
+    } catch {
+      card.style.opacity = "0";
+    }
+  }
+
+  function scheduleWeather() {
+    const start = () => {
+      updateWeather();
+      setInterval(updateWeather, 30 * 60 * 1000);
+    };
+    if ("requestIdleCallback" in window) {
+      (window as Window & typeof globalThis).requestIdleCallback(start, { timeout: 3000 });
+    } else {
+      setTimeout(start, 1);
+    }
+  }
+
   function init() {
     mountGlobe();
     updateTime();
     setInterval(updateTime, 30_000);
+    scheduleWeather();
   }
 
   if (document.readyState === "loading") {
