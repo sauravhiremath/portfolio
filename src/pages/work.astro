@@ -1,0 +1,186 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import ThemeToggle from "~/components/ThemeToggle.astro";
+import Icons from "~/components/Icons.astro";
+import AnimatedArrow from "~/components/AnimatedArrow.astro";
+import { socials, email } from "~/data/site";
+
+const contra = socials.find((s) => s.id === "contra")!;
+const upwork = socials.find((s) => s.id === "upwork")!;
+
+const connectLinks = [
+  { icon: "contra" as const, label: "Contra", href: contra.href, accent: "#fb4f14", external: true },
+  { icon: "upwork" as const, label: "Upwork", href: upwork.href, accent: "#14a800", external: true },
+  { icon: "mail" as const, label: "Email", href: email.href, accent: "var(--fg-muted)", external: false },
+];
+
+const title = "Work with me — Saurav M. Hiremath";
+const description = "Consulting on product and technical problems, end-to-end builds, and security penetration testing.";
+---
+
+<Layout title={title} description={description}>
+  <main class="page">
+    <ThemeToggle />
+
+    <a href="/" class="back-link">
+      <AnimatedArrow direction="left" size={15} />
+      <span>Back</span>
+    </a>
+
+    <div class="work-card card">
+      <p class="work-copy">
+        I'm a senior software engineer working for top cyber security companies from Israel - for more than half a
+        decade. I've founded and launched 3 startups, with one being acquired recently.
+      </p>
+      <p class="work-copy">
+        I provide consulting on complex product and technical problems. Ensuring it's positioned and built right. My
+        services also include building products end-to-end (full stack apps, backend and infra, etc) and security
+        penetration testing (find security issues your AI might miss)
+      </p>
+
+      <div class="connect-section">
+        <h2 class="connect-title">Let's work together</h2>
+
+        <div class="connect-list">
+          {connectLinks.map((l) => (
+            <a
+              href={l.href}
+              class="connect-row"
+              target={l.external ? "_blank" : undefined}
+              rel={l.external ? "noopener noreferrer" : undefined}
+            >
+              <span class="connect-icon" style={`color: ${l.accent}`}>
+                <Icons name={l.icon} size={18} />
+              </span>
+              <span class="connect-label">{l.label}</span>
+              <AnimatedArrow direction="up-right" size={16} />
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .page {
+    width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px;
+    gap: 16px;
+    animation: fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .back-link {
+    align-self: flex-start;
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--fg-muted);
+    text-decoration: none;
+    transition: color 200ms ease;
+  }
+
+  .back-link:hover {
+    color: var(--fg);
+  }
+
+  .work-card {
+    width: 50%;
+    margin: 0 auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .work-copy {
+    font-size: 20px;
+    line-height: 1.6;
+    font-weight: 400;
+    color: var(--fg);
+    margin: 0;
+  }
+
+  .connect-section {
+    margin-top: 12px;
+  }
+
+  .connect-title {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--fg);
+    margin: 0 0 16px;
+  }
+
+  .connect-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .connect-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 0;
+    color: var(--fg);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .connect-row:last-child {
+    border-bottom: none;
+  }
+
+  .connect-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    opacity: 1;
+    transition: opacity 200ms ease;
+  }
+
+  .connect-label {
+    font-size: 17px;
+    font-weight: 500;
+    flex: 1;
+    transition: color 200ms ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .connect-row:hover .connect-icon {
+      opacity: 0.6;
+    }
+
+    .connect-row:hover .connect-label {
+      color: var(--fg-muted);
+    }
+  }
+
+  @media (max-width: 639.98px) {
+    .back-link {
+      top: 16px;
+      left: 16px;
+    }
+
+    .work-card {
+      width: 100%;
+      padding: 28px 24px;
+    }
+
+    .work-copy {
+      font-size: 17px;
+    }
+  }
+</style>

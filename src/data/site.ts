@@ -40,6 +40,13 @@ export const socials = [
     accent: "#fb4f14",
   },
   {
+    id: "upwork",
+    label: "Upwork",
+    href: "https://www.upwork.com/freelancers/~01e964a8ac43b0ac2b?openModal=pib",
+    icon: "upwork",
+    accent: "#14a800",
+  },
+  {
     id: "resume",
     label: "@resume",
     href: "https://drive.google.com/file/d/156SNgRtP1MVdoWAk2qCFxYaTeGiGFnKu/view",
