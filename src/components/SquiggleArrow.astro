@@ -25,9 +25,22 @@ const cssVars = `--arrow-duration:${duration}ms; --arrow-color:${color}; --arrow
 ---
 
 <svg class="squiggle-arrow" viewBox={viewBox} aria-hidden="true" style={cssVars}>
-  <path class="squiggle-line" d={path} pathLength="1" />
+  <path class="squiggle-line" d={path} />
   <path class="squiggle-head" d={ARROWHEAD} transform={headTransform} />
 </svg>
+
+<script>
+  function primeSquiggleArrows() {
+    document.querySelectorAll<SVGPathElement>(".squiggle-line:not([data-arrow-ready])").forEach((line) => {
+      const length = line.getTotalLength();
+      line.style.setProperty("--arrow-length", `${length}`);
+      line.dataset.arrowReady = "true";
+    });
+  }
+
+  primeSquiggleArrows();
+  document.addEventListener("astro:page-load", primeSquiggleArrows);
+</script>
 
 <style>
   .squiggle-arrow {
@@ -44,8 +57,10 @@ const cssVars = `--arrow-duration:${duration}ms; --arrow-color:${color}; --arrow
     stroke-width: var(--arrow-stroke-width);
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
+    /* --arrow-length is set by the script above to the path's real getTotalLength().
+       Until then, the fallback keeps it safely hidden (no FOUC of a fully-drawn line). */
+    stroke-dasharray: var(--arrow-length, 2000);
+    stroke-dashoffset: var(--arrow-length, 2000);
     transition: stroke-dashoffset var(--arrow-duration) cubic-bezier(0.22, 1, 0.36, 1);
   }
 
