@@ -26,15 +26,19 @@ const { href, icon, label, variant = "tall" } = Astro.props;
 
 <style>
   .social {
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
     color: var(--fg);
     text-decoration: none;
   }
 
-  .social-tall  { padding: 20px;     width: 229px; height: 212px; }
-  .social-short { padding: 16px 18px; width: 183px; height: 98px; }
+  .social-tall,
+  .social-short {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .social-tall  { padding: 20px;      width: 229px; height: 212px; }
+  .social-short { padding: 16px 18px; width: 100%;  height: 98px; flex: 1; min-width: 0; }
 
   .social-icon {
     display: inline-flex;

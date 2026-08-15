@@ -1,23 +1,45 @@
 ---
 import Icons from "./Icons.astro";
-import { email } from "~/data/site";
+import { email, socials } from "~/data/site";
+
+const resume = socials.find((s) => s.id === "resume")!;
 ---
 
-<a href={email.href} class="email card-link">
-  <span class="email-icon" aria-hidden="true">
-    <Icons name="mail" size={18} />
-  </span>
-  <span class="email-text">{email.label}</span>
-</a>
+<div class="email card">
+  <a href={email.href} class="email-link">
+    <span class="email-icon" aria-hidden="true">
+      <Icons name="mail" size={18} />
+    </span>
+    <span class="email-text">{email.label}</span>
+  </a>
+  <a
+    href={resume.href}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="email-download"
+    aria-label="Download resume"
+  >
+    <Icons name="download" size={16} />
+  </a>
+</div>
 
 <style>
   .email {
-    color: var(--fg);
-    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px 0 20px;
+  }
+
+  .email-link {
+    display: flex;
     align-items: center;
     gap: 12px;
-    padding: 0 20px;
+    flex: 1;
+    min-width: 0;
     height: 100%;
+    color: var(--fg);
+    text-decoration: none;
   }
 
   .email-icon {
@@ -33,5 +55,22 @@ import { email } from "~/data/site";
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .email-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 999px;
+    color: var(--fg-muted);
+    transition: background-color 200ms cubic-bezier(0.22, 1, 0.36, 1), color 200ms ease;
+  }
+
+  .email-download:hover {
+    background: var(--pop);
+    color: var(--fg);
   }
 </style>

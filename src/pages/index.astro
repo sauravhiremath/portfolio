@@ -4,6 +4,7 @@ import ThemeToggle from "~/components/ThemeToggle.astro";
 import HeroCard from "~/components/HeroCard.astro";
 import SocialCard from "~/components/SocialCard.astro";
 import EmailCard from "~/components/EmailCard.astro";
+import WorkWithMeCard from "~/components/WorkWithMeCard.astro";
 import BlogCard from "~/components/BlogCard.astro";
 import LuckyCard from "~/components/LuckyCard.astro";
 import DecorCard from "~/components/DecorCard.astro";
@@ -12,8 +13,6 @@ import { socials, blogs } from "~/data/site";
 const x = socials.find((s) => s.id === "x")!;
 const gh = socials.find((s) => s.id === "github")!;
 const li = socials.find((s) => s.id === "linkedin")!;
-const co = socials.find((s) => s.id === "contra")!;
-const re = socials.find((s) => s.id === "resume")!;
 const featuredBlogs = blogs.slice(0, 3);
 ---
 
@@ -25,20 +24,17 @@ const featuredBlogs = blogs.slice(0, 3);
       <section class="bento">
         <div class="hero-cell"><HeroCard /></div>
 
-        <div class="stack-tall">
-          <SocialCard {...x} variant="tall" />
-          <SocialCard {...li} variant="tall" />
-        </div>
-
-        <div class="stack-short">
-          <div class="stack-short-top">
+        <div class="work-cell">
+          <div class="wwm-slot"><WorkWithMeCard /></div>
+          <div class="mail-slot"><EmailCard /></div>
+          <div class="duo-slot">
+            <SocialCard {...x} variant="short" />
             <SocialCard {...gh} variant="short" />
-            <SocialCard {...co} variant="short" />
           </div>
-          <SocialCard {...re} variant="short" />
+          <div class="li-slot">
+            <SocialCard {...li} variant="short" />
+          </div>
         </div>
-
-        <div class="mail-cell"><EmailCard /></div>
 
         <div class="decor-cell"><DecorCard /></div>
 
@@ -82,7 +78,7 @@ const featuredBlogs = blogs.slice(0, 3);
 
   .bento {
     display: grid;
-    grid-template-columns: 711px 229px 183px 353px 340px 254px;
+    grid-template-columns: 711px 428px 353px 340px 254px;
     grid-template-rows: 520px;
     column-gap: 16px;
     padding: 0 80px;
@@ -91,45 +87,34 @@ const featuredBlogs = blogs.slice(0, 3);
   }
 
   .hero-cell    { grid-column: 1; grid-row: 1; }
-  .stack-tall   { grid-column: 2; grid-row: 1; }
-  .stack-short  { grid-column: 3; grid-row: 1; }
-  .decor-cell   { grid-column: 4; grid-row: 1; }
-  .blogs-cell   { grid-column: 5; grid-row: 1; display: grid; grid-template-rows: repeat(3, 163px); gap: 16px; }
-  .lucky-cell   { grid-column: 6; grid-row: 1; }
+  .work-cell    { grid-column: 2; grid-row: 1; }
+  .decor-cell   { grid-column: 3; grid-row: 1; }
+  .blogs-cell   { grid-column: 4; grid-row: 1; display: grid; grid-template-rows: repeat(3, 163px); gap: 16px; }
+  .lucky-cell   { grid-column: 5; grid-row: 1; }
 
-  /* Tall stack: X at top, LinkedIn at bottom (email floats in the 96px gap) */
-  .stack-tall {
+  /* Work-with-me stack: card, email, X+GitHub row, LinkedIn row */
+  .work-cell {
     height: 520px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  /* Short stack: GitHub + Contra packed at the top, Resume aligned with LinkedIn at the bottom */
-  .stack-short {
-    height: 520px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .stack-short-top {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
 
-  /* Email overlays the middle gap, spanning both stack columns */
-  .mail-cell {
-    grid-column: 2 / span 2;
-    grid-row: 1;
-    align-self: start;
-    margin-top: 228px;  /* 212 (top tall) + 16 (gap) */
-    height: 64px;
-    width: 428px;       /* 229 + 16 + 183 */
+  .wwm-slot { height: 212px; }
+  .mail-slot { height: 64px; }
+
+  .duo-slot {
+    display: flex;
+    gap: 16px;
+    height: 98px;
   }
 
-  .hero-cell, .stack-tall > *, .stack-short > *, .decor-cell, .blogs-cell > *, .lucky-cell, .mail-cell {
+  .li-slot {
+    width: 206px; /* half of 428px, minus half the 16px gap */
+    height: 98px;
+  }
+
+  .hero-cell, .work-cell > *, .decor-cell, .blogs-cell > *, .lucky-cell {
     scroll-snap-align: start;
   }
 
