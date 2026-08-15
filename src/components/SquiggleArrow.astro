@@ -1,0 +1,73 @@
+---
+interface Props {
+  path: string;
+  viewBox: string;
+  arrowHeadPoint: { x: number; y: number };
+  arrowHeadRotation: number;
+  duration?: number;
+  color?: string;
+  strokeWidth?: number;
+}
+
+const {
+  path,
+  viewBox,
+  arrowHeadPoint,
+  arrowHeadRotation,
+  duration = 1000,
+  color = "var(--fg-soft)",
+  strokeWidth = 1.6,
+} = Astro.props;
+
+const ARROWHEAD = "M -5 -4 L 5 0 L -5 4 Z";
+const headTransform = `translate(${arrowHeadPoint.x} ${arrowHeadPoint.y}) rotate(${arrowHeadRotation})`;
+const cssVars = `--arrow-duration:${duration}ms; --arrow-color:${color}; --arrow-stroke-width:${strokeWidth}px;`;
+---
+
+<svg class="squiggle-arrow" viewBox={viewBox} aria-hidden="true" style={cssVars}>
+  <path class="squiggle-line" d={path} pathLength="1" />
+  <path class="squiggle-head" d={ARROWHEAD} transform={headTransform} />
+</svg>
+
+<style>
+  .squiggle-arrow {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .squiggle-line {
+    fill: none;
+    stroke: var(--arrow-color);
+    stroke-width: var(--arrow-stroke-width);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset var(--arrow-duration) cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .squiggle-head {
+    fill: var(--arrow-color);
+    opacity: 0;
+    transition: opacity calc(var(--arrow-duration) * 0.25) ease;
+  }
+
+  :global([data-arrow-trigger]:hover) .squiggle-line {
+    stroke-dashoffset: 0;
+  }
+
+  :global([data-arrow-trigger]:hover) .squiggle-head {
+    opacity: 1;
+    transition-delay: calc(var(--arrow-duration) * 0.85);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .squiggle-line,
+    .squiggle-head {
+      transition: none;
+    }
+  }
+</style>
