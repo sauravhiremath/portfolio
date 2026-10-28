@@ -42,9 +42,10 @@
 
 .home-petals { height: 100%; inset: 0; overflow: hidden; pointer-events: none; position: fixed; z-index: 20; }
 .home-petals--background { position: absolute; opacity: .7; z-index: 0; }
+.home-petals.is-initializing { visibility: hidden; }
 .home-petals__fall { animation: ambient-petal-fall var(--duration) linear var(--delay) infinite; height: var(--size); position: absolute; top: -28px; width: var(--size); }
 .home-petals__sprite { animation: ambient-petal-sway 6s ease-in-out var(--delay) infinite alternate; display: block; height: 100%; width: 100%; }
-.home-petals.is-paused .home-petals__fall, .home-petals.is-paused .home-petals__sprite { animation-play-state: paused; }
+.home-petals:is(.is-initializing, .is-paused) .home-petals__fall, .home-petals:is(.is-initializing, .is-paused) .home-petals__sprite { animation-play-state: paused; }
 @keyframes ambient-petal-fall {
   0% { opacity: 0; transform: translateZ(0); }
   8%, 90% { opacity: .8; }

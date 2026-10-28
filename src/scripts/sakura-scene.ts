@@ -18,19 +18,19 @@ function setupSakuraScene(tree: HTMLElement) {
   ];
 
   let imageReady = false;
+  let flowersReady = false;
   let inView = true;
   let backgroundInView = true;
   let playing = false;
   let disposed = false;
   let frame = 0;
+  let revealFrame = 0;
   let previousTime = 0;
   let pointer: { x: number; y: number } | null = null;
   let pointerChanged = false;
   let bounds: DOMRect | null = null;
   let boundsDirty = true;
   let previousTransform = "";
-
-  tree.classList.add("is-initializing");
 
   function schedule() {
     if (!frame && playing && !disposed) frame = requestAnimationFrame(animate);
@@ -125,14 +125,29 @@ function setupSakuraScene(tree: HTMLElement) {
     window.removeEventListener("resize", invalidateBounds);
   }
 
+  function revealAfterPaint() {
+    if (revealFrame || flowersReady || !imageReady || !inView || document.hidden || disposed) return;
+    // Leave a paint between image decoding and the flower animations.
+    revealFrame = requestAnimationFrame(() => {
+      revealFrame = requestAnimationFrame(() => {
+        revealFrame = 0;
+        if (disposed || !inView || document.hidden) return;
+        flowersReady = true;
+        update();
+      });
+    });
+  }
+
   function update() {
     if (disposed) return;
+    revealAfterPaint();
     petals.forEach((layer) => {
-      layer.classList.toggle("is-paused", document.hidden || (layer === backgroundPetals && !backgroundInView));
+      layer.classList.toggle("is-initializing", !flowersReady);
+      layer.classList.toggle("is-paused", !flowersReady || document.hidden || (layer === backgroundPetals && !backgroundInView));
     });
 
-    const shouldPlay = imageReady && inView && !document.hidden && !reducedMotion.matches;
-    if (shouldPlay || (imageReady && reducedMotion.matches)) {
+    const shouldPlay = flowersReady && inView && !document.hidden && !reducedMotion.matches;
+    if (flowersReady) {
       tree.classList.remove("is-initializing");
       tree.classList.add("is-ready");
     }
@@ -181,6 +196,7 @@ function setupSakuraScene(tree: HTMLElement) {
   function cleanup(event: PageTransitionEvent) {
     if (event.persisted) return;
     disposed = true;
+    cancelAnimationFrame(revealFrame);
     stopMotion();
     treeObserver.disconnect();
     petalObserver.disconnect();
@@ -196,11 +212,11 @@ function setupSakuraScene(tree: HTMLElement) {
   update();
   const image = new Image();
   image.src = tree.querySelector("image")!.getAttribute("href")!;
-  image.decode().catch(() => {}).then(() => {
+  image.decode().then(() => {
     if (disposed) return;
     imageReady = true;
     update();
-  });
+  }, () => {});
 }
 
 document.querySelectorAll<HTMLElement>("[data-sakura-tree]").forEach(setupSakuraScene);

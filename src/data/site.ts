@@ -2,7 +2,7 @@ export const site = {
   name: "Saurav M. Hiremath",
   shortName: "Saurav",
   url: "https://sauravmh.com",
-  description: "Senior dev at Orca Security, building AI things and ex-API security RnD. Digital nomad, exploring possibilities.",
+  description: "Software Engineer, building enterprise Agentic AI systems and researching API Security. Digital nomad, exploring possibilities.",
   location: {
     label: "Currently in Bangalore, India",
     flag: "🇮🇳",
@@ -71,14 +71,14 @@ export const blogs = [
     href: "https://orca.security/resources/author/sauravh/",
   },
   {
-    title: "Debugging CGo Parse Error in Go Build Process - macOS ARM64",
-    date: "Mar 8, 2024",
-    href: "https://blog.sauravmh.com/posts/debug-cgo-parser-error-macos-arm64",
+    title: "The Gap Between Knowing What to Do and Doing It",
+    date: "Oct 19, 2026",
+    href: "https://medium.com/@sauravmh/the-gap-between-knowing-what-to-do-and-doing-it-7bd8e1d1a3e3",
   },
   {
-    title: "Building a multiplayer game using WebSockets - Part 1",
-    date: "Jan 22, 2022",
-    href: "https://blog.sauravmh.com/posts/building-a-multiplayer-game-using-websockets-part-1",
+    title: "Natural language security queries at Orca Security using Amazon Bedrock",
+    date: "Oct 13, 2026",
+    href: "https://aws.amazon.com/blogs/machine-learning/natural-language-security-queries-at-orca-security-using-amazon-bedrock/",
   },
   {
     title: "Browser game design using websockets and deployments at scale - Part 2",

@@ -11,4 +11,13 @@ import "~/styles/sakura-scene.css";
 </div>
 <SakuraPetals depth="foreground" />
 
+<noscript>
+  <style is:inline>
+    .sakura-hero.is-initializing [data-sakura-blooms],
+    .home-petals.is-initializing { visibility: visible; }
+    .home-petals.is-initializing .home-petals__fall { animation: none; opacity: .55; transform: translateY(var(--rest-y)); }
+    .home-petals.is-initializing .home-petals__sprite { animation: none; }
+  </style>
+</noscript>
+
 <script src="~/scripts/sakura-scene.ts"></script>

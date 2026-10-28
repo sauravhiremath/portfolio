@@ -21,7 +21,7 @@
 .collection-heading { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-bottom: 32px; }
 .collection-title { display: flex; align-items: center; gap: 16px; }
 .back-link { width: 40px; height: 40px; display: grid; place-items: center; flex-shrink: 0; color: var(--fg-muted) !important; }
-.back-link:hover { background: var(--card-hover); color: var(--fg) !important; }
+.back-link:hover { color: var(--fg) !important; }
 .collection-title h1 { font-size: 28px; line-height: 32px; font-weight: 500; letter-spacing: -.01em; }
 
 .project-list {
@@ -94,7 +94,7 @@
   .collection-heading { gap: 10px; margin-bottom: 24px; }
   .collection-title { gap: 10px; }
   .collection-title h1 { font-size: 24px; }
-  .back-link { width: 34px; height: 36px; border-radius: 10px; }
+  .back-link { width: 34px; height: 36px; }
   .project-list { padding: 8px 0; }
   .project-entry { padding-inline: 16px; }
   .project-heading-row { column-gap: 8px; }
