@@ -286,8 +286,8 @@ export function startDotField(container: HTMLElement, options: DotFieldOptions =
   const s = {
     radius: 1.5,
     step: 17,
-    from: readInk("--dot-field-from", "#ad4e71"),
-    to: readInk("--dot-field-to", "#efb4c9"),
+    from: readInk("--dot-field-from", "#5227FF"),
+    to: readInk("--dot-field-to", "#FF9FFC"),
     glowColor: toInk("#ffffff", light),
     glowWeight: light ? 0 : 1,
     direction: [Math.sin(135 * Math.PI / 180), -Math.cos(135 * Math.PI / 180)],
@@ -502,8 +502,8 @@ export function startDotField(container: HTMLElement, options: DotFieldOptions =
   document.addEventListener("visibilitychange", onVisibility);
   motion.addEventListener("change", onMotion);
   const themeObserver = new MutationObserver(() => {
-    s.from = readInk("--dot-field-from", "#ad4e71");
-    s.to = readInk("--dot-field-to", "#efb4c9");
+    s.from = readInk("--dot-field-from", "#5227FF");
+    s.to = readInk("--dot-field-to", "#FF9FFC");
     wake();
   });
   themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
