@@ -1,0 +1,49 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import ThemeToggle from "~/components/ThemeToggle.astro";
+import AnimatedArrow from "~/components/AnimatedArrow.astro";
+import Icons from "~/components/Icons.astro";
+import { projects } from "~/data/projects";
+import { site } from "~/data/site";
+import "~/styles/projects.css";
+---
+
+<Layout sakura title={`My projects — ${site.name}`} description="Products and open-source tools by Saurav M. Hiremath.">
+  <main class="projects-page">
+    <section class="project-collection" aria-labelledby="projects-title">
+      <div class="collection-heading">
+        <div class="collection-title">
+          <a href="/" class="back-link card" aria-label="Back to home"><AnimatedArrow direction="left" size={18} /></a>
+          <h1 id="projects-title">My projects</h1>
+        </div>
+        <ThemeToggle />
+      </div>
+
+      <ul class="project-list" role="list">
+        {projects.map((project) => (
+          <li id={project.id}>
+            <article class="project-entry" aria-labelledby={`title-${project.id}`} data-project-row>
+              <div class="project-copy">
+                <div class="project-heading-row">
+                  <h2 class="project-heading" id={`title-${project.id}`}>
+                    <a class="project-primary-link" href={project.href} target="_blank" rel="noopener noreferrer" aria-describedby={`description-${project.id}`} data-project-primary>{project.name}</a>
+                  </h2>
+                  <div class="project-links">
+                    {project.links.map((link) => (
+                      <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={`${project.name} — ${link.label}`} title={link.label} data-project-link={link.icon} data-project-default={link.href === project.href ? "" : undefined}>
+                        <Icons name={link.icon} size={16} />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+                <p class="project-description" id={`description-${project.id}`}>{project.description}</p>
+              </div>
+            </article>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+</Layout>
+
+<script src="~/scripts/project-links.ts"></script>

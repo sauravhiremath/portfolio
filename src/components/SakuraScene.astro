@@ -1,0 +1,14 @@
+---
+import SakuraArt from "~/components/SakuraArt.astro";
+import SakuraPetals from "~/components/SakuraPetals.astro";
+import "~/styles/sakura-scene.css";
+---
+
+<div class="sakura-backdrop" aria-hidden="true">
+  <img class="sakura-landscape" src="/misty-landscape.webp" width="1774" height="887" alt="" fetchpriority="high" />
+  <SakuraPetals depth="background" />
+  <SakuraArt />
+</div>
+<SakuraPetals depth="foreground" />
+
+<script src="~/scripts/sakura-scene.ts"></script>

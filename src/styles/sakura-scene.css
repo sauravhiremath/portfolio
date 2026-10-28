@@ -1,0 +1,62 @@
+/* Shared placement and theme treatment */
+.has-sakura-scene { isolation: isolate; }
+.sakura-backdrop { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: -1; isolation: isolate; }
+.sakura-landscape { position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: .65; mix-blend-mode: multiply; z-index: -2; }
+.sakura-backdrop::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, var(--bg), transparent 50%); z-index: -2; }
+[data-theme="dark"] .sakura-landscape { mix-blend-mode: screen; opacity: .18; }
+.sakura-backdrop .sakura-hero { opacity: .45; z-index: 2; }
+.sakura-backdrop .sakura-hero__art { transform: scale(.7); transform-origin: top left; }
+[data-theme="dark"] .sakura-backdrop .sakura-hero { opacity: .22; }
+.sakura-backdrop .home-petals--background { z-index: -1; }
+
+/* SakuraHero and HomePetals */
+.sakura-hero { background: transparent; inset: 0; overflow: hidden; position: absolute; transform: scaleX(-1); --play-state: paused; }
+.sakura-hero.is-playing { --play-state: running; }
+.sakura-hero__art { display: block; height: 100%; width: 100%; }
+.sakura-hero__bloom, .sakura-hero__bud { transform-box: view-box; transform-origin: 0 0; }
+.sakura-hero__bud { opacity: 0; }
+.sakura-hero.is-initializing [data-sakura-blooms] { visibility: hidden; }
+.sakura-hero.is-ready .sakura-hero__bud:not(.is-settled) { animation: bud-open .5s ease calc(var(--bloom-delay) - .3s) both; animation-play-state: var(--play-state); }
+.sakura-hero.is-ready .sakura-hero__bloom:not(.is-settled) { animation: blossom-open var(--bloom-duration) cubic-bezier(.2, .65, .3, 1) var(--bloom-delay) both; animation-play-state: var(--play-state); }
+.sakura-hero__bloom.is-settled { animation: none; opacity: 1; transform: none; }
+.sakura-hero__bud.is-settled { animation: none; }
+@keyframes bud-open {
+  0% { opacity: 0; transform: scale(.2); }
+  60% { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(1); }
+}
+@keyframes blossom-open {
+  0% { opacity: 0; transform: scale(.2); }
+  to { opacity: 1; transform: scale(1); }
+}
+@media (max-width: 700px) {
+  .sakura-hero__art { width: max(100%, min(700px, 80svh)); }
+}
+@media (max-width: 767px) {
+  .sakura-landscape { object-position: 27% center; }
+}
+@media (max-width: 439.98px) {
+  .sakura-backdrop .sakura-hero { opacity: .25; }
+  .sakura-landscape { opacity: .5; }
+}
+
+.home-petals { height: 100%; inset: 0; overflow: hidden; pointer-events: none; position: fixed; z-index: 20; }
+.home-petals--background { position: absolute; opacity: .7; z-index: 0; }
+.home-petals__fall { animation: ambient-petal-fall var(--duration) linear var(--delay) infinite; height: var(--size); position: absolute; top: -28px; width: var(--size); }
+.home-petals__sprite { animation: ambient-petal-sway 6s ease-in-out var(--delay) infinite alternate; display: block; height: 100%; width: 100%; }
+.home-petals.is-paused .home-petals__fall, .home-petals.is-paused .home-petals__sprite { animation-play-state: paused; }
+@keyframes ambient-petal-fall {
+  0% { opacity: 0; transform: translateZ(0); }
+  8%, 90% { opacity: .8; }
+  to { opacity: 0; transform: translate3d(var(--drift), calc(100dvh + 56px), 0); }
+}
+@keyframes ambient-petal-sway {
+  0% { transform: translate(-12px) rotate(-35deg); }
+  to { transform: translate(12px) rotate(95deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sakura-hero.is-ready .sakura-hero__bloom:not(.is-settled) { animation: none; opacity: 1; }
+  .sakura-hero.is-ready .sakura-hero__bud:not(.is-settled) { animation: none; opacity: 0; }
+  .home-petals__fall { animation: none; opacity: .55; transform: translateY(var(--rest-y)); }
+  .home-petals__sprite { animation: none; }
+}

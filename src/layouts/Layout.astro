@@ -2,13 +2,15 @@
 import "~/styles/global.css";
 import { Font } from "astro:assets";
 import { site, ga } from "~/data/site";
+import SakuraScene from "~/components/SakuraScene.astro";
 
 interface Props {
   title?: string;
   description?: string;
+  sakura?: boolean;
 }
 
-const { title = site.name, description = site.description } = Astro.props;
+const { title = site.name, description = site.description, sakura = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
@@ -80,7 +82,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
       </>
     )}
   </head>
-  <body>
+  <body class:list={{ "has-sakura-scene": sakura }}>
+    {sakura && <SakuraScene />}
     <slot />
   </body>
 </html>

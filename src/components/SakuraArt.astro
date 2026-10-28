@@ -1,0 +1,40 @@
+---
+import { sakuraSprites, sakuraPlacement, sakuraFlowers, sakuraBuds } from "~/data/sakura";
+
+const id = "sakura-tree";
+const openingBud = sakuraPlacement("bud", 28);
+const restingBud = sakuraPlacement("bud", 24);
+---
+
+<!-- The tree shares a sprite sheet with the page-wide petals. -->
+<div class="sakura-hero" data-sakura-tree aria-hidden="true">
+  <svg class="sakura-hero__art" viewBox="0 0 1440 1000" preserveAspectRatio="xMinYMin meet" focusable="false">
+    <defs>
+      <image id={`${id}-ink`} href="/ink-tree.webp" width="1254" height="1254" />
+      <clipPath id={`${id}-wood`}><rect width="1254" height="818" /></clipPath>
+      {sakuraSprites.map((sprite) => (
+        <symbol id={`${id}-${sprite.name}`} viewBox={sprite.box} overflow="hidden">
+          <use href={`#${id}-ink`} />
+        </symbol>
+      ))}
+    </defs>
+    <g class="sakura-hero__composition" transform="translate(-100 95)">
+      <g data-sakura-sway>
+        <g clip-path={`url(#${id}-wood)`}><use href={`#${id}-ink`} /></g>
+        <g data-sakura-blooms>
+          {sakuraFlowers.map((flower) => (
+            <g transform={`translate(${flower.x} ${flower.y}) rotate(${flower.angle})`} style={`--bloom-delay: ${flower.delay}s; --bloom-duration: ${flower.duration}s`}>
+              <g class="sakura-hero__bud"><use href={`#${id}-bud`} {...openingBud} /></g>
+              <g class="sakura-hero__bloom"><use href={`#${id}-${flower.sprite}`} {...flower.placement} /></g>
+            </g>
+          ))}
+          {sakuraBuds.map((bud) => (
+            <g transform={`translate(${bud.x} ${bud.y}) rotate(${bud.angle})`} style={`--bloom-delay: ${bud.delay}s; --bloom-duration: ${bud.duration}s`}>
+              <g class="sakura-hero__bloom"><use href={`#${id}-bud`} {...restingBud} /></g>
+            </g>
+          ))}
+        </g>
+      </g>
+    </g>
+  </svg>
+</div>

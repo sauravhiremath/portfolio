@@ -1,0 +1,19 @@
+---
+import { sakuraPetals } from "~/data/sakura";
+
+interface Props {
+  depth: "background" | "foreground";
+}
+const { depth } = Astro.props;
+const petals = sakuraPetals.filter((_, index) => index % 2 === (depth === "background" ? 1 : 0));
+---
+
+<div class:list={["home-petals", `home-petals--${depth}`]} data-sakura-petals={depth} aria-hidden="true">
+  {petals.map((petal) => (
+    <div class="home-petals__fall" style={`left: ${petal.x}%; --duration: ${petal.duration}s; --delay: ${petal.delay}s; --drift: ${petal.drift}px; --size: ${petal.size}px; --rest-y: ${petal.rest}vh`}>
+      <svg class="home-petals__sprite" viewBox="715 1105 124 99" focusable="false">
+        <image href="/ink-tree.webp" width="1254" height="1254" />
+      </svg>
+    </div>
+  ))}
+</div>

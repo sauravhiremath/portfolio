@@ -16,11 +16,11 @@ const li = socials.find((s) => s.id === "linkedin")!;
 const featuredBlogs = blogs.slice(0, 3);
 ---
 
-<Layout>
+<Layout sakura>
   <main class="page">
     <ThemeToggle />
 
-    <div class="bento-scroller">
+    <div class="bento-scroller" data-sakura-scroll="horizontal">
       <section class="bento">
         <div class="hero-cell"><HeroCard /></div>
 

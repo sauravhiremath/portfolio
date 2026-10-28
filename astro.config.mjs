@@ -4,6 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://sauravmh.com',
+  devToolbar: { enabled: false },
   integrations: [sitemap()],
   fonts: [
     {
