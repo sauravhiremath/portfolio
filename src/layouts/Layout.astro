@@ -3,6 +3,7 @@ import "~/styles/global.css";
 import { Font } from "astro:assets";
 import { site, ga } from "~/data/site";
 import SakuraScene from "~/components/SakuraScene.astro";
+import StaticNoise from "~/components/StaticNoise.astro";
 
 interface Props {
   title?: string;
@@ -85,5 +86,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
   <body class:list={{ "has-sakura-scene": sakura }}>
     {sakura && <SakuraScene />}
     <slot />
+    <StaticNoise />
   </body>
 </html>
